@@ -188,6 +188,7 @@ function snapshot_enqueue_scripts(){
 	wp_enqueue_script('snapshot-main', get_template_directory_uri().'/js/snapshot.js', array('jquery'), SO_THEME_VERSION);
 	
 	if(is_home()){
+		wp_enqueue_script('snapshot-preload', get_template_directory_uri().'/js/jquery.preload.js', array('jquery'));
 		wp_enqueue_script('snapshot-home', get_template_directory_uri().'/js/snapshot-home.js', array('jquery'), SO_THEME_VERSION);
 		wp_localize_script('snapshot-home', 'snapshotHome', array(
 			'sliderSpeed' => so_setting('slider_speed')
