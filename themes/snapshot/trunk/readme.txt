@@ -2,9 +2,9 @@
 License:
 -----------------------------------------------
 
-Photography WordPress Theme, Copyright 2012 SiteOrigin.com
+Snapshot WordPress Theme, Copyright 2012 SiteOrigin.com
 
-Photography a GPL theme. See license.txt  
+Snapshot a GPL theme. See license.txt  
 
 This theme includes the following external libraries and resources
 

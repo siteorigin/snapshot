@@ -22,7 +22,7 @@
 							<?php if(!empty($comments['approved'])) : ?>
 								<div class="comments">
 									<em></em>
-									<a href="<?php the_permalink() ?>#comments"><?php printf(__('%s Comments', 'photography'), $comments['approved']) ?></a>
+									<a href="<?php the_permalink() ?>#comments"><?php printf(__('%s Comments', 'snapshot'), $comments['approved']) ?></a>
 								</div>
 							<?php endif; ?>
 							
@@ -36,7 +36,7 @@
 			
 			<div id="page-navigation">
 				<?php if(function_exists('wp_pagenavi')) : wp_pagenavi(); ?>
-				<?php else : posts_nav_link(' ', __('Previous Page', 'photography'), __('Next Page', 'photography')); print '<div class="clear"></div>'; endif;?>
+				<?php else : posts_nav_link(' ', __('Previous Page', 'snapshot'), __('Next Page', 'snapshot')); print '<div class="clear"></div>'; endif;?>
 			</div>
 		</div>
 	</div>

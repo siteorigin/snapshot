@@ -9,7 +9,7 @@
 			</div>
 			<div class="comments">
 				<em></em>
-				<a href="#comments"><?php comments_number( __('No Comments', 'photography'), __('One Comment', 'photography'), __('% Comments', 'photography') ); ?></a>
+				<a href="#comments"><?php comments_number( __('No Comments', 'snapshot'), __('One Comment', 'snapshot'), __('% Comments', 'snapshot') ); ?></a>
 			</div>
 			
 			<?php $category = get_the_category(); if(!empty($category)) : ?>
