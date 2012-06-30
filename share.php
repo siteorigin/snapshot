@@ -8,7 +8,7 @@
 			'layout' => 'button_count',
 			'width' => '160',
 			'show_faces' => 'false',
-			'action' => __('like', 'photography'),
+			'action' => __('like', 'snapshot'),
 			'colorscheme' => 'light',
 			'height' => '21',
 		), '//www.facebook.com/plugins/like.php');

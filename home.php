@@ -4,7 +4,7 @@
 <?php else : ?>
 	<div id="page-title" class="archive-title">
 		<div class="container">
-			<h1><?php _e('Latest Posts', 'photography') ?></h1>
+			<h1><?php _e('Latest Posts', 'snapshot') ?></h1>
 		</div>
 	</div>
 	<div id="home-slider-below"></div>

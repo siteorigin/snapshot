@@ -2,7 +2,7 @@
 
 <div id="page-title" class="archive-title">
 	<div class="container">
-		<h1><?php _e('Page Not Found', 'photography') ?></h1>
+		<h1><?php _e('Page Not Found', 'snapshot') ?></h1>
 	</div>
 </div>
 <div id="home-slider-below"></div>

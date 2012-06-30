@@ -8,7 +8,7 @@
 		<div id="footer-copyright">
 			<?php if(so_setting('general_attribution')) : ?>
 				<div class="designer">
-					<?php printf(__('Theme By <a href="%s">SiteOrigin</a>', 'photography'), 'http://siteorigin.com') ?>
+					<?php printf(__('Theme By <a href="%s">SiteOrigin</a>', 'snapshot'), 'http://siteorigin.com') ?>
 				</div>
 			<?php endif; ?>
 				
