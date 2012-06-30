@@ -1,161 +1,98 @@
 /**
- * jQuery.Preload
- * Copyright (c) 2008 Ariel Flesler - aflesler(at)gmail(dot)com
- * Dual licensed under MIT and GPL.
- * Date: 3/25/2009
+ * An asset preloader that preloads Images, CSS and images and calls a single callback. Useful for loading mini apps and widgets.
  *
- * @projectDescription Multifunctional preloader
- * @author Ariel Flesler
- * @version 1.0.8
- *
- * @id jQuery.preload
- * @param {String, jQuery, Array< String, <a>, <link>, <img> >} original Collection of sources to preload
- * @param {Object} settings Hash of settings.
- *
- * @id jQuery.fn.preload
- * @param {Object} settings Hash of settings.
- * @return {jQuery} Returns the same jQuery object, for chaining.
- *
- * @example Link Mode:
- *	$.preload( '#images a' );
- *
- * @example Rollover Mode:
- *	$.preload( '#images img', {
- *		find:/\.(gif|jpg)/,
- *		replace:'_over.$1'
- *	});
- *
- * @example Src Mode:
- *	$.preload( [ 'red', 'blue', 'yellow' ], {
- *		base:'images/colors/',
- *		ext:'.jpg'
- *	});
- *
- * @example Placeholder Mode:
- *	$.preload( '#images img', {
- *		placeholder:'placeholder.jpg',
- *		notFound:'notfound.jpg'
- *	});
- *
- * @example Placeholder+Rollover Mode(High res):
- *	$.preload( '#images img', {
- *		placeholder:true,
- *		find:/\.(gif|jpg)/,
- *		replace:'_high.$1'
- *	});
+ * Licensed under the WTFPL http://sam.zoy.org/wtfpl/
+ * Written By Greg Priday <http://siteorigin.com/>
  */
-;(function( $ ){
 
-	var $preload = $.preload = function( original, settings ){
-		if( original.split ) // selector
-			original = $(original);
+(function($){
+    $.preload = function(assets, options){
+        options = $.extend({
+            'nocache' : false,			// TODO implement nocache
+            'start' : null,				// Callback when preloading starts
+            'each' : null,				// Callback after each asset completes
+            'complete': null, 			// Callback after all assets complete
+            'insert' : false,			// Should JS and CSS be inserted after completion (per asset)?
+            'insertComplete' : true 	// Should JS and CSS be inserted after completion of all assets?
+        }, options);
 
-		settings = $.extend( {}, $preload.defaults, settings );
-		var sources = $.map( original, function( source ){
-			if( !source ) 
-				return; // skip
-			if( source.split ) // URL Mode
-				return settings.base + source + settings.ext;
-			var url = source.src || source.href; // save the original source
-			if( typeof settings.placeholder == 'string' && source.src ) // Placeholder Mode, if it's an image, set it.
-				source.src = settings.placeholder;
-			if( url && settings.find ) // Rollover mode
-				url = url.replace( settings.find, settings.replace );
-			return url || null; // skip if empty string
-		});
+        var isComplete = function(){
+            var c = 0;
+            for(var i = 0; i < assets.length; i++){
+                if(assets[i].loaded) c++;
+            }
+            return c == assets.length;
+        }
 
-		var data = {
-			loaded:0, // how many were loaded successfully
-			failed:0, // how many urls failed
-			next:0, // which one's the next image to load (index)
-			done:0, // how many urls were tried
-			/*
-			index:0, // index of the related image			
-			found:false, // whether the last one was successful
-			*/
-			total:sources.length // how many images are being preloaded overall
-		};
-		
-		if( !data.total ) // nothing to preload
-			return finish();
-		
-		var imgs = $(Array(settings.threshold+1).join('<img/>'))
-			.load(handler).error(handler).bind('abort',handler).each(fetch);
-		
-		function handler( e ){
-			data.element = this;
-			data.found = e.type == 'load';
-			data.image = this.src;
-			data.index = this.index;
-			var orig = data.original = original[this.index];
-			data[data.found?'loaded':'failed']++;
-			data.done++;
+        // Preload all the assets
+        var assetLoad = function(i){
+            var asset = assets[i];
+            if(!asset.loaded){
+                if(asset.callback != null) assets[i].callback();
+                asset.loaded = true;
+                if(asset.insert && (asset.type == 'css' || asset.type == 'js')){
+                    asset.el.appendTo($('head'));
+                }
+                if(options.each == 'function') options.each(assets[i]);
+                if(isComplete()){
+                    if(typeof options.complete == 'function') options.complete(assets);
+                    if(options.insertComplete) {
+                        // Insert all assets
+                        $.each(assets, function(i, asset){
+                            if(asset.type == 'css' || asset.type == 'js'){
+                                asset.el.appendTo($('head'));
+                            }
+                            else if(asset.type == 'html' && asset.appendTo){
+                                $(asset.appendTo).append(asset.el);
+                            }
+                        })
+                    }
+                }
+            }
+        };
 
-			// This will ensure that the images aren't "un-cached" after a while
-			if( settings.enforceCache )
-				$preload.cache.push( 
-					$('<img/>').attr('src',data.image)[0]
-				);
+        $.each(assets, function(i, asset){
+            asset = $.extend({
+                'type' : null,
+                'callback' : null		// Callback after item is loaded
+            }, asset);
+            var preload = false;
 
-			if( settings.placeholder && orig.src ) // special case when on placeholder mode
-				orig.src = data.found ? data.image : settings.notFound || orig.src;
-			if( settings.onComplete )
-				settings.onComplete( data );
-			if( data.done < data.total ) // let's continue
-				fetch( 0, this );
-			else{ // we are finished
-				if( imgs && imgs.unbind )
-					imgs.unbind('load').unbind('error').unbind('abort'); // cleanup
-				imgs = null;
-				finish();
-			}
-		};
-		function fetch( i, img, retry ){
-			// IE problem, can't preload more than 15
-			if( img.attachEvent /* msie */ && data.next && data.next % $preload.gap == 0 && !retry ){
-				setTimeout(function(){ fetch( i, img, true ); }, 0);
-				return false;
-			}
-			if( data.next == data.total ) return false; // no more to fetch
-			img.index = data.next; // save it, we'll need it.
-			img.src = sources[data.next++];
-			if( settings.onRequest ){
-				data.index = img.index;
-				data.element = img;
-				data.image = img.src;
-				data.original = original[data.next-1];
-				settings.onRequest( data );
-			}
-		};
-		function finish(){
-			if( settings.onFinish )
-				settings.onFinish( data );
-		};
-	};
+            if(asset.type == 'image'){
+                asset.el = $('<img />')
+                    .attr('src', asset.url);
+                preload = true;
+            }
+            else if(asset.type == 'css'){
+                asset.el = $('<link rel="stylesheet" type="text/css" media="all" />')
+                    .attr('href', asset.url);
+                preload = true;
+            }
+            else if(asset.type == 'js'){
+                asset.el = $('<script type="text/javascript" />')
+                    .attr('src', asset.url);
+                preload = true;
+            }
+            else if(asset.type == 'html'){
+                $.get(asset.url, function(data){
+                    assets[i].el = $(data);
+                    assetLoad(i);
+                });
+            }
 
-	 // each time we load this amount and it's IE, we must rest for a while, make it lower if you get stack overflow.
-	$preload.gap = 14; 
-	$preload.cache = [];
-	
-	$preload.defaults = {
-		threshold:2, // how many images to load simultaneously
-		base:'', // URL mode: a base url can be specified, it is prepended to all string urls
-		ext:'', // URL mode:same as base, but it's appended after the original url.
-		replace:'' // Rollover mode: replacement (can be left empty)
-		/*
-		enforceCache: false, // If true, the plugin will save a copy of the images in $.preload.cache
-		find:null, // Rollover mode: a string or regex for the replacement
-		notFound:'' // Placeholder Mode: Optional url of an image to use when the original wasn't found
-		placeholder:'', // Placeholder Mode: url of an image to set while loading
-		onRequest:function( data ){ ... }, // callback called every time a new url is requested
-		onComplete:function( data ){ ... }, // callback called every time a response is received(successful or not)
-		onFinish:function( data ){ ... } // callback called after all the images were loaded(or failed)
-		*/
-	};
+            if(preload){
+                // Load the asset through an image
+                assets[i] = asset;
+                var img = $('<img />')
+                    .attr('src', asset.url)
+                    .ready(function(){
+                        assetLoad(i, asset)
+                    });
+            }
+        });
 
-	$.fn.preload = function( settings ){
-		$preload( this, settings );
-		return this;
-	};
+        if(options.start != null) options.start();
 
-})( jQuery );
+        return assets;
+    }
+})(jQuery);
