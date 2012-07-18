@@ -51,4 +51,4 @@ function snapshot_upgrade_text($text){
 	
 	return $text;
 }
-add_filter('so_premium_page', 'snapshot_upgrade_text');
+add_filter('so_premium_content', 'snapshot_upgrade_text');
