@@ -4,8 +4,8 @@ Theme URI: http://siteorigin.com/theme/snapshot/
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Version: trunk
-License: GPL
-License URI: http://wordpress.org/about/gpl/
+License: GPL 3.0
+License URI: http://www.gnu.org/copyleft/gpl.html
 Description: Snapshot is a theme built for showing off your photography. The home page gives you a full width slider along with a grid of all your recent photos. Each photo gets its own page, with a massive photo display at the top.
 Tags: gray, fixed-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, photoblogging
 */
@@ -540,7 +540,7 @@ a{
 	position: absolute;
 	left: 0;
 	top: 50%;
-	margin-top: -30px;
+	margin-top: -27px;
 	
 	color: #dddddd;
 	font-size: 11px;
@@ -550,6 +550,10 @@ a{
 #page-title .post-info div{
 	display: block;
 	margin-bottom: 6px;
+}
+
+#page-title .post-info div.category{
+	margin-bottom: 0;
 }
 
 #page-title .post-info a{

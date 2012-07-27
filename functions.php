@@ -6,7 +6,7 @@ define('SO_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
 include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/functions/settings.php';
 
-if(file_exists(get_template_directory().'/premium/functions.php'))
+if(file_exists(get_template_directory().'/premium/functions.php') && false)
 	include get_template_directory().'/premium/functions.php';
 
 if(!defined('SO_IS_PREMIUM')) {
@@ -26,6 +26,8 @@ include get_template_directory().'/extras/support/support.php';
  * @action after_setup_theme
  */
 function snapshot_setup_theme(){
+	global $content_width;
+	
 	// We're using SiteOrigin theme settings
 	so_settings_init();
 	
@@ -301,9 +303,3 @@ add_action('add_meta_boxes', 'snapshot_add_meta_boxes');
 function snapshot_meta_box_video_render(){
 	?><p><?php printf(__('Post videos are available in <a href="%s">Snapshot Premium</a>.', 'snapshot'), admin_url('themes.php?page=premium_upgrade')) ?></p><?php
 }
-
-function snapshot_embed_defaults($defaults){
-	$defaults['width'] = 440;
-	return $defaults;
-}
-add_filter('embed_defaults', 'snapshot_embed_defaults');
