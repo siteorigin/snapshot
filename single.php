@@ -56,11 +56,14 @@
 		
 		<div id="post-images">
 			<?php
-				// TODO this should only select specific images
 				$children = get_children(array(
 					'post_mime_type' => 'image',
 					'post_parent' => get_the_ID(),
-					'post_type' => 'attachment'
+					'post_type' => 'attachment',
+					'post_status' => 'inherit',
+					'post_mime_type' => 'image', 
+					'order' => 'ASC',
+					'orderby' => 'menu_order ID'
 				));
 			
 				foreach($children as $child){
@@ -70,9 +73,9 @@
 					$src = wp_get_attachment_image_src($child->ID, 'single-large');
 					?>
 					<div class="image">
-						<?php if(count($children)) print '<a href="#" data-src="'.$src[0].'" data-width="'.$src[1].'" data-height="'.$src[2].'">' ?>
+						<?php print '<a href="'.get_attachment_link($child->ID).'" data-width="'.$src[1].'" data-height="'.$src[2].'">' ?>
 						<?php print wp_get_attachment_image($child->ID, 'post-thumbnail', false, array('class' => 'thumbnail')); ?>
-						<?php if(count($children)) print '</a>' ?>
+						<?php print '</a>' ?>
 					</div>
 					<?php
 					

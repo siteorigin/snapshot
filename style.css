@@ -912,6 +912,10 @@ a{
 
 /* @group Comments */
 
+#single-comments-wrapper {
+	margin-top: 25px;
+}
+
 /* @group Comment List */
 
 #comments-title{
@@ -1010,6 +1014,10 @@ a{
 /* @end */
 
 /* @group Reply */
+
+#respond{
+	margin-top: 25px;
+}
 
 #reply-title{
 	font-size: 16px;

@@ -6,82 +6,75 @@ define('SO_IS_PREMIUM', true);
 include get_template_directory().'/premium/extras/ajax-comments/ajax-comments.php';
 include get_template_directory().'/premium/extras/css/css.php';
 
-/**
- * @param $output
- * @param $show
- * @return string
- * 
- * @filter stylesheet_uri
- */
-function photography_premium_filter_stylesheet($output){
-	// We want to use the original stylesheet
-	$output = get_template_directory_uri().'/style.css';
-	return $output;
+function snapshot_premium_init(){
+	if(so_setting('comments_ajax')){
+		so_ajax_comments_activate();
+	}
 }
-add_filter('stylesheet_uri', 'photography_premium_filter_stylesheet', 10);
+add_action('after_setup_theme', 'snapshot_premium_init', 11);
 
 /**
  * Add all the settings available in the premium version.
  * 
  * @action admin_init
  */
-function photography_premium_admin_init(){
+function snapshot_premium_admin_init(){
 
-	so_settings_add_field('general', 'search', 'checkbox', __('Search in Menu', 'photography'), array(
-		'description' => __('Display a search link in your menu that slides out a big beautiful search bar.', 'photography')
+	so_settings_add_field('general', 'search', 'checkbox', __('Search in Menu', 'snapshot'), array(
+		'description' => __('Display a search link in your menu that slides out a big beautiful search bar.', 'snapshot')
 	));
 	
-	so_settings_add_field('general', 'attribution', 'checkbox', __('Attribution Link', 'photography'), array(
-		'description' => __('Hide or display "Theme By SiteOrigin" link from your footer.', 'photography')
+	so_settings_add_field('general', 'attribution', 'checkbox', __('Attribution Link', 'snapshot'), array(
+		'description' => __('Hide or display "Theme By SiteOrigin" link from your footer.', 'snapshot')
 	));
 
-	so_settings_add_field('appearance', 'style', 'select', __('Style', 'photography'), array(
+	so_settings_add_field('appearance', 'style', 'select', __('Style', 'snapshot'), array(
 		'options' => array(
 			'light' => 'Light',
 			'dark' => 'Dark',
 		)
 	));
 
-	so_settings_add_field('comments', 'ajax', 'checkbox', __('Ajax Comments', 'photography'), array(
-		'description' => __('Let your visitors post comments without leaving the page.', 'photography')
+	so_settings_add_field('comments', 'ajax', 'checkbox', __('Ajax Comments', 'snapshot'), array(
+		'description' => __('Let your visitors post comments without leaving the page.', 'snapshot')
 	));
 }
-add_action('admin_init', 'photography_premium_admin_init', 11);
+add_action('admin_init', 'snapshot_premium_admin_init', 11);
 
 /**
- * Enqueue photography premium's scripts
+ * Enqueue snapshot premium's scripts
  * 
  * @action wp_enqueue_scripts
  */
-function photography_premium_enqueue_scripts(){
-	wp_enqueue_style('photography-premium', get_stylesheet_directory_uri().'/style.css');
+function snapshot_premium_enqueue_scripts(){
+	wp_enqueue_style('snapshot-premium', get_stylesheet_directory_uri().'/style.css');
 	
 	if(so_setting('comments_ajax') && is_single() && post_type_supports( get_post_type(), 'comments' )){
-		wp_enqueue_script('photography-ajax-comments', get_stylesheet_directory_uri().'/js/ajax-comments.js', array('jquery'), '1.0');
+		wp_enqueue_script('snapshot-ajax-comments', get_stylesheet_directory_uri().'/js/ajax-comments.js', array('jquery'), '1.0');
 	}
 }
-add_action('wp_enqueue_scripts', 'photography_premium_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'snapshot_premium_enqueue_scripts');
 
 /**
  * Set up the error handler.
  * 
  * @filter wp_die_handler
  */
-function photography_premium_comment_ajax_handler($handler){
+function snapshot_premium_comment_ajax_handler($handler){
 	global $pagenow;
 	if($pagenow == 'wp-comments-post.php' && so_setting('comments_ajax') && !empty($_POST['is_ajax'])){
-		$handler = 'photography_premium_comment_ajax_error_handler';
+		$handler = 'snapshot_premium_comment_ajax_error_handler';
 	}
 	return $handler;
 }
-add_filter('wp_die_handler', 'photography_premium_comment_ajax_handler');
+add_filter('wp_die_handler', 'snapshot_premium_comment_ajax_handler');
 
 /**
  * Ajax error handler
  * 
  * @param $error
  */
-function photography_premium_comment_ajax_error_handler($error){
+function snapshot_premium_comment_ajax_error_handler($error){
 	header('content-type: application/json', true);
 	print json_encode(array(
 		'status' => 'error',
@@ -93,7 +86,7 @@ function photography_premium_comment_ajax_error_handler($error){
 /**
  * Render all the ajax comments
  */
-function photography_premium_ajax_comment_rerender($location, $comment){
+function snapshot_premium_ajax_comment_rerender($location, $comment){
 	if(!so_setting('comments_ajax') || empty($_POST['is_ajax'])) return $location;
 	
 	$post_id = isset($_POST['comment_post_ID']) ? intval($_POST['comment_post_ID']) : '';
@@ -123,38 +116,38 @@ function photography_premium_ajax_comment_rerender($location, $comment){
 	));
 	exit();
 }
-add_filter('comment_post_redirect', 'photography_premium_ajax_comment_rerender', 10, 2);
+add_filter('comment_post_redirect', 'snapshot_premium_ajax_comment_rerender', 10, 2);
 
 /**
  * Add video metabox
  * 
  * @action add_meta_boxes
  */
-function photography_premium_add_meta_boxes(){
-	add_meta_box('photography-post-video', __('Post Video', 'photography'), 'photography_premium_meta_box_video_render', 'post', 'side');
+function snapshot_premium_add_meta_boxes(){
+	add_meta_box('snapshot-post-video', __('Post Video', 'snapshot'), 'snapshot_premium_meta_box_video_render', 'post', 'side');
 }
-add_action('add_meta_boxes', 'photography_premium_add_meta_boxes');
+add_action('add_meta_boxes', 'snapshot_premium_add_meta_boxes');
 
 /**
  * Render the video meta box
  */
-function photography_premium_meta_box_video_render($post){
-	$video = get_post_meta($post->ID, 'photography_post_video', true);
+function snapshot_premium_meta_box_video_render($post){
+	$video = get_post_meta($post->ID, 'snapshot_post_video', true);
 	?>
-	<input type="text" name="photography_post_video" class="widefat" value="<?php print esc_attr($video) ?>" />
-	<p class="description"><?php _e('Enter a full video URL', 'photography') ?></p>
+	<input type="text" name="snapshot_post_video" class="widefat" value="<?php print esc_attr($video) ?>" />
+	<p class="description"><?php _e('Enter a full video URL', 'snapshot') ?></p>
 	<?php
 }
 
-function photography_premium_save_post($post_id, $post){
+function snapshot_premium_save_post($post_id, $post){
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 	if ( !current_user_can('edit_post', $post_id) ) return;
-	if(!isset($_POST['photography_post_video'])) return;
+	if(!isset($_POST['snapshot_post_video'])) return;
 	
-	update_post_meta($post_id, 'photography_post_video', $_POST['photography_post_video']);
+	update_post_meta($post_id, 'snapshot_post_video', $_POST['snapshot_post_video']);
 	
 }
-add_action('save_post', 'photography_premium_save_post', 10, 2);
+add_action('save_post', 'snapshot_premium_save_post', 10, 2);
 
 /**
  * Add the search button
@@ -163,10 +156,16 @@ add_action('save_post', 'photography_premium_save_post', 10, 2);
  * @param $args
  * @return string
  */
-function photography_premium_wp_nav_menu_items($items, $args){
+function snapshot_premium_wp_nav_menu_items($items, $args){
 	if(so_setting('general_search') && $args->theme_location == 'main-menu'){
-		$items .= '<li id="main-menu-search"><a href="#">'.__('Search', 'photography').'</a></li>';
+		$items .= '<li id="main-menu-search"><a href="#">'.__('Search', 'snapshot').'</a></li>';
 	}
 	return $items;
 }
-add_filter('wp_nav_menu_items', 'photography_premium_wp_nav_menu_items', 10, 2);
+add_filter('wp_nav_menu_items', 'snapshot_premium_wp_nav_menu_items', 10, 2);
+
+function snapshot_premium_video_viewer($post_id){
+	$video = get_post_meta($post_id, 'snapshot_post_video', true);
+	global $wp_embed;
+	print $wp_embed->shortcode(array('width' => 960), $video);
+}
