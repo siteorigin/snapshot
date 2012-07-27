@@ -1,6 +1,7 @@
 <?php
 
 define('SO_THEME_VERSION', 'trunk');
+define('SO_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
 
 include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/functions/settings.php';
