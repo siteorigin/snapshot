@@ -1030,6 +1030,11 @@ a{
 	margin-top: 25px;
 }
 
+#respond .commentform-error{
+	margin-bottom: 5px;
+	color: #474747;
+}
+
 #reply-title{
 	font-size: 16px;
 	font-weight: 300;

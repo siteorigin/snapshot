@@ -95,7 +95,7 @@ add_action('widgets_init', 'snapshot_setup_widgets');
  */
 function snapshot_enqueue_scripts(){
 	if(so_setting('appearance_style') != 'light'){
-		wp_enqueue_style('snapshot-style', get_stylesheet_directory_uri().'/style-'.so_setting('appearance_style').'.css', array(), SO_THEME_VERSION);
+		wp_enqueue_style('snapshot-style', get_stylesheet_directory_uri().'/premium/style-'.so_setting('appearance_style').'.css', array(), SO_THEME_VERSION);
 	}
 
 	wp_enqueue_script('imgpreload', get_template_directory_uri().'/js/jquery.imgpreload.js', array('jquery'), '1.4');
@@ -118,7 +118,7 @@ function snapshot_enqueue_scripts(){
 	if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	
-	if(is_singular()) // TODO check that sharing is enabled
+	if(is_singular() && so_setting('social_display_share'))
 		wp_enqueue_script('snapshot-google-plusone', get_template_directory_uri().'/js/plusone.js', array(), SO_THEME_VERSION);
 		
 }

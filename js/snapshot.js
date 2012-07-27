@@ -34,7 +34,7 @@ jQuery(function($){
         $('#post-single-viewer.image').addClass('loading');
         $('#post-single-viewer.image img').css('visibility', 'hidden');
 
-        $.imgpreload(snapshotSingle.loaderUrl);
+        $.imgpreload(snapshot.imageLoaderUrl);
 
         // Load the main image
         $('#post-single-viewer.image img').imgpreload(function(){
