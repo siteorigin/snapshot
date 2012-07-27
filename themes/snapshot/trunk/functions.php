@@ -2,6 +2,9 @@
 
 define('SO_THEME_VERSION', 'trunk');
 
+include get_template_directory().'/extras/settings/settings.php';
+include get_template_directory().'/functions/settings.php';
+
 if(file_exists(get_template_directory().'/premium/functions.php'))
 	include get_template_directory().'/premium/functions.php';
 
@@ -9,9 +12,8 @@ if(!defined('SO_IS_PREMIUM')) include get_template_directory().'/extras/premium/
 if(!defined('SO_IS_PREMIUM')) include get_template_directory().'/upgrade/upgrade.php';
 
 include get_template_directory().'/extras/admin/admin.php';
-include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/extras/support/support.php';
-include get_template_directory().'/functions/settings.php';
+
 
 
 /**

@@ -1,5 +1,3 @@
-/* @override http://wpdev.dynalias.com/photography/wp-content/themes/photography/style-dark.css?ver=trunk */
-
 body{
 	background: #272727;
 }
@@ -56,7 +54,7 @@ body{
 /* @end */
 
 #footer{
-	background: #1c1c1c url(../photography/images/dark/footer-bg.png) repeat;
+	background: #1c1c1c url(../images/dark/footer-bg.png) repeat;
 }
 
 /* @group Comment Form */
