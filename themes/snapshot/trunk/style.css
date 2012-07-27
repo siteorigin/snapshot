@@ -1,6 +1,6 @@
 /*
 Theme Name: Snapshot
-Theme URI: http://siteorigin.com/theme/photoraphy/
+Theme URI: http://siteorigin.com/theme/snapshot/
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Version: trunk
@@ -273,6 +273,7 @@ a{
 /* @group Navigation */
 
 #home-slider .navigation{
+    display: none;
 	position: absolute;
 	z-index: 2;
 	bottom: 10px;
