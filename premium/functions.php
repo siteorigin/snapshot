@@ -47,11 +47,7 @@ add_action('admin_init', 'snapshot_premium_admin_init', 11);
  * @action wp_enqueue_scripts
  */
 function snapshot_premium_enqueue_scripts(){
-	wp_enqueue_style('snapshot-premium', get_stylesheet_directory_uri().'/style.css');
-	
-	if(so_setting('comments_ajax') && is_single() && post_type_supports( get_post_type(), 'comments' )){
-		wp_enqueue_script('snapshot-ajax-comments', get_stylesheet_directory_uri().'/js/ajax-comments.js', array('jquery'), '1.0');
-	}
+	//wp_enqueue_style('snapshot-premium', get_stylesheet_directory_uri().'/style.css');
 }
 add_action('wp_enqueue_scripts', 'snapshot_premium_enqueue_scripts');
 

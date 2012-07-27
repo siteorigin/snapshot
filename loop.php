@@ -5,7 +5,7 @@
 				<div <?php post_class('post') ?>>
 					<div class="post-background">
 						<?php if(has_post_thumbnail()) : the_post_thumbnail('post-thumbnail', array('class' => 'thumbnail')) ?>
-						<?php else : ?><img src="<?php print get_template_directory_uri() ?>/images/defaults/no-thumbnail.jpg" width="310" height="420" />
+						<?php else : ?><img src="<?php print get_template_directory_uri() ?>/images/defaults/no-thumbnail.jpg" width="310" height="420" class="thumbnail" />
 						<?php endif ?>
 						<div class="post-content">
 							<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>

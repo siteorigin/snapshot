@@ -150,6 +150,7 @@ a{
 }
 
 #menu-main-menu .sub-menu{
+	display: none;
 	padding: 10px 20px;
 	background: url(images/submenu-bg.png) repeat;
 }
@@ -367,6 +368,10 @@ a{
 	height: 420px;
 }
 
+#post-loop .post-background.loading{
+	background: #1c1c1c url(images/slider-loader.gif) no-repeat center center;
+}
+
 #post-loop .post-background img{
 	width: 100%;
 }
@@ -384,6 +389,8 @@ a{
 	height: 420px;
 	width: 100%;
 	padding: 5px 20px;
+	
+	opacity: 0;
 }
 
 #post-loop .post-content h2{
@@ -620,6 +627,10 @@ a{
 	width: 100%;
 	background: #212121;
 	line-height: 0;
+}
+
+#post-single-viewer.loading{
+	background: #212121 url(images/photo-loader.gif) no-repeat center center;
 }
 
 /* @end */

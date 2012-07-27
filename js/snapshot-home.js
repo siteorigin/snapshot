@@ -49,7 +49,7 @@ jQuery(function($){
     }
     
     // Start by preloading the loader gif
-    $.imgpreload(snapshotHome.loaderUrl);
+    $.imgpreload(snapshot.sliderLoaderUrl);
     
     // Next, preload the slide images
     $('#home-slider img.slide').imgpreload(function(){
