@@ -26,6 +26,7 @@ jQuery(function($){
 
     // Display a slide
     var displaySlide = function(i){
+        if($('#home-slider img.slide').length)
         if(i < 0 || i >= $('#home-slider img.slide').length){
             i = i % $('#home-slider img.slide').length;
         }
@@ -48,38 +49,37 @@ jQuery(function($){
             .addClass('current').show().css('opacity', 0).clearQueue().animate({'opacity' : 1}, 600);
     }
     
-    var assets = [];
-    $('#home-slider img.slide').each(function(){
-        assets.push({'type' : 'image', 'url' : $(this).attr('src')});
-    });
-    $.preload(assets, {
-        complete: function(){
-            $('#home-slider').removeClass('loading');
-            displaySlide(0);
+    // Start by preloading the loader gif
+    $.imgpreload(snapshotHome.loaderUrl);
+    
+    // Next, preload the slide images
+    $('#home-slider img.slide').imgpreload(function(){
+        $('#home-slider .navigation').fadeIn();
+        $('#home-slider').removeClass('loading');
+        displaySlide(0);
 
-            // Temporary slide transition
-            var cc = 0;
-            var interval;
+        // Temporary slide transition
+        var cc = 0;
+        var interval;
 
-            var resetInterval = function(){
-                clearInterval(interval);
-                interval = setInterval(function(){
-                    displaySlide(++cc);
-                }, snapshotHome.sliderSpeed);
-            };
-            resetInterval();
-
-            $('#home-slider a.next').click(function(){
+        var resetInterval = function(){
+            clearInterval(interval);
+            interval = setInterval(function(){
                 displaySlide(++cc);
-                resetInterval();
-                return false;
-            });
+            }, snapshotHome.sliderSpeed);
+        };
+        resetInterval();
 
-            $('#home-slider a.previous').click(function(){
-                displaySlide(--cc);
-                resetInterval();
-                return false;
-            });
-        }
+        $('#home-slider a.next').click(function(){
+            displaySlide(++cc);
+            resetInterval();
+            return false;
+        });
+
+        $('#home-slider a.previous').click(function(){
+            displaySlide(--cc);
+            resetInterval();
+            return false;
+        });
     });
 })
