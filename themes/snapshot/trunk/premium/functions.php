@@ -3,8 +3,8 @@
 // This is a premium version
 define('SO_IS_PREMIUM', true);
 
-include get_template_directory().'/extras/ajax-comments/ajax-comments.php';
-include get_template_directory().'/extras/css/css.php';
+include get_template_directory().'/premium/extras/ajax-comments/ajax-comments.php';
+include get_template_directory().'/premium/extras/css/css.php';
 
 /**
  * @param $output
