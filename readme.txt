@@ -16,3 +16,4 @@ Change Log:
 
 1.0 Initial Release
 1.0.1 Bug fixes and minor updates
+1.0.2 Set up sprites and added spritemaps to premium
