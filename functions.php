@@ -28,8 +28,8 @@ include get_template_directory().'/extras/support/support.php';
 function snapshot_setup_theme(){
 	// We're using SiteOrigin theme settings
 	so_settings_init();
-
-	if ( ! isset( $content_width ) ) $content_width = 620;
+	
+	if ( ! isset( $content_width ) ) $content_width = 440;
 	
 	// The custom header is used for the logo
 	add_theme_support('custom-header', array(	
@@ -301,3 +301,9 @@ add_action('add_meta_boxes', 'snapshot_add_meta_boxes');
 function snapshot_meta_box_video_render(){
 	?><p><?php printf(__('Post videos are available in <a href="%s">Snapshot Premium</a>.', 'snapshot'), admin_url('themes.php?page=premium_upgrade')) ?></p><?php
 }
+
+function snapshot_embed_defaults($defaults){
+	$defaults['width'] = 440;
+	return $defaults;
+}
+add_filter('embed_defaults', 'snapshot_embed_defaults');
