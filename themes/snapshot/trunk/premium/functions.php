@@ -47,7 +47,7 @@ add_action('admin_init', 'snapshot_premium_admin_init', 11);
  * @action wp_enqueue_scripts
  */
 function snapshot_premium_enqueue_scripts(){
-	//wp_enqueue_style('snapshot-premium', get_stylesheet_directory_uri().'/style.css');
+	wp_enqueue_style('snapshot-spritemaps', get_stylesheet_directory_uri().'/premium/sprites.css');
 }
 add_action('wp_enqueue_scripts', 'snapshot_premium_enqueue_scripts');
 
