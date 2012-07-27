@@ -4,11 +4,12 @@ License:
 
 Snapshot WordPress Theme, Copyright 2012 SiteOrigin.com
 
-Snapshot a GPL theme. See license.txt  
+Snapshot a GPL v3.0 theme. See license.txt  
 
 This theme includes the following external libraries and resources
 
 * HTML5 Shiv MIT/GPL2 Licensed 
+* jQuery Image Preload Dimas Begunoff licensed under MIT
 
 -----------------------------------------------
 Limitations:

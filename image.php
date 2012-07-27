@@ -11,6 +11,9 @@
 				<em></em>
 				<a href="#comments"><?php comments_number( __('No Comments', 'snapshot'), __('One Comment', 'snapshot'), __('% Comments', 'snapshot') ); ?></a>
 			</div>
+			<div class="category">
+				<em></em><a href="<?php print get_permalink($post->post_parent) ?>"><?php print get_the_title($post->post_parent) ?></a>
+			</div>
 
 			<?php $category = get_the_category(); if(!empty($category)) : ?>
 			<div class="category">
