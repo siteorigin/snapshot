@@ -109,10 +109,6 @@ function snapshot_enqueue_scripts(){
 		));
 	}
 	
-	if(is_single()){
-		wp_enqueue_script('snapshot-single', get_template_directory_uri().'/js/snapshot-single.js', array('jquery'), SO_THEME_VERSION);
-	}
-	
 	if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	

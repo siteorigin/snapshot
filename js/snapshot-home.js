@@ -26,7 +26,6 @@ jQuery(function($){
 
     // Display a slide
     var displaySlide = function(i){
-        if($('#home-slider img.slide').length)
         if(i < 0 || i >= $('#home-slider img.slide').length){
             i = i % $('#home-slider img.slide').length;
         }
@@ -54,32 +53,38 @@ jQuery(function($){
     
     // Next, preload the slide images
     $('#home-slider img.slide').imgpreload(function(){
-        $('#home-slider .navigation').fadeIn();
         $('#home-slider').removeClass('loading');
-        displaySlide(0);
 
-        // Temporary slide transition
-        var cc = 0;
-        var interval;
-
-        var resetInterval = function(){
-            clearInterval(interval);
-            interval = setInterval(function(){
+        if($('#home-slider img.slide').length > 1) {
+            $('#home-slider .navigation').fadeIn();
+            displaySlide(0);
+    
+            // Temporary slide transition
+            var cc = 0;
+            var interval;
+    
+            var resetInterval = function(){
+                clearInterval(interval);
+                interval = setInterval(function(){
+                    displaySlide(++cc);
+                }, snapshotHome.sliderSpeed);
+            };
+            resetInterval();
+    
+            $('#home-slider a.next').click(function(){
                 displaySlide(++cc);
-            }, snapshotHome.sliderSpeed);
-        };
-        resetInterval();
-
-        $('#home-slider a.next').click(function(){
-            displaySlide(++cc);
-            resetInterval();
-            return false;
-        });
-
-        $('#home-slider a.previous').click(function(){
-            displaySlide(--cc);
-            resetInterval();
-            return false;
-        });
+                resetInterval();
+                return false;
+            });
+    
+            $('#home-slider a.previous').click(function(){
+                displaySlide(--cc);
+                resetInterval();
+                return false;
+            });
+        }
+        else{
+            displaySlide(0);
+        }
     });
 })
