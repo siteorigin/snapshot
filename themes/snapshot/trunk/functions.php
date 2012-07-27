@@ -6,7 +6,7 @@ define('SO_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
 include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/functions/settings.php';
 
-if(file_exists(get_template_directory().'/premium/functions.php') && false)
+if(file_exists(get_template_directory().'/premium/functions.php'))
 	include get_template_directory().'/premium/functions.php';
 
 if(!defined('SO_IS_PREMIUM')) {
