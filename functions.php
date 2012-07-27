@@ -2,7 +2,7 @@
 
 define('SO_THEME_VERSION', 'trunk');
 
-if(file_exists(get_template_directory().'/premium/functions.php') && false)
+if(file_exists(get_template_directory().'/premium/functions.php'))
 	include get_template_directory().'/premium/functions.php';
 
 if(!defined('SO_IS_PREMIUM')) include get_template_directory().'/extras/premium/premium.php';
