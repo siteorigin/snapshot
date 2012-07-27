@@ -42,7 +42,7 @@
 	</div>
 </div>
 
-<div id="post-single-viewer">
+<div id="post-single-viewer" class="image">
 	<div class="container">
 		<?php print wp_get_attachment_image($post->ID, 'single-large', false, array('class' => 'single-image')); ?>
 	</div>

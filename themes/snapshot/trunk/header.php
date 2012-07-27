@@ -41,4 +41,4 @@
 	</div>
 </div>
 
-<?php if(so_setting('general_search')) get_template_part('searchbar'); ?>
+<?php if(so_setting('general_search')) get_template_part('premium/searchbar'); ?>
