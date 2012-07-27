@@ -1,14 +1,16 @@
 jQuery(function($){
     // Resize the main home slider image
+    var sliderHeight = $('#home-slider').height();
+    console.log(sliderHeight);
+    
     $('#home-slider img.slide').load(function(){
         var $$ = $(this);
-        if($$.height() < 420){
+        if($$.height() < sliderHeight){
             $$.css({
-                'height' : 420,
+                'height' : sliderHeight,
                 'width' : 'auto'
             });
         }
-
         else if($$.width() < $('#home-slider').width()){
             $$.css({
                 'height' : 'auto',
