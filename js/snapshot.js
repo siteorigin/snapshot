@@ -28,6 +28,7 @@ jQuery(function($){
     
     // Dropdown hover pointer
     $('#menu-main-menu .sub-menu').show().append($('<div class="pointer"></div>')).wrap($('<div></div>').addClass('sub-menu-wrapper'));
+    $('#top-area .menu ul .children').show().append($('<div class="pointer"></div>')).wrap($('<div></div>').addClass('children-wrapper'));
     
     // Preload single images
     if($('#post-single-viewer.image').length && !$('#post-single-viewer.image img').get(0).complete){

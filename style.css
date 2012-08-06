@@ -113,28 +113,33 @@ a{
 
 /* @group Menu */
 
-#menu-main-menu{
+#menu-main-menu,
+#top-area .menu > ul{
 	font-size: 12px;
 	position: absolute;
 	top: 50%;
 	right: 0;
 	margin-top: -0.5em;
 	height: 1em;
+	max-width: 750px;
 }
 
-#menu-main-menu > li{
+#menu-main-menu > li,
+#top-area .menu > ul > li{
 	position: relative;
 	display: inline-block;
 	margin-left: 20px;
 }
 
-#menu-main-menu > li > a{
+#menu-main-menu > li > a,
+#top-area .menu > ul > li > a{
 	color: #3b3b3b;
 	font-weight: 500;
 	text-decoration: none;
 }
 
-#menu-main-menu .sub-menu-wrapper{
+#menu-main-menu .sub-menu-wrapper,
+#top-area .menu > ul .children-wrapper{
 	display: none;
 	position: absolute;
 	right: 0;
@@ -145,17 +150,20 @@ a{
 	z-index: 10;
 }
 
-#menu-main-menu > li:hover .sub-menu-wrapper{
+#menu-main-menu > li:hover .sub-menu-wrapper, 
+#top-area .menu > ul > li:hover .children-wrapper{
 	display: block;
 }
 
-#menu-main-menu .sub-menu{
+#menu-main-menu .sub-menu,
+#top-area .menu > ul .children{
 	display: none;
 	padding: 10px 20px;
 	background: url(images/submenu-bg.png) repeat;
 }
 
-#menu-main-menu .sub-menu .pointer{
+#menu-main-menu .sub-menu .pointer,
+#top-area .menu > ul .children .pointer{
 	display: block;
 	width: 17px;
 	height: 17px;
@@ -165,11 +173,13 @@ a{
 	background: url(images/sprites/submenu-pointer.png) no-repeat;
 }
 
-#menu-main-menu .sub-menu li{
+#menu-main-menu .sub-menu li,
+#top-area .menu > ul .children li{
 	display: block;
 }
 
-#menu-main-menu .sub-menu li a{
+#menu-main-menu .sub-menu li a,
+#top-area .menu > ul .children li a{
 	color: #c6c6c6;
 	text-decoration: none;
 	font-weight: 500;
