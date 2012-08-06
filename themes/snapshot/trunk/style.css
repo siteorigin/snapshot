@@ -148,6 +148,8 @@ a{
 	padding-top: 28px;
 	
 	z-index: 10;
+	
+	white-space: nowrap;
 }
 
 #menu-main-menu > li:hover .sub-menu-wrapper, 
