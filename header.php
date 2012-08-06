@@ -2,17 +2,12 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
-	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale = 1.0, user-scalable=0' />
 
 	<title><?php wp_title('|', true, 'right'); ?></title>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php print get_stylesheet_uri(); ?>" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri() ?>js/html5shiv.js"></script>
-	<![endif]-->
 
 	<?php wp_head(); ?>
 </head>
