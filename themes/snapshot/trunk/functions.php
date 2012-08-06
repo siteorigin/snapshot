@@ -80,7 +80,19 @@ if(!function_exists('snapshot_print_scripts')) :
  */
 function snapshot_print_scripts(){
 	if(is_admin()) return;
-	?><style type="text/css" media="all">a{ color: <?php print so_setting('appearance_link') ?>; }</style><?php
+
+	$header = get_custom_header()
+	?>
+	<style type="text/css" media="all">
+		a{ color: <?php print so_setting('appearance_link') ?>; }
+		<?php if($header->url) : ?>
+			#menu-main-menu,
+			#top-area .menu > ul{
+				width: <?php print max(200, 960-$header->width - 20) ?>px;
+			}
+		<?php endif; ?>
+	</style>
+	<?php
 }
 endif;
 add_action('wp_print_styles', 'snapshot_print_scripts');
