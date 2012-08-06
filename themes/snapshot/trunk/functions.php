@@ -20,6 +20,7 @@ include get_template_directory().'/extras/support/support.php';
 
 
 
+if(!function_exists('snapshot_setup_theme')) :
 /**
  * General theme setup
  * 
@@ -66,8 +67,11 @@ function snapshot_setup_theme(){
 	
 	add_editor_style();
 }
+endif;
 add_action('after_setup_theme', 'snapshot_setup_theme');
 
+
+if(!function_exists('snapshot_print_scripts')) :
 /**
  * Add the custom style CSS
  * @return mixed
@@ -78,8 +82,26 @@ function snapshot_print_scripts(){
 	if(is_admin()) return;
 	?><style type="text/css" media="all">a{ color: <?php print so_setting('appearance_link') ?>; }</style><?php
 }
+endif;
 add_action('wp_print_styles', 'snapshot_print_scripts');
 
+
+if(!function_exists('snapshot_print_html_shiv')) :
+/**
+ * Display the HTML 5 shiv conditional
+ */
+function snapshot_print_html_shiv(){
+	?>
+	<!--[if lt IE 9]>
+	<script src="<?php echo get_template_directory_uri() ?>js/html5shiv.js"></script>
+	<![endif]-->
+	<?php
+}
+endif;
+add_action('wp_print_scripts', 'snapshot_print_html_shiv');
+
+
+if(!function_exists('snapshot_setup_widgets')) :
 /**
  * Setup the widgets
  * 
@@ -91,8 +113,11 @@ function snapshot_setup_widgets(){
 		'id' => 'site-footer',
 	));
 }
+endif;
 add_action('widgets_init', 'snapshot_setup_widgets');
 
+
+if(!function_exists('snapshot_enqueue_scripts')) :
 /**
  * Enqueue Snapshot's Scripts.
  * 
@@ -127,7 +152,9 @@ function snapshot_enqueue_scripts(){
 		wp_enqueue_script('snapshot-google-plusone', get_template_directory_uri().'/js/plusone.js', array(), SO_THEME_VERSION);
 		
 }
+endif;
 add_action('wp_enqueue_scripts', 'snapshot_enqueue_scripts');
+
 
 if(!function_exists('snapshot_wp_title')) :
 /**
@@ -161,6 +188,7 @@ function snapshot_wp_title($title, $sep, $seplocation){
 }
 endif;
 add_filter('wp_title', 'snapshot_wp_title', 10, 3);
+
 
 if(!function_exists('snapshot_single_comment')) :
 /**
@@ -197,6 +225,8 @@ function snapshot_single_comment($comment, $args, $depth){
 }
 endif;
 
+
+if(!function_exists('snapshot_previous_posts_link_attributes')):
 /**
  * Add the proper class to the posts nav link
  * @param $attr
@@ -208,8 +238,11 @@ function snapshot_previous_posts_link_attributes($attr){
 	$attr = 'class="next"';
 	return $attr;
 }
+endif;
 add_filter('previous_posts_link_attributes', 'snapshot_previous_posts_link_attributes');
 
+
+if(!function_exists('snapshot_next_posts_link_attributes')):
 /**
  * Add the proper class to the posts nav link
  * @param $attr
@@ -221,8 +254,11 @@ function snapshot_next_posts_link_attributes($attr){
 	$attr = 'class="prev"';
 	return $attr;
 }
+endif;
 add_filter('next_posts_link_attributes', 'snapshot_next_posts_link_attributes');
 
+
+if(!function_exists('snapshot_footer_widget_params')):
 /**
  * Set the widths of the footer widgets
  *
@@ -241,8 +277,11 @@ function snapshot_footer_widget_params($params){
 
 	return $params;
 }
+endif;
 add_filter('dynamic_sidebar_params', 'snapshot_footer_widget_params');
 
+
+if(!function_exists('snapshot_attachment_fields_to_edit')):
 /**
  * Add the sidebar exclude field
  * @param $fields
@@ -265,8 +304,11 @@ function snapshot_attachment_fields_to_edit($fields, $post){
 	
 	return $fields;
 }
+endif;
 add_filter('attachment_fields_to_edit', 'snapshot_attachment_fields_to_edit', 10, 2);
 
+
+if(!function_exists('snapshot_attachment_save')):
 /**
  * Save the attachment form meta. 
  * @param $post
@@ -284,8 +326,11 @@ function snapshot_attachment_save($post){
 	
 	return $post;
 }
+endif;
 add_filter('attachment_fields_to_save', 'snapshot_attachment_save', 10, 2);
 
+
+if(!function_exists('snapshot_add_meta_boxes')):
 /**
  * Add the relevant metaboxes.
  * 
@@ -295,11 +340,15 @@ function snapshot_add_meta_boxes(){
 	if(defined('SO_IS_PREMIUM')) return;
 	add_meta_box('snapshot-post-video', __('Post Video', 'snapshot'), 'snapshot_meta_box_video_render', 'post', 'side');
 }
+endif;
 add_action('add_meta_boxes', 'snapshot_add_meta_boxes');
 
+
+if(!function_exists('snapshot_meta_box_video_render')) :
 /**
  * Render the video meta box added in snapshot_add_meta_boxes
  */
 function snapshot_meta_box_video_render(){
 	?><p><?php printf(__('Post videos are available in <a href="%s">Snapshot Premium</a>.', 'snapshot'), admin_url('themes.php?page=premium_upgrade')) ?></p><?php
 }
+endif;

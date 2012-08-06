@@ -14,12 +14,15 @@
 			
 			<?php $category = get_the_category(); if(!empty($category)) : ?>
 				<div class="category">
-					<em></em><a href="<?php print get_term_link($category[0]) ?>"><?php print $category[0]->name ?></a>
+					<em></em>
+					<?php the_category(', '); ?>
 				</div>
 			<?php endif ?>
 		</div>
 		
-		<h1><?php the_title() ?></h1>
+		<h1>
+			<?php the_title() ?>
+		</h1>
 		
 		<div class="nav">
 			<?php previous_post_link('%link') ?>

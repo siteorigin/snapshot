@@ -391,6 +391,7 @@ a{
 	padding: 5px 20px;
 	
 	opacity: 0;
+	overflow: hidden;
 }
 
 #post-loop .post-content h2{
@@ -398,6 +399,8 @@ a{
 	color: #dddddd;
 	margin: 20px 0;
 	font-size: 21px;
+	
+	word-wrap: break-word;
 }
 
 #post-loop .post-content h2 a{
@@ -523,8 +526,9 @@ a{
 }
 
 #page-title .container{
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	display: table;
 }
 
 #page-title h1{
@@ -537,19 +541,20 @@ a{
 /* @group Post Info */
 
 #page-title .post-info{
-	position: absolute;
-	left: 0;
-	top: 50%;
-	margin-top: -27px;
+	display: table-cell;
 	
 	color: #dddddd;
 	font-size: 11px;
 	font-weight: 500;
+	width: 170px;
+	
+	vertical-align: middle;
 }
 
 #page-title .post-info div{
 	display: block;
 	margin-bottom: 6px;
+	background: inherit;
 }
 
 #page-title .post-info div.category{
@@ -587,21 +592,34 @@ a{
 
 /* @end */
 
+/* @group Post Title */
+
+#page-title.post-title h1{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 15px;
+}
+
+/* @end */
+
 /* @group Post Navigation */
 
 #page-title .nav{
-	position: absolute;
-	top: 50%;
-	margin-top: -9px;
-	right: 0;
-	height: 19px;
+	display: table-cell;
+	vertical-align: middle;
+	width: 40px;
+	overflow: hidden;
+	
+	text-align: right;
 }
 
 #page-title .nav a{
-	display: inline-block;
+	display: block;
+	float: left;
 	width: 14px;
 	height: 19px;
 	text-indent: -9999px;
+	text-align: left;
 	margin-left: 6px;
 }
 
@@ -611,14 +629,6 @@ a{
 
 #page-title .nav a[rel=next]{
 	background: url(images/sprites/post-nav-next.png) no-repeat;
-}
-
-/* @end */
-
-/* @group Post Title */
-
-#page-title.post-title h1{
-	margin-left: 185px;
 }
 
 /* @end */

@@ -12,6 +12,7 @@ function snapshot_settings_admin_init(){
 	so_settings_add_teaser('general', 'search', __('Search in Menu', 'snapshot'), array(
 		'description' => __('Display a search link in your menu that slides out a big beautiful search bar.', 'snapshot')
 	));
+	so_settings_add_field('general', 'latest_posts', 'text', __('Latest Posts Title', 'snapshot'));
 	so_settings_add_field('general', 'copyright', 'text', __('Copyright Message', 'snapshot'));
 	so_settings_add_teaser('general', 'attribution', __('Attribution Link', 'snapshot'), array(
 		'description' => __('Hide or display "Theme By SiteOrigin" link from your footer.', 'snapshot')
@@ -72,6 +73,7 @@ add_action('admin_init', 'snapshot_settings_admin_init');
  */
 function snapshot_settings_default($defaults){
 	$defaults['general_search'] = true;
+	$defaults['general_latest_posts'] = __('Latest Posts', 'snapshot');
 	$defaults['general_copyright'] = __('Copyright &copy; {sitename} {year}', 'snapshot');
 	$defaults['general_attribution'] = true;
 
