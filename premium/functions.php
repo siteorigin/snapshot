@@ -118,7 +118,6 @@ function snapshot_premium_ajax_comment_rerender($location, $comment){
 		$args['per_page'] = get_option('comments_per_page');
 		$cpage = get_page_of_comment( $comment->comment_ID, $args );
 		$query['cpage'] = $cpage;
-		error_log($cpage);
 	}
 	query_posts($query);
 	
