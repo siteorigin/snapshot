@@ -43,6 +43,11 @@ function Snapshot_premium_upgrade_content($content){
 			'content' => __("New to WordPress? Need to chat to someone? There is a WordPress guru, waiting to answer your questions. You'll be familiar with our theme in no time.", 'snapshot'),
 		),
 	);
+
+	$content['featured'] = array(
+		get_template_directory_uri().'/upgrade/images/premium.jpg',
+		1110, 1398
+	);
 	
 	return $content;
 }
