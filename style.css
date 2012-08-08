@@ -86,25 +86,39 @@ a{
 /* @group Top Area */
 
 #top-area .container{
-	padding: 13px 0 20px 0;
+	padding: 19px 0;
 }
 
-#top-area h1{
+#top-area-wrapper {
+	display: table;
+	width: 100%;
+}
+
+
+#top-area #logo{
+	display: table-cell;
+	vertical-align: middle;
+	width: 10%;
+}
+
+#top-area #logo a{
+	display: block;
+	text-decoration: none;
+}
+
+#top-area #logo h1{
 	color: #3b3b3b;
 	font-family: 'Belgrano', serif;
 	display: inline-block;
 	font-size: 20px;
 	position: relative;
-}
-
-#top-area #logo a{
-	text-decoration: none;
+	white-space: nowrap;
 }
 
 #top-area h1 em{
 	display: block;
-	position: relative;
-	top: 4px;
+	position: absolute;
+	top: -2px;
 	left: -8px;
 	width: 8px;
 	height: 8px;
@@ -113,15 +127,17 @@ a{
 
 /* @group Menu */
 
+#menu-main-menu-container{
+	display: table-cell;
+	padding-left: 25px;
+	vertical-align: middle;
+	text-align: right;
+}
+
 #menu-main-menu,
 #top-area .menu > ul{
+	display: inline-block;
 	font-size: 12px;
-	position: absolute;
-	top: 50%;
-	right: 0;
-	margin-top: -0.5em;
-	height: 1em;
-	max-width: 750px;
 }
 
 #menu-main-menu > li,
@@ -138,8 +154,8 @@ a{
 	text-decoration: none;
 }
 
-#menu-main-menu .sub-menu-wrapper,
-#top-area .menu > ul .children-wrapper{
+#menu-main-menu .sub-menu,
+#top-area .menu > ul .sub-menu{
 	display: none;
 	position: absolute;
 	right: 0;
@@ -152,20 +168,19 @@ a{
 	white-space: nowrap;
 }
 
-#menu-main-menu > li:hover .sub-menu-wrapper, 
-#top-area .menu > ul > li:hover .children-wrapper{
+#menu-main-menu > li:hover .sub-menu, 
+#top-area .menu > ul > li:hover .sub-menu{
 	display: block;
 }
 
-#menu-main-menu .sub-menu,
-#top-area .menu > ul .children{
-	display: none;
+#menu-main-menu .sub-wrapper,
+#top-area .menu > ul .sub-wrapper{
 	padding: 10px 20px;
 	background: url(images/submenu-bg.png) repeat;
 }
 
 #menu-main-menu .sub-menu .pointer,
-#top-area .menu > ul .children .pointer{
+#top-area .menu > ul .sub-menu .pointer{
 	display: block;
 	width: 17px;
 	height: 17px;
@@ -176,12 +191,12 @@ a{
 }
 
 #menu-main-menu .sub-menu li,
-#top-area .menu > ul .children li{
+#top-area .menu > ul .sub-menu li{
 	display: block;
 }
 
 #menu-main-menu .sub-menu li a,
-#top-area .menu > ul .children li a{
+#top-area .menu > ul .sub-menu li a{
 	color: #c6c6c6;
 	text-decoration: none;
 	font-weight: 500;

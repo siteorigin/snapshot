@@ -16,22 +16,27 @@
 
 <div id="top-area">
 	<div class="container">
-		<div id="logo">
-			<a href="<?php print site_url('/') ?>" title="<?php esc_attr(get_bloginfo('title', 'display') . ' - '.get_bloginfo('description', 'display')) ?>">
-				<?php $header = get_custom_header(); if(!empty($header->url)) : ?>
-					<img src="<?php print esc_attr($header->url) ?>" width="<?php print intval($header->width)?>" height="<?php print intval($header->height)?>" alt="<?php esc_attr(get_bloginfo('title', 'display')) ?>" />
-				<?php else : ?>
-					<h1><em></em><?php bloginfo('title', 'display') ?></h1>
-				<?php endif ?>
-			</a>
+		<div id="top-area-wrapper">
+			<div id="logo">
+				<a href="<?php print esc_url(home_url()) ?>" title="<?php print esc_attr(get_bloginfo('title', 'display') . ' - '.get_bloginfo('description', 'display')) ?>">
+					<?php $header = get_custom_header(); if(!empty($header->url)) : ?>
+						<img src="<?php print esc_url($header->url) ?>" width="<?php print intval($header->width)?>" height="<?php print intval($header->height)?>" alt="<?php esc_attr(get_bloginfo('title', 'display')) ?>" />
+					<?php else : ?>
+						<h1><em></em><?php bloginfo('title', 'display') ?></h1>
+					<?php endif ?>
+				</a>
+			</div>
+	
+			<?php
+			wp_nav_menu(array(
+				'theme_location' => 'main-menu',
+				'container_id' => 'menu-main-menu-container',
+				'depth' => 2,
+				'fallback_cb' => 'snapshot_wp_page_menu',
+				'walker' => new Snapshot_Walker_Nav_Menu,
+			));
+			?>
 		</div>
-
-		<?php
-		wp_nav_menu(array(
-			'theme_location' => 'main-menu',
-			'depth' => 2,
-		));
-		?>
 	</div>
 </div>
 

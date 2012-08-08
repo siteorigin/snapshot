@@ -23,7 +23,11 @@ function snapshot_premium_admin_init(){
 	so_settings_add_field('general', 'search', 'checkbox', __('Search in Menu', 'snapshot'), array(
 		'description' => __('Display a search link in your menu that slides out a big beautiful search bar.', 'snapshot')
 	));
-	
+
+	so_settings_add_field('general', 'search_menu_text', 'checkbox', __('Search Text in Menu', 'snapshot'), array(
+		'description' => __('The search text to display in your menu.', 'snapshot')
+	));
+
 	so_settings_add_field('general', 'attribution', 'checkbox', __('Attribution Link', 'snapshot'), array(
 		'description' => __('Hide or display "Theme By SiteOrigin" link from your footer.', 'snapshot')
 	));
@@ -42,12 +46,32 @@ function snapshot_premium_admin_init(){
 add_action('admin_init', 'snapshot_premium_admin_init', 11);
 
 /**
+ * Set up the default settings
+ * @param $defaults
+ * @return array
+ *
+ * @filter so_theme_default_settings
+ */
+function snapshot_premium_settings_default($defaults){
+	$defaults['general_search_menu_text'] = __('Search', 'snapshot');
+	return $defaults;
+}
+add_filter('so_theme_default_settings', 'snapshot_premium_settings_default');
+
+/**
  * Enqueue snapshot premium's scripts
  * 
  * @action wp_enqueue_scripts
  */
 function snapshot_premium_enqueue_scripts(){
-	wp_enqueue_style('snapshot-spritemaps', get_stylesheet_directory_uri().'/premium/sprites.css');
+	wp_enqueue_style('snapshot-spritemaps', get_stylesheet_directory_uri().'/premium/sprites.css', array(), SO_THEME_VERSION);
+	
+	if(so_setting('general_search')){
+		wp_enqueue_script('snapshot-search', get_stylesheet_directory_uri().'/premium/js/search.js', array('jquery'), SO_THEME_VERSION);
+		wp_localize_script('snapshot-search', 'snapshotSearch', array(
+			'menuText' => so_setting('general_search_menu_text')
+		));
+	}
 }
 add_action('wp_enqueue_scripts', 'snapshot_premium_enqueue_scripts');
 
@@ -146,7 +170,7 @@ function snapshot_premium_save_post($post_id, $post){
 add_action('save_post', 'snapshot_premium_save_post', 10, 2);
 
 /**
- * Add the search button
+ * Add the search button to the navigation menu
  * 
  * @param $items
  * @param $args
@@ -154,12 +178,15 @@ add_action('save_post', 'snapshot_premium_save_post', 10, 2);
  */
 function snapshot_premium_wp_nav_menu_items($items, $args){
 	if(so_setting('general_search') && $args->theme_location == 'main-menu'){
-		$items .= '<li id="main-menu-search"><a href="#">'.__('Search', 'snapshot').'</a></li>';
+		$items .= '<li id="main-menu-search"><a href="#">'.so_setting('general_search_menu_text').'</a></li>';
 	}
 	return $items;
 }
 add_filter('wp_nav_menu_items', 'snapshot_premium_wp_nav_menu_items', 10, 2);
 
+/**
+ * @param $post_id
+ */
 function snapshot_premium_video_viewer($post_id){
 	$video = get_post_meta($post_id, 'snapshot_post_video', true);
 	global $wp_embed;

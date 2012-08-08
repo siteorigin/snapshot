@@ -105,7 +105,7 @@ if(!function_exists('snapshot_print_html_shiv')) :
 function snapshot_print_html_shiv(){
 	?>
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri() ?>js/html5shiv.js"></script>
+	<script src="<?php echo esc_url(get_template_directory_uri().'/js/html5shiv.js') ?>"></script>
 	<![endif]-->
 	<?php
 }
@@ -362,5 +362,47 @@ if(!function_exists('snapshot_meta_box_video_render')) :
  */
 function snapshot_meta_box_video_render(){
 	?><p><?php printf(__('Post videos are available in <a href="%s">Snapshot Premium</a>.', 'snapshot'), admin_url('themes.php?page=premium_upgrade')) ?></p><?php
+}
+endif;
+
+function snapshot_wp_page_menu($args){
+	?><div id="menu-main-menu-container"><?php
+	$args['walker'] = new Snapshot_Walker_Page; 
+	wp_page_menu($args);
+	?></div><?php
+}
+
+if(!class_exists('Snapshot_Walker_Page')) :
+class Snapshot_Walker_Page extends Walker_Page{
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class='sub-menu'><div class='sub-wrapper'><div class='pointer'></div>\n";
+	}
+
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent</div></ul>\n";
+	}
+
+	function start_el( &$output, $page, $depth, $args, $current_page = 0 ) {
+		if ( $depth ) $indent = str_repeat("\t", $depth);
+		else $indent = '';
+
+		$output .= $indent . '<li class="menu-item"><a href="' . get_permalink($page->ID) . '">' . apply_filters( 'the_title', $page->post_title, $page->ID ) . '</a>';
+	}
+}
+endif;
+
+if(!class_exists('Snapshot_Walker_Nav_Menu')) :
+class Snapshot_Walker_Nav_Menu extends Walker_Nav_Menu {
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class='sub-menu'><div class='sub-wrapper'><div class='pointer'></div>\n";
+	}
+
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent</div></ul>\n";
+	}
 }
 endif;
