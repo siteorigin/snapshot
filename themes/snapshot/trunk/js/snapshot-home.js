@@ -1,7 +1,6 @@
 jQuery(function($){
     // Resize the main home slider image
     var sliderHeight = $('#home-slider').height();
-    console.log(sliderHeight);
     
     $('#home-slider img.slide').load(function(){
         var $$ = $(this);

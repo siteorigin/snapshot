@@ -13,15 +13,11 @@ jQuery(function($){
             $$.find('.corner.corner-se').clearQueue().animate({'bottom': 5, 'right' : 5}, 300);
         });
     
-    // Dropdown hover pointer
-    //$('#menu-main-menu .sub-menu').show().append($('<div class="pointer"></div>')).wrap($('<div></div>').addClass('sub-menu-wrapper'));
-    //$('#top-area .menu ul .children').show().append($('<div class="pointer"></div>')).wrap($('<div></div>').addClass('children-wrapper'));
-    
     // Preload single images
     if($('#post-single-viewer.image').length && !$('#post-single-viewer.image img').get(0).complete){
         $('#post-single-viewer.image').addClass('loading');
         $('#post-single-viewer.image img').css('visibility', 'hidden');
-
+        
         $.imgpreload(snapshot.imageLoaderUrl);
 
         // Load the main image
@@ -36,9 +32,9 @@ jQuery(function($){
         var $el = $(this);
         if(!$el.get(0).complete){
             $el.css('visibility', 'hidden').closest('.post-background').addClass('loading');
-            $el.load(function(){
-                $el
-                    .css('visibility', 'visible').hide()
+
+            $el.imgpreload(function(){
+                $el.css('visibility', 'visible').hide()
                     .fadeIn('slow', function(){$el.closest('.post-background').removeClass('loading')})
             });
         }
