@@ -32,10 +32,10 @@
 						break;
 				
 				if(isset($attachments[$k-1])){
-					?><a href="<?php print get_attachment_link($attachments[$k-1]->ID) ?>" rel="prev"></a><?php
+					?><a href="<?php print esc_url(get_attachment_link($attachments[$k-1]->ID)) ?>" rel="prev"></a><?php
 				}
 				if(isset($attachments[$k+1])){
-					?><a href="<?php print get_attachment_link($attachments[$k+1]->ID) ?>" rel="next"></a><?php
+					?><a href="<?php print esc_url(get_attachment_link($attachments[$k+1]->ID)) ?>" rel="next"></a><?php
 				}
 			?>
 		</div>
