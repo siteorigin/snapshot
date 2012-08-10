@@ -31,6 +31,7 @@
 			wp_nav_menu(array(
 				'theme_location' => 'main-menu',
 				'container_id' => 'menu-main-menu-container',
+				'menu_id' => 'menu-main-menu',
 				'depth' => 2,
 				'fallback_cb' => 'snapshot_wp_page_menu',
 				'walker' => new Snapshot_Walker_Nav_Menu,
