@@ -31,11 +31,15 @@ function snapshot_settings_admin_init(){
 	so_settings_add_section('slider', __('Home Page Slider', 'snapshot'));
 	so_settings_add_field('slider', 'enabled', 'checkbox', __('Home Page Slider', 'snapshot'), array());
 	so_settings_add_field('slider', 'speed', 'number', __('Transition Delay', 'snapshot'), array(
-		'description' => 'Number of milliseconds a photo is displayed for.'
+		'description' => __('Number of milliseconds a photo is displayed for.', 'snapshot')
 	));
 	so_settings_add_field('slider', 'transition', 'number', __('Transition Delay', 'snapshot'), array(
-		'description' => 'How many milliseconds the transition takes.'
+		'description' => __('How many milliseconds the transition takes.', 'snapshot'),
 	));
+	so_settings_add_field('slider', 'post_count', 'number', __('Post Count', 'snapshot'), array(
+		'description' => __('The number of posts displayed on your home page slider.', 'snapshot'),
+	));
+	
 	so_settings_add_teaser('slider', 'posts', __('Posts', 'snapshot'), array(
 		'description' => __('How Snapshot chooses your home page slides.', 'snapshot')
 	));
@@ -83,6 +87,8 @@ function snapshot_settings_default($defaults){
 	$defaults['slider_enabled'] = true;
 	$defaults['slider_speed'] = 7500;
 	$defaults['slider_transition'] = 500;
+	$defaults['slider_post_count'] = 5;
+	$defaults['slider_posts'] = 'date';
 
 	$defaults['social_display_share'] = true;
 	$defaults['social_recommend'] = false;

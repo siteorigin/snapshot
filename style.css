@@ -754,6 +754,10 @@ a{
 	margin: 25px 0;
 }
 
+.entry-content > div:first-child{
+	margin-top: 25px;
+}
+
 .entry-content a{
 	color: #dc5c3b;
 }

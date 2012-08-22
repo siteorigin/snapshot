@@ -34,8 +34,18 @@ function snapshot_premium_admin_init(){
 
 	so_settings_add_field('appearance', 'style', 'select', __('Style', 'snapshot'), array(
 		'options' => array(
-			'light' => 'Light',
-			'dark' => 'Dark',
+			'light' => __('Light', 'snapshot'),
+			'dark' => __('Dark', 'snapshot'),
+		)
+	));
+
+	so_settings_add_field('slider', 'posts', 'select', __('Posts', 'snapshot'), array(
+		'description' => __('How Snapshot chooses your home page slides.', 'snapshot'),
+		'options' => array(
+			'date' => __('Post Date', 'snapshot'),
+			'modified' => __('Modified Date', 'snapshot'),
+			'rand' => __('Random', 'snapshot'),
+			'comment_count' => __('By Comment Count', 'snapshot'),
 		)
 	));
 
