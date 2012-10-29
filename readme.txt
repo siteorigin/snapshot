@@ -34,3 +34,5 @@ Fixed IE issues
 
 1.0.8
 Added demo slider
+Moved style.css to an enqueue function
+Added selectivizr
