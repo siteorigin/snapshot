@@ -27,14 +27,13 @@ if(!function_exists('snapshot_setup_theme')) :
  * @action after_setup_theme
  */
 function snapshot_setup_theme(){
-	global $content_width;
-	
 	// Enable translation
 	load_theme_textdomain( 'snapshot', get_template_directory() . '/languages' );
 	
 	// We're using SiteOrigin theme settings
 	so_settings_init();
-	
+
+	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 440;
 	
 	// The custom header is used for the logo
