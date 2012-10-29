@@ -17,7 +17,7 @@ $post_count = 0;
 
 		<?php if($post_count == 0) : ?>
 			<div class="demo-message">
-				<?php _e("This Slider Will Display Your Post's Featured Images - So Start Adding Posts", 'snapshot') ?>
+				<?php _e("This Slider Will Display Your Post's Featured Images... So Start Adding Some Posts.", 'snapshot') ?>
 			</div>
 		<?php endif; ?>
 		
