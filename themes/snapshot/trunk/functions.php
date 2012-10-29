@@ -107,7 +107,10 @@ if(!function_exists('snapshot_print_html_shiv')) :
 function snapshot_print_html_shiv(){
 	?>
 	<!--[if lt IE 9]>
-	<script src="<?php echo esc_url(get_template_directory_uri().'/js/html5shiv.js') ?>"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
+	<![endif]-->
+	<!--[if (gte IE 6)&(lte IE 8)]>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/selectivizr.js"></script>
 	<![endif]-->
 	<?php
 }
@@ -138,6 +141,8 @@ if(!function_exists('snapshot_enqueue_scripts')) :
  * @action wp_enqueue_scripts
  */
 function snapshot_enqueue_scripts(){
+	wp_enqueue_style('snapshot', get_stylesheet_uri(), array(), SO_THEME_VERSION);
+	
 	if(so_setting('appearance_style') != 'light'){
 		wp_enqueue_style('snapshot-style', get_stylesheet_directory_uri().'/premium/style-'.so_setting('appearance_style').'.css', array(), SO_THEME_VERSION);
 	}
