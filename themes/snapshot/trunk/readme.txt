@@ -9,6 +9,7 @@ This theme includes the following external libraries and resources
 
 * HTML5 Shiv MIT/GPL2 Licensed 
 * jQuery Image Preload Dimas Begunoff licensed under MIT
+* Demo images under public domain from Pixabay
 
 -----------------------------------------------
 Change Log:
@@ -36,3 +37,6 @@ Fixed IE issues
 Added demo slider
 Moved style.css to an enqueue function
 Added selectivizr
+
+1.0.9
+Fixed theme endpoint and version number
