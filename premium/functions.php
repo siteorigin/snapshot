@@ -39,7 +39,7 @@ function snapshot_premium_admin_init(){
 		)
 	));
 
-	so_settings_add_field('slider', 'posts', 'select', __('Posts', 'snapshot'), array(
+	so_settings_add_field('slider', 'posts', 'select', __('Posts Order', 'snapshot'), array(
 		'description' => __('How Snapshot chooses your home page slides.', 'snapshot'),
 		'options' => array(
 			'date' => __('Post Date', 'snapshot'),
@@ -58,7 +58,6 @@ function snapshot_premium_admin_init(){
 			$category_options[$cat->term_id] = $cat->name;
 		}
 	}
-	
 	so_settings_add_field('slider', 'category', 'select', __('Posts Category', 'snapshot'), array(
 		'description' => __('Choose which posts are displayed on your home page slider.', 'snapshot'),
 		'options' => $category_options,
