@@ -218,10 +218,15 @@ function snapshot_premium_video_viewer($post_id){
 }
 
 function snapshot_premium_slider_query_args($args){
+	// Add the category setting
 	$cat = so_setting('slider_category');
 	if(!empty($cat)){
 		$args['cat'] = intval($cat);
 	}
+	
+	// Add the order setting
+	$args['orderby'] = so_setting('slider_posts');
+	
 	return $args;
 }
 add_filter('snapshot_slider_query_args', 'snapshot_premium_slider_query_args');
