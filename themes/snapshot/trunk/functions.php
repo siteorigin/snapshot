@@ -423,7 +423,6 @@ function snapshot_get_slider_query(){
 	$query_args = apply_filters('snapshot_slider_query_args', array(
 		'post_type' => 'post',
 		'posts_per_page' => so_setting('slider_post_count'),
-		'orderby' => so_setting('slider_posts'),
 	));
 	return new WP_Query($query_args);
 }

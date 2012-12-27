@@ -40,3 +40,7 @@ Added selectivizr
 
 1.0.9
 Fixed theme endpoint and version number
+
+1.0.10
+Fixed search text setting
+Added filter for home page slider categories

@@ -26,7 +26,6 @@ function snapshot_settings_admin_init(){
 
 	so_settings_add_field('appearance', 'link', 'color', __('Link Color', 'snapshot'));
 
-
 	// The slider section
 	so_settings_add_section('slider', __('Home Page Slider', 'snapshot'));
 	so_settings_add_field('slider', 'enabled', 'checkbox', __('Home Page Slider', 'snapshot'), array());
