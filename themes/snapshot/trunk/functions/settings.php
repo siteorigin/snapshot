@@ -29,9 +29,6 @@ function snapshot_settings_admin_init(){
 	// The slider section
 	so_settings_add_section('slider', __('Home Page Slider', 'snapshot'));
 	so_settings_add_field('slider', 'enabled', 'checkbox', __('Home Page Slider', 'snapshot'), array());
-	so_settings_add_teaser('slider', 'category', __('Posts Category', 'snapshot'), array(
-		'description' => __('Choose which posts are displayed on your home page slider.', 'snapshot')
-	));
 	so_settings_add_field('slider', 'speed', 'number', __('Transition Delay', 'snapshot'), array(
 		'description' => __('Number of milliseconds a photo is displayed for.', 'snapshot')
 	));
@@ -42,8 +39,11 @@ function snapshot_settings_admin_init(){
 		'description' => __('The number of posts displayed on your home page slider.', 'snapshot'),
 	));
 	
-	so_settings_add_teaser('slider', 'posts', __('Posts', 'snapshot'), array(
+	so_settings_add_teaser('slider', 'posts', __('Posts Order', 'snapshot'), array(
 		'description' => __('How Snapshot chooses your home page slides.', 'snapshot')
+	));
+	so_settings_add_teaser('slider', 'category', __('Posts Category', 'snapshot'), array(
+		'description' => __('Choose which posts are displayed on your home page slider.', 'snapshot')
 	));
 
 	// Social and sharing
