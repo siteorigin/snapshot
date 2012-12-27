@@ -24,7 +24,7 @@ function snapshot_premium_admin_init(){
 		'description' => __('Display a search link in your menu that slides out a big beautiful search bar.', 'snapshot')
 	));
 
-	so_settings_add_field('general', 'search_menu_text', 'checkbox', __('Search Text in Menu', 'snapshot'), array(
+	so_settings_add_field('general', 'search_menu_text', 'text', __('Search Text in Menu', 'snapshot'), array(
 		'description' => __('The search text to display in your menu.', 'snapshot')
 	));
 
