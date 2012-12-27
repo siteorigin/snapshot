@@ -49,6 +49,21 @@ function snapshot_premium_admin_init(){
 		)
 	));
 
+	$category_options = array(
+		0 => __('All', 'snapshot'),
+	);
+	$cats = get_categories();
+	if(!empty($cats)){
+		foreach(get_categories() as $cat){
+			$category_options[$cat->term_id] = $cat->name;
+		}
+	}
+	
+	so_settings_add_field('slider', 'category', 'select', __('Posts Category', 'snapshot'), array(
+		'description' => __('Choose which posts are displayed on your home page slider.', 'snapshot'),
+		'options' => $category_options,
+	));
+
 	so_settings_add_field('comments', 'ajax', 'checkbox', __('Ajax Comments', 'snapshot'), array(
 		'description' => __('Let your visitors post comments without leaving the page.', 'snapshot')
 	));
@@ -201,3 +216,12 @@ function snapshot_premium_video_viewer($post_id){
 	global $wp_embed;
 	print $wp_embed->shortcode(array('width' => 960), $video);
 }
+
+function snapshot_premium_slider_query_args($args){
+	$cat = so_setting('slider_category');
+	if(!empty($cat)){
+		$args['cat'] = intval($cat);
+	}
+	return $args;
+}
+add_filter('snapshot_slider_query_args', 'snapshot_premium_slider_query_args');

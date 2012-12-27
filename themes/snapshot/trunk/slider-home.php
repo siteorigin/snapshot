@@ -1,9 +1,5 @@
 <?php
-$query = new WP_Query(array(
-	'post_type' => 'post',
-	'posts_per_page' => so_setting('slider_post_count'),
-	'orderby' => so_setting('slider_posts'),
-));
+$query = snapshot_get_slider_query();
 $post_count = 0;
 ?>
 <div id="home-slider" class="loading">

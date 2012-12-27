@@ -413,3 +413,18 @@ class Snapshot_Walker_Nav_Menu extends Walker_Nav_Menu {
 	}
 }
 endif;
+
+
+if(!function_exists('snapshot_get_slider_query')) :
+/**
+ * Get the method for the slider query
+ */
+function snapshot_get_slider_query(){
+	$query_args = apply_filters('snapshot_slider_query_args', array(
+		'post_type' => 'post',
+		'posts_per_page' => so_setting('slider_post_count'),
+		'orderby' => so_setting('slider_posts'),
+	));
+	return new WP_Query($query_args);
+}
+endif;
