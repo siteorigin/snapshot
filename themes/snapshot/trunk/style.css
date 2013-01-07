@@ -226,17 +226,19 @@ a{
 	box-sizing:border-box;
 	
 	border: 1px solid #EEE;
-	background: white;
 	padding: 5px;
-	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	font-weight: 300;
 	color: #777;
-	font-size: 15px;
 	margin: 0;
 	
 	width: 90%;
 	
 	outline: none;
+	
+	font: 300 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	
+	-moz-box-shadow: 0 0 1px rgba(255, 255, 255, 0.35);
+	-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.35);
+	box-shadow: 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
 #hidden-search #searchsubmit{

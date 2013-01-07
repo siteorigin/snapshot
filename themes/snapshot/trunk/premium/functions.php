@@ -88,10 +88,10 @@ add_filter('so_theme_default_settings', 'snapshot_premium_settings_default');
  * @action wp_enqueue_scripts
  */
 function snapshot_premium_enqueue_scripts(){
-	wp_enqueue_style('snapshot-spritemaps', get_stylesheet_directory_uri().'/premium/sprites.css', array(), SO_THEME_VERSION);
+	wp_enqueue_style('snapshot-spritemaps', get_template_directory_uri().'/premium/sprites.css', array(), SO_THEME_VERSION);
 	
 	if(so_setting('general_search')){
-		wp_enqueue_script('snapshot-search', get_stylesheet_directory_uri().'/premium/js/search.js', array('jquery'), SO_THEME_VERSION);
+		wp_enqueue_script('snapshot-search', get_template_directory_uri().'/premium/js/search.js', array('jquery'), SO_THEME_VERSION);
 		wp_localize_script('snapshot-search', 'snapshotSearch', array(
 			'menuText' => so_setting('general_search_menu_text')
 		));
