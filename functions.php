@@ -427,3 +427,14 @@ function snapshot_get_slider_query(){
 	return new WP_Query($query_args);
 }
 endif;
+
+/**
+ * This is a wrapper for siteorigin_setting to support legacy child themes.
+ *
+ * @param $name
+ * @param null $default
+ * @return mixed
+ */
+function so_setting($name, $default = null){
+	return siteorigin_setting($name, $default);
+}
