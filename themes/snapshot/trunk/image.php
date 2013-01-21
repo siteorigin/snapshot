@@ -52,7 +52,7 @@
 <div id="post-<?php the_ID() ?>" <?php post_class() ?>>
 	<div class="container">
 		<div id="post-share">
-			<?php if(so_setting('social_display_share')) get_template_part('share') ?>
+			<?php if(siteorigin_setting('social_display_share')) get_template_part('share') ?>
 		</div>
 
 		<div id="post-main">

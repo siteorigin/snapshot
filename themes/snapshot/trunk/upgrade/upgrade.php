@@ -5,6 +5,7 @@ function Snapshot_premium_upgrade_content($content){
 	$content['premium_summary'] = __("If you've enjoyed using Snapshot, you'll going to love Snapshot Premium. It's a robust upgrade to Snapshot that gives you loads of cool features and email support. At just <strong>$9</strong>, it's a cost effective way to give your site a professional edge.", 'snapshot');
 	
 	$content['buy_url'] = 'http://go.siteorigin.com/snapshot-premium';
+	$content['buy_price'] = '$9';
 	$content['buy_button'] = get_template_directory_uri().'/upgrade/images/download.png';
 	$content['buy_message_1'] = __("If you're not delighted with Snapshot Premium, I'll give you a full refund", 'snapshot');
 	$content['buy_message_2'] = __("Remember, if you're not satisfied, you get your money back", 'snapshot');
@@ -51,4 +52,4 @@ function Snapshot_premium_upgrade_content($content){
 	
 	return $content;
 }
-add_filter('so_premium_content', 'Snapshot_premium_upgrade_content');
+add_filter('siteorigin_premium_content', 'Snapshot_premium_upgrade_content');
