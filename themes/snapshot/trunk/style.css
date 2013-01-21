@@ -731,7 +731,8 @@ a{
 	width: 630px;
 }
 
-.page-template-page-full-php .page #post-main{
+.page-template-page-slidertext-php #post-main,
+.full-width #post-main{
 	width: 100%;
 }
 

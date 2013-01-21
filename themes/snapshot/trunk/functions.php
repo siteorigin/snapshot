@@ -10,11 +10,11 @@ if(file_exists(get_template_directory().'/premium/functions.php'))
 	include get_template_directory().'/premium/functions.php';
 
 if(!defined('SO_IS_PREMIUM')) {
-	include get_template_directory().'/extras/premium/premium.php';
 	include get_template_directory().'/upgrade/upgrade.php';
 }
 
-include get_template_directory().'/extras/update.php';
+include get_template_directory().'/extras/premium/premium.php';
+include get_template_directory().'/extras/update/update.php';
 include get_template_directory().'/extras/admin/admin.php';
 include get_template_directory().'/extras/support/support.php';
 
@@ -154,8 +154,8 @@ function snapshot_enqueue_scripts(){
 		'sliderLoaderUrl' => get_template_directory_uri().'/images/slider-loader.gif',
 		'imageLoaderUrl' => get_template_directory_uri().'/images/photo-loader.gif',
 	));
-	
-	if(is_home()){
+
+	if(is_home() || is_page_template('page-slidertext.php')){
 		wp_enqueue_script('imgpreload', get_template_directory_uri().'/js/jquery.imgpreload.js', array('jquery'));
 		wp_enqueue_script('snapshot-home', get_template_directory_uri().'/js/snapshot-home.js', array('jquery'), SO_THEME_VERSION);
 		wp_localize_script('snapshot-home', 'snapshotHome', array(
