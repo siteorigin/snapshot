@@ -5,7 +5,7 @@
 		<div class="post-info">
 			<div class="date">
 				<em></em>
-				<a href="<?php the_permalink() ?>"><?php print get_the_date() ?></a>
+				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>
 			</div>
 			<div class="comments">
 				<em></em>
@@ -36,7 +36,7 @@
 <div id="post-<?php the_ID() ?>" <?php post_class() ?>>
 	<div class="container">
 		<div id="post-share">
-			<?php if(so_setting('social_display_share')) get_template_part('share') ?>
+			<?php if(siteorigin_setting('social_display_share')) get_template_part('share') ?>
 		</div>
 		
 		<div id="post-main">
@@ -76,9 +76,9 @@
 					$src = wp_get_attachment_image_src($child->ID, 'single-large');
 					?>
 					<div class="image">
-						<?php print '<a href="'.get_attachment_link($child->ID).'" data-width="'.$src[1].'" data-height="'.$src[2].'">' ?>
-						<?php print wp_get_attachment_image($child->ID, 'post-thumbnail', false, array('class' => 'thumbnail')); ?>
-						<?php print '</a>' ?>
+						<?php echo '<a href="'.get_attachment_link($child->ID).'" data-width="'.$src[1].'" data-height="'.$src[2].'">' ?>
+						<?php echo wp_get_attachment_image($child->ID, 'post-thumbnail', false, array('class' => 'thumbnail')); ?>
+						<?php echo '</a>' ?>
 					</div>
 					<?php
 					

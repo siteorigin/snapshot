@@ -6,7 +6,7 @@
 		<div class="clear"></div>
 		
 		<div id="footer-copyright">
-			<?php if(so_setting('general_attribution')) : ?>
+			<?php if(siteorigin_setting('general_attribution')) : ?>
 				<div class="designer">
 					<?php printf(__('Theme By <a href="%s">SiteOrigin</a>', 'snapshot'), 'http://siteorigin.com') ?>
 				</div>
@@ -17,7 +17,7 @@
 					print str_replace(
 						array('{sitename}', '{year}'),
 						array(get_bloginfo('name'), date('Y')),
-						so_setting('general_copyright')
+						siteorigin_setting('general_copyright')
 					);
 				?>
 			</div>

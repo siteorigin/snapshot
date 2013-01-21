@@ -11,7 +11,7 @@
 	<div class="container">
 		<div id="post-main">
 			<div class="entry-content">
-				<p><?php print so_setting('messages_404') ?></p>
+				<p><?php echo siteorigin_setting('messages_404') ?></p>
 			</div>
 		</div>
 

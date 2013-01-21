@@ -5,7 +5,7 @@
 				<div <?php post_class('post') ?>>
 					<div class="post-background">
 						<?php if(has_post_thumbnail()) : the_post_thumbnail('post-thumbnail', array('class' => 'thumbnail')) ?>
-						<?php else : ?><img src="<?php print get_template_directory_uri() ?>/images/defaults/no-thumbnail.jpg" width="310" height="420" class="thumbnail" />
+						<?php else : ?><img src="<?php echo get_template_directory_uri() ?>/images/defaults/no-thumbnail.jpg" width="310" height="420" class="thumbnail" />
 						<?php endif ?>
 						<div class="post-content">
 							<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
@@ -15,7 +15,7 @@
 							
 							<div class="date">
 								<em></em>
-								<a href="<?php the_permalink() ?>"><?php print get_the_date() ?></a>
+								<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>
 							</div>
 							
 							<?php $comments = get_comment_count(get_the_ID()); ?>
@@ -36,7 +36,7 @@
 			
 			<div id="page-navigation">
 				<?php if(function_exists('wp_pagenavi')) : wp_pagenavi(); ?>
-				<?php else : posts_nav_link(' ', __('Previous Page', 'snapshot'), __('Next Page', 'snapshot')); print '<div class="clear"></div>'; endif;?>
+				<?php else : posts_nav_link(' ', __('Previous Page', 'snapshot'), __('Next Page', 'snapshot')); echo '<div class="clear"></div>'; endif;?>
 			</div>
 		</div>
 	</div>
@@ -45,7 +45,7 @@
 		<div class="container">
 			<div id="post-main">
 				<div class="entry-content">
-					<p><?php print so_setting('messages_no_results') ?></p>
+					<p><?php echo siteorigin_setting('messages_no_results') ?></p>
 				</div>
 			</div>
 	

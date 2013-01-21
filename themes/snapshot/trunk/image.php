@@ -5,19 +5,19 @@
 		<div class="post-info">
 			<div class="date">
 				<em></em>
-				<a href="<?php the_permalink() ?>"><?php print get_the_date() ?></a>
+				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>
 			</div>
 			<div class="comments">
 				<em></em>
 				<a href="#comments"><?php comments_number( __('No Comments', 'snapshot'), __('One Comment', 'snapshot'), __('% Comments', 'snapshot') ); ?></a>
 			</div>
 			<div class="category">
-				<em></em><a href="<?php print get_permalink($post->post_parent) ?>"><?php print get_the_title($post->post_parent) ?></a>
+				<em></em><a href="<?php echo get_permalink($post->post_parent) ?>"><?php echo get_the_title($post->post_parent) ?></a>
 			</div>
 
 			<?php $category = get_the_category(); if(!empty($category)) : ?>
 			<div class="category">
-				<em></em><a href="<?php print get_term_link($category[0]) ?>"><?php print $category[0]->name ?></a>
+				<em></em><a href="<?php echo get_term_link($category[0]) ?>"><?php echo $category[0]->name ?></a>
 			</div>
 			<?php endif ?>
 		</div>
@@ -32,10 +32,10 @@
 						break;
 				
 				if(isset($attachments[$k-1])){
-					?><a href="<?php print esc_url(get_attachment_link($attachments[$k-1]->ID)) ?>" rel="prev"></a><?php
+					?><a href="<?php echo esc_url(get_attachment_link($attachments[$k-1]->ID)) ?>" rel="prev"></a><?php
 				}
 				if(isset($attachments[$k+1])){
-					?><a href="<?php print esc_url(get_attachment_link($attachments[$k+1]->ID)) ?>" rel="next"></a><?php
+					?><a href="<?php echo esc_url(get_attachment_link($attachments[$k+1]->ID)) ?>" rel="next"></a><?php
 				}
 			?>
 		</div>
@@ -44,7 +44,7 @@
 
 <div id="post-single-viewer" class="image">
 	<div class="container">
-		<?php print wp_get_attachment_image($post->ID, 'single-large', false, array('class' => 'single-image')); ?>
+		<?php echo wp_get_attachment_image($post->ID, 'single-large', false, array('class' => 'single-image')); ?>
 	</div>
 </div>
 <div id="home-slider-below"></div>
@@ -89,9 +89,9 @@
 				$src = wp_get_attachment_image_src($child->ID, 'single-large');
 				?>
 				<div class="image">
-					<?php if(count($children)) print '<a href="#" data-src="'.$src[0].'" data-width="'.$src[1].'" data-height="'.$src[2].'">' ?>
-					<?php print wp_get_attachment_image($child->ID, 'post-thumbnail', false, array('class' => 'thumbnail')); ?>
-					<?php if(count($children)) print '</a>' ?>
+					<?php if(count($children)) echo '<a href="#" data-src="'.$src[0].'" data-width="'.$src[1].'" data-height="'.$src[2].'">' ?>
+					<?php echo wp_get_attachment_image($child->ID, 'post-thumbnail', false, array('class' => 'thumbnail')); ?>
+					<?php if(count($children)) echo '</a>' ?>
 				</div>
 				<?php
 
