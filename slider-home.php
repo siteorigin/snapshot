@@ -25,7 +25,7 @@ $post_count = 0;
 	</div>
 	
 	<?php $query->rewind_posts(); while($query->have_posts()) : $query->the_post(); if(has_post_thumbnail()) : ?>
-		<?php print wp_get_attachment_image(get_post_thumbnail_id(), 'slider-large', false, array('class' => 'slide')) ?>
+		<?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'slider-large', false, array('class' => 'slide')) ?>
 	<?php endif; endwhile; ?>
 	
 	<?php if($post_count == 0) : ?>

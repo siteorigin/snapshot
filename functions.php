@@ -31,7 +31,7 @@ function snapshot_setup_theme(){
 	load_theme_textdomain( 'snapshot', get_template_directory() . '/languages' );
 	
 	// We're using SiteOrigin theme settings
-	so_settings_init();
+	siteorigin_settings_init();
 
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 440;
@@ -45,7 +45,7 @@ function snapshot_setup_theme(){
 	
 	// Custom background images are nice
 	$background = array();
-	switch(so_setting('general_style')){
+	switch(siteorigin_setting('appearance_style')){
 		case 'light' :
 			$background['default-color'] = 'FEFEFE';
 			break;
@@ -86,11 +86,11 @@ function snapshot_print_scripts(){
 	$header = get_custom_header()
 	?>
 	<style type="text/css" media="all">
-		a{ color: <?php print so_setting('appearance_link') ?>; }
+		a{ color: <?php echo siteorigin_setting('appearance_link') ?>; }
 		<?php if($header->url) : ?>
 			#menu-main-menu,
 			#top-area .menu > ul{
-				width: <?php print max(200, 960-$header->width - 20) ?>px;
+				width: <?php echo max(200, 960-$header->width - 20) ?>px;
 			}
 		<?php endif; ?>
 	</style>
@@ -143,8 +143,8 @@ if(!function_exists('snapshot_enqueue_scripts')) :
 function snapshot_enqueue_scripts(){
 	wp_enqueue_style('snapshot', get_stylesheet_uri(), array(), SO_THEME_VERSION);
 	
-	if(so_setting('appearance_style') != 'light'){
-		wp_enqueue_style('snapshot-style', get_template_directory_uri().'/premium/style-'.so_setting('appearance_style').'.css', array(), SO_THEME_VERSION);
+	if(siteorigin_setting('appearance_style') != 'light'){
+		wp_enqueue_style('snapshot-style', get_template_directory_uri().'/premium/style-'.siteorigin_setting('appearance_style').'.css', array(), SO_THEME_VERSION);
 	}
 
 	wp_enqueue_script('imgpreload', get_template_directory_uri().'/js/jquery.imgpreload.js', array('jquery'), '1.4');
@@ -159,7 +159,7 @@ function snapshot_enqueue_scripts(){
 		wp_enqueue_script('imgpreload', get_template_directory_uri().'/js/jquery.imgpreload.js', array('jquery'));
 		wp_enqueue_script('snapshot-home', get_template_directory_uri().'/js/snapshot-home.js', array('jquery'), SO_THEME_VERSION);
 		wp_localize_script('snapshot-home', 'snapshotHome', array(
-			'sliderSpeed' => so_setting('slider_speed'),
+			'sliderSpeed' => siteorigin_setting('slider_speed'),
 			'loaderUrl' => get_template_directory_uri().'/images/slider-loader.gif'
 		));
 	}
@@ -167,7 +167,7 @@ function snapshot_enqueue_scripts(){
 	if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	
-	if(is_singular() && so_setting('social_display_share'))
+	if(is_singular() && siteorigin_setting('social_display_share'))
 		wp_enqueue_script('snapshot-google-plusone', get_template_directory_uri().'/js/plusone.js', array(), SO_THEME_VERSION);
 		
 }
@@ -220,10 +220,10 @@ if(!function_exists('snapshot_single_comment')) :
 function snapshot_single_comment($comment, $args, $depth){
 	$GLOBALS['comment'] = $comment;
 	?>
-	<li id="comment-<?php print get_comment_ID() ?>" <?php comment_class() ?>>
+	<li id="comment-<?php echo get_comment_ID() ?>" <?php comment_class() ?>>
 		<?php if(empty($comment->comment_type) || $comment->comment_type == 'comment') : ?>
 			<div class="comment-avatar">
-				<?php print get_avatar(get_comment_author_email(), 60) ?>
+				<?php echo get_avatar(get_comment_author_email(), 60) ?>
 			</div>
 		<?php elseif($comment->comment_type == 'trackback' || $comment->comment_type == 'pingback') : ?>
 			<div class="pingback-icon"></div>
@@ -231,7 +231,7 @@ function snapshot_single_comment($comment, $args, $depth){
 		
 		<div class="comment-main">
 			<div class="comment-info">
-				<span class="author"><?php print get_comment_author_link() ?></span>
+				<span class="author"><?php echo get_comment_author_link() ?></span>
 				<span class="date"><?php comment_date() ?></span>
 		
 				<?php comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'])) ?>
@@ -422,7 +422,7 @@ if(!function_exists('snapshot_get_slider_query')) :
 function snapshot_get_slider_query(){
 	$query_args = apply_filters('snapshot_slider_query_args', array(
 		'post_type' => 'post',
-		'posts_per_page' => so_setting('slider_post_count'),
+		'posts_per_page' => siteorigin_setting('slider_post_count'),
 	));
 	return new WP_Query($query_args);
 }

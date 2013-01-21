@@ -102,4 +102,4 @@ function snapshot_settings_default($defaults){
 
 	return $defaults;
 }
-add_filter('so_theme_default_settings', 'snapshot_settings_default');
+add_filter('siteorigin_theme_default_settings', 'snapshot_settings_default');
