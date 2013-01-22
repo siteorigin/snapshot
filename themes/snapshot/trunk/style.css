@@ -695,7 +695,7 @@ a{
 
 #page-title .nav a{
 	display: block;
-	float: left;
+	float: right;
 	width: 14px;
 	height: 19px;
 	text-indent: -9999px;
@@ -766,7 +766,6 @@ a{
 #post-share .networks .network{
 	margin-bottom: 3px;
 }
-
 
 
 /* @end */
