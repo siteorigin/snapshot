@@ -446,6 +446,7 @@ a{
 }
 
 #post-loop .post-content{
+    display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -463,6 +464,16 @@ a{
 	overflow: hidden;
 }
 
+#post-loop .post-content-link{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
 #post-loop .post-content h2{
 	font-weight: 300;
 	color: #dddddd;
@@ -473,7 +484,7 @@ a{
 }
 
 #post-loop .post-content h2 a{
-	color: #dddddd;
+	color: inherit;
 	text-decoration: none;
 }
 
@@ -725,6 +736,13 @@ a{
 	width: 440px;
 	margin-right: 25px;
 	min-height: 10px;
+}
+
+#post-main.no-sidebar{
+    float: left;
+    width: 775px;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .page #post-main{
