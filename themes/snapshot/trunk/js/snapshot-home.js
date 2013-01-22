@@ -36,7 +36,7 @@ jQuery(function($){
             // Hide the slide
             $('#home-slider img.slide').eq(c)
                 .add($('#home-slider .post-titles a').eq(c))
-                .clearQueue().animate({'opacity' : 0}, 600, function(){
+                .clearQueue().animate({'opacity' : 0}, Number(snapshotHome.transitionSpeed), function(){
                     $(this).hide();
                 });
         }
@@ -46,7 +46,7 @@ jQuery(function($){
         // Show the new slide
         $('#home-slider img.slide').eq(i).load()
             .add($('#home-slider .post-titles a').eq(i))
-            .addClass('current').show().css('opacity', 0).clearQueue().animate({'opacity' : 1}, 600);
+            .addClass('current').show().css('opacity', 0).clearQueue().animate({'opacity' : 1}, Number(snapshotHome.transitionSpeed));
     }
     
     // Start by preloading the loader gif

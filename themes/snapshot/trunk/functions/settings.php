@@ -58,7 +58,7 @@ function snapshot_settings_admin_init(){
 	// The slider section
 	
 	siteorigin_settings_add_field('slider', 'enabled', 'checkbox', __('Home Page Slider', 'snapshot'), array());
-	siteorigin_settings_add_field('slider', 'speed', 'number', __('Transition Delay', 'snapshot'), array(
+	siteorigin_settings_add_field('slider', 'speed', 'number', __('Transition Speed', 'snapshot'), array(
 		'description' => __('Number of milliseconds a photo is displayed for.', 'snapshot')
 	));
 	siteorigin_settings_add_field('slider', 'transition', 'number', __('Transition Delay', 'snapshot'), array(
