@@ -68,10 +68,10 @@ if(!function_exists('snapshot_meta_box_video_render')) :
 	 */
 	function snapshot_meta_box_video_render(){
 		siteorigin_premium_call_function(
-			'snapshot_premium_display_video_metabox',
+			'snapshot_premium_meta_box_video_render',
 			array(),
 			array(
-				'description' => 'Display videos as your post header'
+				'description' => __('Embed a video instead of the image gallery. Any oEmbed compatible site like YouTube or Vimeo.', 'snapshot')
 			)
 		);
 	}

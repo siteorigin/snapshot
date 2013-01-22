@@ -1,6 +1,6 @@
 <?php
 
-function Snapshot_premium_upgrade_content($content){
+function snapshot_premium_upgrade_content($content){
 	$content['premium_title'] = __('Upgrade To Snapshot Premium', 'snapshot');
 	$content['premium_summary'] = __("If you've enjoyed using Snapshot, you'll going to love Snapshot Premium. It's a robust upgrade to Snapshot that gives you loads of cool features and email support. At just <strong>$9</strong>, it's a cost effective way to give your site a professional edge.", 'snapshot');
 	
@@ -52,4 +52,4 @@ function Snapshot_premium_upgrade_content($content){
 	
 	return $content;
 }
-add_filter('siteorigin_premium_content', 'Snapshot_premium_upgrade_content');
+add_filter('siteorigin_premium_content', 'snapshot_premium_upgrade_content');
