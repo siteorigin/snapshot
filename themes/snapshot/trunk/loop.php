@@ -8,6 +8,7 @@
 						<?php else : ?><img src="<?php echo get_template_directory_uri() ?>/images/defaults/no-thumbnail.jpg" width="310" height="420" class="thumbnail" />
 						<?php endif ?>
 						<div class="post-content">
+							<?php do_action('before_post_summary') ?>
 							<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 							<div class="excerpt">
 								<?php the_excerpt() ?>
@@ -25,7 +26,7 @@
 									<a href="<?php the_permalink() ?>#comments"><?php printf(__('%s Comments', 'snapshot'), $comments['approved']) ?></a>
 								</div>
 							<?php endif; ?>
-							
+							<?php do_action('after_post_summary') ?>
 						</div>
 
 						<div class="corner corner-se"></div>
@@ -45,7 +46,7 @@
 		<div class="container">
 			<div id="post-main">
 				<div class="entry-content">
-					<p><?php echo siteorigin_setting('messages_no_results') ?></p>
+					<p><?php echo siteorigin_setting('messages_no_results', __("No results.", 'snapshot')) ?></p>
 				</div>
 			</div>
 	

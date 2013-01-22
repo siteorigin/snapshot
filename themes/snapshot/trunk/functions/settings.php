@@ -6,9 +6,16 @@
  * @action admin_init
  */
 function snapshot_settings_admin_init(){
-	// General Stuff
 	siteorigin_settings_add_section('general', __('General', 'snapshot'));
+	siteorigin_settings_add_section('appearance', __('Appearance', 'snapshot'));
+	siteorigin_settings_add_section('posts', __('Posts', 'snapshot'));
+	siteorigin_settings_add_section('slider', __('Slider', 'snapshot'));
+	siteorigin_settings_add_section('social', __('Social', 'snapshot'));
+	siteorigin_settings_add_section('comments', __('Comments', 'snapshot'));
+	siteorigin_settings_add_section('messages', __('Text', 'snapshot'));
 
+	// General Stuff
+	
 	siteorigin_settings_add_teaser('general', 'search', __('Search in Menu', 'snapshot'), array(
 		'description' => __('Display a search link in your menu that slides out a big beautiful search bar.', 'snapshot')
 	));
@@ -18,16 +25,26 @@ function snapshot_settings_admin_init(){
 		'description' => __('Hide or display "Theme By SiteOrigin" link from your footer.', 'snapshot')
 	));
 
-	siteorigin_settings_add_section('appearance', __('Appearance', 'snapshot'));
+	// Appearance Stuff
 
 	siteorigin_settings_add_teaser('appearance', 'style', __('Style', 'snapshot'), array(
 		'description' => __('Choose the style of your site.', 'snapshot')
 	));
 
 	siteorigin_settings_add_field('appearance', 'link', 'color', __('Link Color', 'snapshot'));
+	
+	// Posts stuff
+	
+	siteorigin_settings_add_field('posts', 'clickable_thumbnails', 'checkbox', __('Clickable Thumbnails', 'snapshot'), array(
+		'description' => __('Make the entire post thumbnail clickable on the home page and post archive pages.', 'snapshot')
+	));
+
+	siteorigin_settings_add_field('posts', 'sidebar_images', 'checkbox', __('Sidebar Images', 'snapshot'), array(
+		'description' => __('Show or hide the post thumbnails down the right sidebar.', 'snapshot')
+	));
 
 	// The slider section
-	siteorigin_settings_add_section('slider', __('Home Page Slider', 'snapshot'));
+	
 	siteorigin_settings_add_field('slider', 'enabled', 'checkbox', __('Home Page Slider', 'snapshot'), array());
 	siteorigin_settings_add_field('slider', 'speed', 'number', __('Transition Delay', 'snapshot'), array(
 		'description' => __('Number of milliseconds a photo is displayed for.', 'snapshot')
@@ -47,7 +64,7 @@ function snapshot_settings_admin_init(){
 	));
 
 	// Social and sharing
-	siteorigin_settings_add_section('social', __('Social', 'snapshot'));
+	
 	siteorigin_settings_add_field('social', 'display_share', 'checkbox', __('Share Buttons', 'snapshot'), array(
 		'label' => __('Show share buttons next to posts', 'snapshot')
 	));
@@ -58,13 +75,13 @@ function snapshot_settings_admin_init(){
 	));
 
 	// Comments
-	siteorigin_settings_add_section('comments', __('Comments', 'snapshot'));
+	
 	siteorigin_settings_add_teaser('comments', 'ajax', __('Ajax Comments', 'snapshot'), array(
 		'description' => __('Let your visitors post comments without leaving the page.', 'snapshot')
 	));
 
 	// Site messages
-	siteorigin_settings_add_section('messages', __('Site Messages', 'snapshot'));
+	
 	siteorigin_settings_add_field('messages', '404', 'textarea', __('Error 404 Message', 'snapshot'));
 	siteorigin_settings_add_field('messages', 'no_results', 'textarea', __('No Search Results', 'snapshot'));
 }
@@ -85,6 +102,9 @@ function snapshot_settings_default($defaults){
 
 	$defaults['appearance_style'] = 'light';
 	$defaults['appearance_link'] = '#dc5c3b';
+	
+	$defaults['posts_clickable_thumbnails'] = false;
+	$defaults['posts_sidebar_images'] = true;
 
 	$defaults['slider_enabled'] = true;
 	$defaults['slider_speed'] = 7500;
@@ -97,8 +117,8 @@ function snapshot_settings_default($defaults){
 
 	$defaults['comments_ajax'] = true;
 
-	$defaults['messages_404'] = __("We couldn't find what you were looking for.", 'snapshot');
-	$defaults['messages_no_results'] = __("No results.", 'snapshot');
+	$defaults['messages_404'] = '';
+	$defaults['messages_no_results'] = '';
 
 	return $defaults;
 }
