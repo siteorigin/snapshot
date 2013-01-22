@@ -145,7 +145,33 @@ add_filter('wp_nav_menu_items', 'snapshot_premium_wp_nav_menu_items', 10, 2);
 function snapshot_premium_video_viewer($post_id){
 	$video = get_post_meta($post_id, 'snapshot_post_video', true);
 	global $wp_embed;
-	print $wp_embed->shortcode(array('width' => 960), $video);
+	
+	$code = $wp_embed->shortcode(array('width' => 960), $video);
+	$code = apply_filters('snapshot_video_embed_code', $code);
+	echo $code;
+}
+
+function snapshot_premium_filter_video_embed_code($code){
+	if(siteorigin_setting('posts_video_autoplay') || siteorigin_setting('posts_video_hide_related') || siteorigin_setting('posts_video_default_hd')) {
+		$code = preg_replace_callback('/src="([^"]*)"/', 'snapshot_premium_video_change_autoplay_callback', $code);
+	}
+	echo $code;
+}
+add_filter('snapshot_video_embed_code', 'snapshot_premium_filter_video_embed_code');
+
+function snapshot_premium_video_change_autoplay_callback($matches){
+	$url = $matches[1];
+	if(siteorigin_setting('posts_video_autoplay')){
+		$url = add_query_arg('autoplay', 1, $url);
+	}
+	if(siteorigin_setting('posts_video_hide_related')){
+		$url = add_query_arg('rel', 0, $url);
+	}
+	if(siteorigin_setting('posts_video_default_hd')){
+		$url = add_query_arg('hd', 1, $url);
+	}
+
+	return 'src="' .$url. '"';
 }
 
 function snapshot_premium_slider_query_args($args){

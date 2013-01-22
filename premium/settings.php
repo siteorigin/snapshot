@@ -7,27 +7,22 @@
  */
 function snapshot_premium_admin_init(){
 
-	siteorigin_settings_add_field('general', 'search', 'checkbox', __('Search in Menu', 'snapshot'), array(
-		'description' => __('Display a search link in your menu that slides out a big beautiful search bar.', 'snapshot')
-	));
+	siteorigin_settings_add_field('general', 'search', 'checkbox');
+	siteorigin_settings_add_field('general', 'search_menu_text', 'text');
+	siteorigin_settings_add_field('general', 'attribution', 'checkbox');
 
-	siteorigin_settings_add_field('general', 'search_menu_text', 'text', __('Search Text in Menu', 'snapshot'), array(
-		'description' => __('The search text to display in your menu.', 'snapshot')
-	));
-
-	siteorigin_settings_add_field('general', 'attribution', 'checkbox', __('Attribution Link', 'snapshot'), array(
-		'description' => __('Hide or display "Theme By SiteOrigin" link from your footer.', 'snapshot')
-	));
-
-	siteorigin_settings_add_field('appearance', 'style', 'select', __('Style', 'snapshot'), array(
+	siteorigin_settings_add_field('appearance', 'style', 'select', null, array(
 		'options' => array(
 			'light' => __('Light', 'snapshot'),
 			'dark' => __('Dark', 'snapshot'),
 		)
 	));
 
-	siteorigin_settings_add_field('slider', 'posts', 'select', __('Posts Order', 'snapshot'), array(
-		'description' => __('How Snapshot chooses your home page slides.', 'snapshot'),
+	siteorigin_settings_add_field('posts', 'video_autoplay', 'checkbox');
+	siteorigin_settings_add_field('posts', 'video_hide_related', 'checkbox');
+	siteorigin_settings_add_field('posts', 'video_default_hd', 'checkbox');
+
+	siteorigin_settings_add_field('slider', 'posts', 'select', null, array(
 		'options' => array(
 			'date' => __('Post Date', 'snapshot'),
 			'modified' => __('Modified Date', 'snapshot'),
@@ -45,14 +40,11 @@ function snapshot_premium_admin_init(){
 			$category_options[$cat->term_id] = $cat->name;
 		}
 	}
-	siteorigin_settings_add_field('slider', 'category', 'select', __('Posts Category', 'snapshot'), array(
-		'description' => __('Choose which posts are displayed on your home page slider.', 'snapshot'),
+	siteorigin_settings_add_field('slider', 'category', 'select', null, array(
 		'options' => $category_options,
 	));
 
-	siteorigin_settings_add_field('comments', 'ajax', 'checkbox', __('Ajax Comments', 'snapshot'), array(
-		'description' => __('Let your visitors post comments without leaving the page.', 'snapshot')
-	));
+	siteorigin_settings_add_field('comments', 'ajax', 'checkbox');
 }
 add_action('admin_init', 'snapshot_premium_admin_init', 11);
 

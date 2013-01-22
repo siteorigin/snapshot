@@ -27,11 +27,11 @@ function snapshot_settings_admin_init(){
 
 	// Appearance Stuff
 
+	siteorigin_settings_add_field('appearance', 'link', 'color', __('Link Color', 'snapshot'));
+	
 	siteorigin_settings_add_teaser('appearance', 'style', __('Style', 'snapshot'), array(
 		'description' => __('Choose the style of your site.', 'snapshot')
 	));
-
-	siteorigin_settings_add_field('appearance', 'link', 'color', __('Link Color', 'snapshot'));
 	
 	// Posts stuff
 	
@@ -41,6 +41,18 @@ function snapshot_settings_admin_init(){
 
 	siteorigin_settings_add_field('posts', 'sidebar_images', 'checkbox', __('Sidebar Images', 'snapshot'), array(
 		'description' => __('Show or hide the post thumbnails down the right sidebar.', 'snapshot')
+	));
+	
+	siteorigin_settings_add_teaser('posts', 'video_autoplay', __('Video: Autoplay', 'snapshot'), array(
+		'description' => __('Automatically start playing post videos', 'snapshot'),
+	));
+
+	siteorigin_settings_add_teaser('posts', 'video_hide_related', __('Video: Hide Related', 'snapshot'), array(
+		'description' => __('Hides related videos after YouTube videos stop playing.', 'snapshot'),
+	));
+
+	siteorigin_settings_add_teaser('posts', 'video_default_hd', __('Video: Default to HD', 'snapshot'), array(
+		'description' => __('Defaults YouTube and Vimeo videos to HD. Can be overwritten by user/video settings.', 'snapshot'),
 	));
 
 	// The slider section
@@ -105,6 +117,9 @@ function snapshot_settings_default($defaults){
 	
 	$defaults['posts_clickable_thumbnails'] = false;
 	$defaults['posts_sidebar_images'] = true;
+	$defaults['posts_video_autoplay'] = false;
+	$defaults['posts_video_hide_related'] = false;
+	$defaults['posts_video_default_hd'] = false;
 
 	$defaults['slider_enabled'] = true;
 	$defaults['slider_speed'] = 7500;
