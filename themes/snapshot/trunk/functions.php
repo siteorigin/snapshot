@@ -3,8 +3,8 @@
 define('SITEORIGIN_THEME_VERSION', 'trunk');
 define('SITEORIGIN_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
 
-include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/functions/settings.php';
+include get_template_directory().'/functions/admin.php';
 
 if(file_exists(get_template_directory().'/premium/functions.php'))
 	include get_template_directory().'/premium/functions.php';
@@ -13,10 +13,10 @@ if(!defined('SITEORIGIN_IS_PREMIUM')) {
 	include get_template_directory().'/upgrade/upgrade.php';
 }
 
+include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/extras/premium/premium.php';
 include get_template_directory().'/extras/update/update.php';
 include get_template_directory().'/extras/admin/admin.php';
-include get_template_directory().'/extras/support/support.php';
 
 if(!function_exists('snapshot_setup_theme')) :
 /**
@@ -172,7 +172,6 @@ function snapshot_enqueue_scripts(){
 endif;
 add_action('wp_enqueue_scripts', 'snapshot_enqueue_scripts');
 
-
 if(!function_exists('snapshot_wp_title')) :
 /**
  * Filter the title
@@ -296,79 +295,6 @@ function snapshot_footer_widget_params($params){
 }
 endif;
 add_filter('dynamic_sidebar_params', 'snapshot_footer_widget_params');
-
-
-if(!function_exists('snapshot_attachment_fields_to_edit')):
-/**
- * Add the sidebar exclude field
- * @param $fields
- * @param $post
- * @return array
- * 
- * @filter attachment_fields_to_edit
- */
-function snapshot_attachment_fields_to_edit($fields, $post){
-	$parent = get_post($post->post_parent);
-	if($parent->post_type == 'post'){
-		$exclude = get_post_meta($post->ID, 'sidebar_exclude', true);
-		$fields['snapshot_exclude'] = array(
-			'label' => __('Sidebar Exclude', 'snapshot'),
-			'input' => 'html',
-			'html' => '<input name="attachments['.$post->ID.'][sidebar_exclude]" id="attachment-'.$post->ID.'-sidebar_exclude" type="checkbox" '.checked(!empty($exclude), true, false).' /> <label for="attachment-'.$post->ID.'-sidebar_exclude">'.__('Exclude', 'snapshot').'</label>',
-			'value' => !empty($exclude)
-		);
-	}
-	
-	return $fields;
-}
-endif;
-add_filter('attachment_fields_to_edit', 'snapshot_attachment_fields_to_edit', 10, 2);
-
-
-if(!function_exists('snapshot_attachment_save')):
-/**
- * Save the attachment form meta. 
- * @param $post
- * @return mixed
- * 
- * @filter attachment_fields_to_save
- */
-function snapshot_attachment_save($post){
-	$parent = get_post($post['post_parent']);
-	if($parent->post_type == 'post' && !empty($_POST['attachments'][$post['ID']])){
-		$current = get_post_meta($post['ID'], 'sidebar_exclude', true);
-		$exclude = !empty($_POST['attachments'][$post['ID']]['sidebar_exclude']);
-		update_post_meta($post['ID'], 'sidebar_exclude', $exclude, $current);
-	}
-	
-	return $post;
-}
-endif;
-add_filter('attachment_fields_to_save', 'snapshot_attachment_save', 10, 2);
-
-
-if(!function_exists('snapshot_add_meta_boxes')):
-/**
- * Add the relevant metaboxes.
- * 
- * @action add_meta_boxes
- */
-function snapshot_add_meta_boxes(){
-	if(defined('SITEORIGIN_IS_PREMIUM')) return;
-	add_meta_box('snapshot-post-video', __('Post Video', 'snapshot'), 'snapshot_meta_box_video_render', 'post', 'side');
-}
-endif;
-add_action('add_meta_boxes', 'snapshot_add_meta_boxes');
-
-
-if(!function_exists('snapshot_meta_box_video_render')) :
-/**
- * Render the video meta box added in snapshot_add_meta_boxes
- */
-function snapshot_meta_box_video_render(){
-	?><p><?php printf(__('Post videos are available in <a href="%s">Snapshot Premium</a>.', 'snapshot'), admin_url('themes.php?page=premium_upgrade')) ?></p><?php
-}
-endif;
 
 function snapshot_wp_page_menu($args){
 	?><div id="menu-main-menu-container"><?php

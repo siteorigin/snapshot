@@ -40,8 +40,8 @@ function Snapshot_premium_upgrade_content($content){
 			'content' => __("We'll keep Snapshot Premium up to date with new features and performance enhancements.", 'snapshot'),
 		),
 		array(
-			'heading' => __('Email Support', 'snapshot'),
-			'content' => __("New to WordPress? Need to chat to someone? There is a WordPress guru, waiting to answer your questions. You'll be familiar with our theme in no time.", 'snapshot'),
+			'heading' => __('Premium Support', 'snapshot'),
+			'content' => __("New to WordPress? Need to chat to someone? There is a WordPress guru, waiting to answer your questions. Your posts receive much higher priority on our support forums.", 'snapshot'),
 		),
 	);
 
