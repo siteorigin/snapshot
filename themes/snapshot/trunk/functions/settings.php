@@ -126,9 +126,11 @@ function snapshot_settings_default($defaults){
 	$defaults['slider_transition'] = 500;
 	$defaults['slider_post_count'] = 5;
 	$defaults['slider_posts'] = 'date';
+	$defaults['slider_category'] = 'date';
 
 	$defaults['social_display_share'] = true;
 	$defaults['social_recommend'] = false;
+	$defaults['social_twitter'] = '';
 
 	$defaults['comments_ajax'] = true;
 

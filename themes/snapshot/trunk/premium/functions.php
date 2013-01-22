@@ -94,23 +94,14 @@ function snapshot_premium_ajax_comment_rerender($location, $comment){
 add_filter('comment_post_redirect', 'snapshot_premium_ajax_comment_rerender', 10, 2);
 
 /**
- * Add video metabox
- * 
- * @action add_meta_boxes
- */
-function snapshot_premium_add_meta_boxes(){
-	add_meta_box('snapshot-post-video', __('Post Video', 'snapshot'), 'snapshot_premium_meta_box_video_render', 'post', 'side');
-}
-add_action('add_meta_boxes', 'snapshot_premium_add_meta_boxes');
-
-/**
  * Render the video meta box
  */
-function snapshot_premium_meta_box_video_render($post){
+function snapshot_premium_meta_box_video_render(){
+	global $post;
 	$video = get_post_meta($post->ID, 'snapshot_post_video', true);
 	?>
 	<input type="text" name="snapshot_post_video" class="widefat" value="<?php echo esc_attr($video) ?>" />
-	<p class="description"><?php _e('Enter a full video URL', 'snapshot') ?></p>
+	<p class="description"><?php _e('Enter the full url of a oEmbed video (YouTube, Vimeo, etc).', 'snapshot') ?></p>
 	<?php
 }
 
