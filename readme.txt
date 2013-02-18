@@ -47,3 +47,7 @@ Added filter for home page slider categories
 Updated to latest framework.
 Added blog page archive.
 Various fixes and security enhancements.
+Integrated support for page builder.
+Improved home page slider, allowing dynamic height.
+Added custom gallery type of slider.
+Integrated FitVids
