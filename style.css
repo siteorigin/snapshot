@@ -750,6 +750,7 @@ a{
 }
 
 .page-template-page-slidertext-php #post-main,
+.page-template-page-full-php #post-main,
 .full-width #post-main{
 	width: 100%;
 }
@@ -1332,3 +1333,176 @@ a{
 
 /* @end */
 
+/* @group Panels */
+
+.panel-grid{
+    margin: 0 -15px 30px -15px;
+}
+
+.panel-grid-cell{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding: 0 15px;
+}
+
+.panel-grid-cell .panel{
+    margin-bottom: 30px;
+}
+
+.panel-grid-cell .panel:last-child{
+    margin-bottom: 0;
+}
+
+.panel {
+    min-height: 1em;
+    margin-bottom: 15px;
+}
+
+.panel.panel-last-child{
+    margin-bottom: 0;
+}
+
+.panel h3.widget-title{
+    margin-bottom: 15px;
+    font-size: 125%;
+}
+
+/* @end */
+
+/* @group Widgets */
+
+/* @group Button */
+
+.widget .button{
+	display: inline-block;
+
+	background: #484744;
+	border: none;
+	color: #FFF;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	
+	text-decoration: none;
+	font-size: 13px;
+	padding: 12px 35px;
+	
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.button-container.align-center{
+	text-align: center;
+}
+
+.button-container.align-left{
+	text-align: left;
+}
+
+.button-container.align-right{
+	text-align: right;
+}
+
+.button-container.align-full .button{
+    display: block;
+    text-align: center;
+}
+
+/* @end */
+
+/* @group Call To Action */
+
+.widget_call-to-action {
+	padding: 25px 15px;
+	border: 1px solid #EEEEEE;
+	border-width: 1px 0;
+	background: #F9F9F9;
+	position: relative;
+}
+
+.widget_call-to-action .cta-headline{
+	margin-bottom: 0;
+	margin-top: 0;
+	color: #444444;
+}
+
+.widget_call-to-action .cta-sub-text{
+	margin-top: 10px;
+	margin-bottom: 0;
+	color: #777777;
+}
+
+.widget_call-to-action .button{
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -22px;
+}
+
+/* @end */
+
+/* @group Icon and Text */
+
+.widget_icon-text h3.widget-title{
+    font-size: 15px;
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.widget_icon-text .feature-icon{
+    float: left;
+    width: 32px;
+    height: 32px;
+}
+
+.widget_icon-text .feature-icon img{
+	max-width: 100%;
+	height: auto;
+}
+
+.widget_icon-text .widget-text{
+    margin-left: 45px;
+}
+
+/* @end */
+
+/* @group Headline Widget */
+
+.widget_headline .widget-title span{
+    display: block;
+    line-height: 1.3em;
+}
+
+.widget_headline .widget-title .size-medium {
+    font-size: 130%;
+}
+
+.widget_headline .widget-title .size-large {
+    font-size: 160%;
+}
+
+.widget_headline .widget-title .size-extra-large {
+    font-size: 190%;
+}
+
+.widget_headline .align-left{
+    text-align: left;
+}
+
+.widget_headline .align-center{
+    text-align: center;
+}
+
+.widget_headline .align-right{
+    text-align: right;
+}
+
+/* @end */
+
+.widget img{
+	max-width: 100%;
+	height: auto;
+}
+
+/* @end */
