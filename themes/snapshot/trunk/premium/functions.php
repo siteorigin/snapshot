@@ -32,68 +32,6 @@ function snapshot_premium_enqueue_scripts(){
 add_action('wp_enqueue_scripts', 'snapshot_premium_enqueue_scripts');
 
 /**
- * Set up the error handler.
- * 
- * @filter wp_die_handler
- */
-function snapshot_premium_comment_ajax_handler($handler){
-	global $pagenow;
-	if($pagenow == 'wp-comments-post.php' && siteorigin_setting('comments_ajax') && !empty($_POST['is_ajax'])){
-		$handler = 'snapshot_premium_comment_ajax_error_handler';
-	}
-	return $handler;
-}
-add_filter('wp_die_handler', 'snapshot_premium_comment_ajax_handler');
-
-/**
- * Ajax error handler
- * 
- * @param $error
- */
-function snapshot_premium_comment_ajax_error_handler($error){
-	header('content-type: application/json', true);
-	print json_encode(array(
-		'status' => 'error',
-		'error' => $error,
-	));
-	exit();
-}
-
-/**
- * Render all the ajax comments
- */
-function snapshot_premium_ajax_comment_rerender($location, $comment){
-	if(!siteorigin_setting('comments_ajax') || empty($_POST['is_ajax'])) return $location;
-	
-	$post_id = isset($_POST['comment_post_ID']) ? intval($_POST['comment_post_ID']) : '';
-	
-	// We're going to pretend this is a single
-	$query = array('post_id' => $post_id);
-	
-	if(get_option('page_comments')){
-		$args['per_page'] = get_option('comments_per_page');
-		$cpage = get_page_of_comment( $comment->comment_ID, $args );
-		$query['cpage'] = $cpage;
-	}
-	query_posts($query);
-	
-	global $wp_query;
-	$wp_query->is_single = true;
-	$wp_query->is_singular = true;
-	
-	ob_start();
-	comments_template();
-	$comment_html = ob_get_clean();
-	
-	print json_encode(array(
-		'status' => 'success',
-		'html' => $comment_html,
-	));
-	exit();
-}
-add_filter('comment_post_redirect', 'snapshot_premium_ajax_comment_rerender', 10, 2);
-
-/**
  * Render the video meta box
  */
 function snapshot_premium_meta_box_video_render(){
@@ -111,7 +49,6 @@ function snapshot_premium_save_post($post_id, $post){
 	if(!isset($_POST['snapshot_post_video'])) return;
 	
 	update_post_meta($post_id, 'snapshot_post_video', $_POST['snapshot_post_video']);
-	
 }
 add_action('save_post', 'snapshot_premium_save_post', 10, 2);
 
