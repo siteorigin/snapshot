@@ -11,7 +11,7 @@
 	<div class="container">
 		<div id="post-main">
 			<div class="entry-content">
-				<p><?php echo siteorigin_setting('messages_404', __("We couldn't find what you were looking for.", 'snapshot')) ?></p>
+				<p><?php echo wp_kses_post(siteorigin_setting('messages_404', __("We couldn't find what you were looking for.", 'snapshot'))) ?></p>
 			</div>
 		</div>
 

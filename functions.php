@@ -6,8 +6,9 @@ define('SITEORIGIN_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
 include get_template_directory().'/functions/settings.php';
 include get_template_directory().'/functions/admin.php';
 
-if(file_exists(get_template_directory().'/premium/functions.php'))
+if(file_exists(get_template_directory().'/premium/functions.php')){
 	include get_template_directory().'/premium/functions.php';
+}
 
 if(!defined('SITEORIGIN_IS_PREMIUM')) {
 	include get_template_directory().'/upgrade/upgrade.php';
@@ -16,7 +17,7 @@ if(!defined('SITEORIGIN_IS_PREMIUM')) {
 include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/extras/premium/premium.php';
 include get_template_directory().'/extras/update/update.php';
-include get_template_directory().'/extras/admin/admin.php';
+include get_template_directory().'/extras/adminbar/adminbar.php';
 
 if(!function_exists('snapshot_setup_theme')) :
 /**
@@ -60,6 +61,8 @@ function snapshot_setup_theme(){
 	
 	set_post_thumbnail_size(310, 420, true);
 	add_image_size('single-large', 960, 960, false);
+	add_image_size('single-large-landscape', 960, 540, true);
+	
 	add_image_size('slider-large', 1600, 1600, false);
 	
 	// The navigation menus
@@ -84,7 +87,7 @@ function snapshot_print_scripts(){
 	$header = get_custom_header()
 	?>
 	<style type="text/css" media="all">
-		a{ color: <?php echo siteorigin_setting('appearance_link') ?>; }
+		a{ color: <?php echo esc_attr(siteorigin_setting('appearance_link')) ?>; }
 		<?php if($header->url) : ?>
 			#menu-main-menu,
 			#top-area .menu > ul{

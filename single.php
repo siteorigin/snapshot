@@ -20,9 +20,7 @@
 			<?php endif ?>
 		</div>
 		
-		<h1>
-			<?php the_title() ?>
-		</h1>
+		<h1><?php the_title() ?></h1>
 		
 		<div class="nav">
 			<?php next_post_link('%link') ?>
@@ -43,9 +41,7 @@
 			<div class="entry-content">
 				<?php the_content() ?>
 				
-				<?php global $numpages; if(!empty($numpages) || get_the_tag_list() != '') : ?>
-					<div class="clear"></div>
-				<?php endif; ?>
+				<?php global $numpages; if(!empty($numpages) || get_the_tag_list() != '') : ?><div class="clear"></div><?php endif; ?>
 				
 				<?php wp_link_pages() ?>
 				<?php the_tags() ?>

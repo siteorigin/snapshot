@@ -4,7 +4,7 @@
 <?php else : ?>
 	<div id="page-title" class="archive-title">
 		<div class="container">
-			<h1><?php echo siteorigin_setting('general_latest_posts') ?></h1>
+			<h1><?php echo esc_html(siteorigin_setting('general_latest_posts')) ?></h1>
 		</div>
 	</div>
 	<div id="home-slider-below"></div>
