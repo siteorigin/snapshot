@@ -6,6 +6,7 @@ define('SITEORIGIN_IS_PREMIUM', true);
 include get_template_directory().'/premium/settings.php';
 include get_template_directory().'/premium/extras/ajax-comments/ajax-comments.php';
 include get_template_directory().'/premium/extras/css/css.php';
+include get_template_directory().'/premium/extras/widgets/widgets.php';
 
 function snapshot_premium_init(){
 	if(siteorigin_setting('comments_ajax')){
@@ -115,3 +116,9 @@ function snapshot_premium_slider_query_args($args){
 	return $args;
 }
 add_filter('snapshot_slider_query_args', 'snapshot_premium_slider_query_args');
+
+function snapshot_premium_widgets_init(){
+	register_widget( 'SiteOrigin_Widgets_GoogleMap' );
+	register_widget( 'SiteOrigin_Widgets_Video' );
+}
+add_action('widgets_init', 'snapshot_premium_widgets_init');

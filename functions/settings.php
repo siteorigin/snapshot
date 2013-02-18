@@ -58,14 +58,18 @@ function snapshot_settings_admin_init(){
 	// The slider section
 	
 	siteorigin_settings_add_field('slider', 'enabled', 'checkbox', __('Home Page Slider', 'snapshot'), array());
-	siteorigin_settings_add_field('slider', 'speed', 'number', __('Transition Speed', 'snapshot'), array(
+	siteorigin_settings_add_field('slider', 'speed', 'number', __('Transition Delay', 'snapshot'), array(
 		'description' => __('Number of milliseconds a photo is displayed for.', 'snapshot')
 	));
-	siteorigin_settings_add_field('slider', 'transition', 'number', __('Transition Delay', 'snapshot'), array(
+	siteorigin_settings_add_field('slider', 'transition', 'number', __('Transition Speed', 'snapshot'), array(
 		'description' => __('How many milliseconds the transition takes.', 'snapshot'),
 	));
 	siteorigin_settings_add_field('slider', 'post_count', 'number', __('Post Count', 'snapshot'), array(
 		'description' => __('The number of posts displayed on your home page slider.', 'snapshot'),
+	));
+
+	siteorigin_settings_add_field('slider', 'scale_height', 'checkbox', __('Scale Home Page Slider Height', 'snapshot'), array(
+		'description' => __('Automatically scale the height of the home slider to match each image.', 'snapshot'),
 	));
 	
 	siteorigin_settings_add_teaser('slider', 'posts', __('Posts Order', 'snapshot'), array(
@@ -125,6 +129,7 @@ function snapshot_settings_default($defaults){
 	$defaults['slider_speed'] = 7500;
 	$defaults['slider_transition'] = 500;
 	$defaults['slider_post_count'] = 5;
+	$defaults['slider_scale_height'] = false;
 	$defaults['slider_posts'] = 'date';
 	$defaults['slider_category'] = 'date';
 

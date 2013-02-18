@@ -2,7 +2,7 @@
 $query = snapshot_get_slider_query();
 $post_count = 0;
 ?>
-<div id="home-slider" class="loading">
+<div id="home-slider" class="loading <?php if(siteorigin_setting('slider_scale_height')) echo 'gallery-slider'; ?>">
 	<div class="container">
 		
 		<div class="post-titles">
