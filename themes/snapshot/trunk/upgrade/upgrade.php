@@ -6,7 +6,6 @@ function snapshot_premium_upgrade_content($content){
 	
 	$content['buy_url'] = 'http://go.siteorigin.com/snapshot-premium';
 	$content['buy_price'] = '$9';
-	$content['buy_button'] = get_template_directory_uri().'/upgrade/images/download.png';
 	$content['buy_message_1'] = __("If you're not delighted with Snapshot Premium, I'll give you a full refund", 'snapshot');
 	$content['buy_message_2'] = __("Remember, if you're not satisfied, you get your money back", 'snapshot');
 
@@ -41,7 +40,7 @@ function snapshot_premium_upgrade_content($content){
 		),
 		array(
 			'heading' => __('Premium Support', 'snapshot'),
-			'content' => __("New to WordPress? Need to chat to someone? There is a WordPress guru, waiting to answer your questions. Your posts receive much higher priority on our support forums.", 'snapshot'),
+			'content' => __("New to WordPress? Need to chat to someone? There is a WordPress guru, waiting to answer your questions. Your posts receive higher priority on our support forums.", 'snapshot'),
 		),
 	);
 
