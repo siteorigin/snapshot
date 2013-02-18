@@ -38,5 +38,7 @@ jQuery(function($){
                     .fadeIn('slow', function(){$el.closest('.post-background').removeClass('loading')})
             });
         }
-    })
+    });
+    
+    $('.entry-content' ).fitVids();
 });
