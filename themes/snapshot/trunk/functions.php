@@ -18,6 +18,8 @@ include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/extras/premium/premium.php';
 include get_template_directory().'/extras/update/update.php';
 include get_template_directory().'/extras/adminbar/adminbar.php';
+include get_template_directory().'/extras/panels/panels.php';
+include get_template_directory().'/extras/widgets/widgets.php';
 
 if(!function_exists('snapshot_setup_theme')) :
 /**
@@ -58,6 +60,16 @@ function snapshot_setup_theme(){
 	add_theme_support('post-thumbnails');
 	
 	add_theme_support( 'automatic-feed-links' );
+
+	/**
+	 * Support panels
+	 */
+	add_theme_support( 'siteorigin-panels', array(
+		'margin-bottom' => 30,
+		'responsive' => false,
+		'home-page' => true,
+		'home-page-default' => false,
+	) );
 	
 	set_post_thumbnail_size(310, 420, true);
 	add_image_size('single-large', 960, 960, false);
@@ -67,7 +79,7 @@ function snapshot_setup_theme(){
 	
 	// The navigation menus
 	register_nav_menu('main-menu', __('Main Menu', 'snapshot'));
-	
+
 	add_editor_style();
 }
 endif;
@@ -130,6 +142,14 @@ function snapshot_setup_widgets(){
 		'name' => __('Site Footer', 'snapshot'),
 		'id' => 'site-footer',
 	));
+
+	register_widget( 'SiteOrigin_Widgets_CTA' );
+	register_widget( 'SiteOrigin_Widgets_Button' );
+	register_widget( 'SiteOrigin_Widgets_IconText' );
+	register_widget( 'SiteOrigin_Widgets_Headline' );
+	register_widget( 'SiteOrigin_Widgets_Gallery' );
+	register_widget( 'SiteOrigin_Widgets_PostContent' );
+	register_widget( 'SiteOrigin_Widgets_Image' );
 }
 endif;
 add_action('widgets_init', 'snapshot_setup_widgets');
