@@ -50,12 +50,12 @@ jQuery(function($){
             $slider.find('img.slide, .post-titles a').removeClass('current');
 
             if($slider.is('.gallery-slider')){
-                var cImg = $slider.find('img.slide').eq(i);
+                var cImg = $slider.find('img.slide').eq(i).css({height: 'auto', width: '100%'});
 
                 if(c != -1) $slider.clearQueue().animate({height: cImg.height()});
                 else $slider.height(cImg.height());
-                
-                sliderHeight = $slider.find('img.slide').eq(i).height();
+
+                sliderHeight = cImg.height();
             }
             
             // Show the new slide

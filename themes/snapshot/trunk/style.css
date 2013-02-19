@@ -1484,7 +1484,15 @@ a{
 .widget_icon-text h3.widget-title{
     font-size: 15px;
     line-height: 1.5em;
-    margin-bottom: 0.5em;
+    margin: 0 0 0.6em 0;
+}
+
+.widget_icon-text .entry-content{
+	margin-top: 0;
+}
+
+.widget_icon-text .entry-content > *:first-child{
+	margin-top: 0;
 }
 
 .widget_icon-text .feature-icon{
@@ -1494,7 +1502,7 @@ a{
 }
 
 .widget_icon-text .feature-icon img{
-	max-width: 100%;
+	width: auto;
 	height: auto;
 }
 
