@@ -53,5 +53,5 @@ Added blog page archive.
 Various fixes and security enhancements.
 Integrated support for page builder.
 Improved home page slider, allowing dynamic height.
-Added custom gallery type of slider.
+Added custom gallery type of "slider".
 Integrated FitVids
