@@ -9,7 +9,7 @@ Author URI: http://siteorigin.com/
 Version: trunk
 License: GPL 2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Description: Snapshot is a theme built for showing off your photography. The home page gives you a full width slider along with a grid of all your recent photos. Each photo gets its own page, with a massive photo display at the top.
+Description: At its core, Snapshot is a theme built for showing off your photography. You can dive in and start adding your photos right away and it'll look great. Snapshot also includes our powerful drag and drop page builder, so you can use it to create a complete business or company site.
 Tags: gray, fixed-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, photoblogging
 */
 
@@ -1502,6 +1502,8 @@ a{
 }
 
 .widget_icon-text .feature-icon img{
+	max-width: 100%;
+  	max-height: 100%;
 	width: auto;
 	height: auto;
 }

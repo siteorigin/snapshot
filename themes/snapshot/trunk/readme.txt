@@ -8,6 +8,7 @@ This theme includes the following external libraries and resources
 
 * HTML5 Shiv MIT/GPL2 Licensed 
 * jQuery Image Preload Dimas Begunoff licensed under MIT
+* Fitvids Released under the WTFPL license
 * Demo images under public domain from Pixabay
 
 Change Log
