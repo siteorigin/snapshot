@@ -878,6 +878,23 @@ a{
 	font-family: "Courier New", Courier, mono;
 }
 
+.entry-content sup,
+.entry-content sub{
+	height: 0;
+	line-height: 1;
+	vertical-align: baseline;
+	position: relative;
+}
+
+.entry-content sup {
+	bottom: 1ex;
+}
+
+.entry-content sub {
+	top: .5ex;
+}
+
+
 /* @group Gallery */
 
 .entry-content .gallery-caption{
