@@ -45,6 +45,9 @@ Fixed search text setting
 Added filter for home page slider categories
 
 **1.1**
+Updated to the latest framework.
+
+**1.2**
 Updated to latest framework.
 Added blog page archive.
 Various fixes and security enhancements.
