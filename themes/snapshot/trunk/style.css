@@ -873,7 +873,7 @@ a{
 	
 	box-shadow: 0 1px 2px rgba(0,0,0,0.09);
 	
-	overflow-y: auto;
+	overflow-x: auto;
 }
 
 .entry-content code{
