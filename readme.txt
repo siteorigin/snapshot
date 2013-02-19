@@ -56,6 +56,3 @@ Improved home page slider, allowing dynamic height.
 Added custom gallery type of "slider".
 Integrated FitVids
 CSS fixes
-
-**1.2.1**
-Fixed bug with media browser and home page builder.
