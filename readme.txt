@@ -55,3 +55,4 @@ Integrated support for page builder.
 Improved home page slider, allowing dynamic height.
 Added custom gallery type of "slider".
 Integrated FitVids
+CSS fixes
