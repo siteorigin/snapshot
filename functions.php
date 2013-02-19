@@ -6,6 +6,7 @@ define('SITEORIGIN_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
 include get_template_directory().'/functions/settings.php';
 include get_template_directory().'/functions/admin.php';
 include get_template_directory().'/functions/gallery.php';
+include get_template_directory().'/functions/layouts.php';
 
 if(file_exists(get_template_directory().'/premium/functions.php')){
 	include get_template_directory().'/premium/functions.php';
