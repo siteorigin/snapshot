@@ -10,8 +10,9 @@ if(!function_exists('snapshot_attachment_fields_to_edit')):
 	 * @filter attachment_fields_to_edit
 	 */
 	function snapshot_attachment_fields_to_edit($fields, $post){
+		if(empty($post)) return $fields;
 		$parent = get_post($post->post_parent);
-		if($parent->post_type == 'post'){
+		if(!empty($parent) && $parent->post_type == 'post'){
 			$exclude = get_post_meta($post->ID, 'sidebar_exclude', true);
 			$fields['snapshot_exclude'] = array(
 				'label' => __('Sidebar Exclude', 'snapshot'),
@@ -37,7 +38,7 @@ if(!function_exists('snapshot_attachment_save')):
 	 */
 	function snapshot_attachment_save($post){
 		$parent = get_post($post['post_parent']);
-		if($parent->post_type == 'post' && !empty($_POST['attachments'][$post['ID']])){
+		if(!empty($parent) && $parent->post_type == 'post' && !empty($_POST['attachments'][$post['ID']])){
 			$current = get_post_meta($post['ID'], 'sidebar_exclude', true);
 			$exclude = !empty($_POST['attachments'][$post['ID']]['sidebar_exclude']);
 			update_post_meta($post['ID'], 'sidebar_exclude', $exclude, $current);
