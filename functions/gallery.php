@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Intercept the gallery shortcode when type=slider
+ * 
+ * @param $contents
+ * @param $attr
+ * @return string
+ */
 function snapshot_slider_gallery($contents, $attr){
 	if(empty($attr['type']) || $attr['type'] != 'slider') return $contents;
 
@@ -79,13 +86,22 @@ function snapshot_slider_gallery($contents, $attr){
 }
 add_filter('post_gallery', 'snapshot_slider_gallery', 10, 2);
 
-function snapshot_slider_gallery_default_type(){
-	return 'slider';
-}
-add_filter('siteorigin_gallery_default_type', 'snapshot_slider_gallery_default_type');
-
+/**
+ * Add the type slider to the gallery widget.
+ * @param $types
+ * @return mixed
+ */
 function snapshot_slider_gallery_type($types){
 	$types['slider'] = __('Slider', 'snapshot');
 	return $types;
 }
 add_filter('siteorigin_gallery_types', 'snapshot_slider_gallery_type');
+
+/**
+ * Change the gallery widget default type to slider.
+ * @return string
+ */
+function snapshot_slider_gallery_default_type(){
+	return 'slider';
+}
+add_filter('siteorigin_gallery_default_type', 'snapshot_slider_gallery_default_type');
