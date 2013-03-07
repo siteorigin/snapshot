@@ -59,3 +59,6 @@ CSS fixes
 
 **1.2.1**
 Fixed bug with media browser and home page builder.
+
+**1.2.2**
+Fixed conflict with page builder plugin.
