@@ -6,7 +6,7 @@ define('SITEORIGIN_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
 include get_template_directory().'/functions/settings.php';
 include get_template_directory().'/functions/admin.php';
 include get_template_directory().'/functions/gallery.php';
-include get_template_directory().'/functions/layouts.php';
+include get_template_directory().'/functions/panels.php';
 
 if(file_exists(get_template_directory().'/premium/functions.php')){
 	include get_template_directory().'/premium/functions.php';
@@ -20,7 +20,6 @@ include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/extras/premium/premium.php';
 include get_template_directory().'/extras/update/update.php';
 include get_template_directory().'/extras/adminbar/adminbar.php';
-include get_template_directory().'/extras/panels/panels.php';
 include get_template_directory().'/extras/widgets/widgets.php';
 
 if(!function_exists('snapshot_setup_theme')) :
@@ -83,6 +82,9 @@ function snapshot_setup_theme(){
 	register_nav_menu('main-menu', __('Main Menu', 'snapshot'));
 
 	add_editor_style();
+
+	// Only include the bundled version of panels if the plugin does not exist
+	if(!defined('SITEORIGIN_PANELS_VERSION')) include get_template_directory().'/extras/panels/panels.php';
 }
 endif;
 add_action('after_setup_theme', 'snapshot_setup_theme');
