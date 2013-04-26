@@ -62,3 +62,7 @@ Fixed bug with media browser and home page builder.
 
 **1.2.2**
 Fixed conflict with page builder plugin.
+
+**1.2.3**
+Updated to the latest version of SiteOrigin framework
+Various fixes for WordPress 3.6 compatibility
