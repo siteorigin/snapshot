@@ -152,10 +152,6 @@ function snapshot_setup_widgets(){
 	register_widget( 'SiteOrigin_Widgets_Button' );
 	register_widget( 'SiteOrigin_Widgets_IconText' );
 	register_widget( 'SiteOrigin_Widgets_Headline' );
-	register_widget( 'SiteOrigin_Widgets_Gallery' );
-	register_widget( 'SiteOrigin_Widgets_PostContent' );
-	register_widget( 'SiteOrigin_Widgets_Image' );
-	register_widget( 'SiteOrigin_Widgets_PostLoop' );
 }
 endif;
 add_action('widgets_init', 'snapshot_setup_widgets');
@@ -407,3 +403,33 @@ function so_setting($name, $default = null){
 	return siteorigin_setting($name, $default);
 }
 endif;
+
+/**
+ * Update widget classes to use panels built in widgets.
+ *
+ * @param $data
+ * @return mixed
+ */
+function snapshot_siteorigin_panels_data($data){
+	if(empty($data['widgets'])) return $data;
+
+	foreach($data['widgets'] as $i => $d){
+		if(!empty($d['info']['class'])){
+			switch($d['info']['class']){
+				case 'SiteOrigin_Widgets_Gallery':
+					$data['widgets'][$i]['info']['class'] = 'SiteOrigin_Panels_Widgets_Gallery';
+					break;
+
+				case 'SiteOrigin_Widgets_Image':
+					$data['widgets'][$i]['info']['class'] = 'SiteOrigin_Panels_Widgets_Image';
+					break;
+
+				case 'SiteOrigin_Widgets_PostContent':
+					$data['widgets'][$i]['info']['class'] = 'SiteOrigin_Panels_Widgets_PostContent';
+					break;
+			}
+		}
+	}
+	return $data;
+}
+add_filter('siteorigin_panels_data', 'snapshot_siteorigin_panels_data');
