@@ -22,7 +22,7 @@ jQuery(function($){
 
         // Load the main image
         $('#post-single-viewer.image img').imgpreload(function(){
-            $('#post-single-viewer.image').removeClass('loading');
+            $('#post-single-viewer.image').removeClass( 'loading' );
             $(this).css('visibility', 'visible').hide().fadeIn(850);
         });
     }

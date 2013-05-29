@@ -21,6 +21,7 @@ include get_template_directory().'/extras/premium/premium.php';
 include get_template_directory().'/extras/update/update.php';
 include get_template_directory().'/extras/adminbar/adminbar.php';
 include get_template_directory().'/extras/widgets/widgets.php';
+include get_template_directory().'/extras/plugin-activation/plugin-activation.php';
 
 if(!function_exists('snapshot_setup_theme')) :
 /**
