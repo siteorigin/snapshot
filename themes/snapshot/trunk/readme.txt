@@ -66,3 +66,6 @@ Fixed conflict with page builder plugin.
 **1.2.3**
 Updated to the latest version of SiteOrigin framework
 Various fixes for WordPress 3.6 compatibility
+
+**1.2.4**
+Added updater for latest version of Page Builder
