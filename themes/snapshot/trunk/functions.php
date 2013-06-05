@@ -85,7 +85,9 @@ function snapshot_setup_theme(){
 	add_editor_style();
 
 	// Only include the bundled version of panels if the plugin does not exist
-	if(!defined('SITEORIGIN_PANELS_VERSION')) include get_template_directory().'/extras/panels/panels.php';
+	if(!defined('SITEORIGIN_PANELS_VERSION') && !siteorigin_plugin_activation_is_activating('siteorigin-panels')) {
+		include get_template_directory().'/extras/panels/panels.php';
+	}
 }
 endif;
 add_action('after_setup_theme', 'snapshot_setup_theme');
