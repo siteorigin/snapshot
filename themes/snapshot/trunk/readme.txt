@@ -69,3 +69,6 @@ Various fixes for WordPress 3.6 compatibility
 
 **1.2.4**
 Added updater for latest version of Page Builder
+
+**1.2.5**
+Activating Page Builder no longer causes error.
