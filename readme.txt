@@ -76,3 +76,4 @@ Activating Page Builder no longer causes error.
 **1.2.6**
 Changed purchase information.
 Fixed translation.
+Fixed blog archive page template.
