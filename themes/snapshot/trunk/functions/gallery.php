@@ -43,7 +43,6 @@ function snapshot_slider_gallery($contents, $attr){
 		'icontag'    => 'dt',
 		'captiontag' => 'dd',
 		'columns'    => 3,
-		// 'size'       => 'origami-slider',
 		'include'    => '',
 		'exclude'    => '',
 		'wp_default'    => false,

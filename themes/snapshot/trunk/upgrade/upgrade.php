@@ -2,12 +2,16 @@
 
 function snapshot_premium_upgrade_content($content){
 	$content['premium_title'] = __('Upgrade To Snapshot Premium', 'snapshot');
-	$content['premium_summary'] = __("If you've enjoyed using Snapshot, you'll going to love Snapshot Premium. It's a robust upgrade to Snapshot that gives you loads of cool features and email support. At just <strong>$9</strong>, it's a cost effective way to give your site a professional edge.", 'snapshot');
+	$content['premium_summary'] = __("If you've enjoyed using Snapshot, you'll going to love Snapshot Premium. It's a robust upgrade to Snapshot that gives you loads of cool features and email support. You choose how much you want to pay for the upgrade, so it's a cost effective way to give your site a professional edge.", 'snapshot');
 	
-	$content['buy_url'] = 'http://go.siteorigin.com/snapshot-premium';
-	$content['buy_price'] = '9';
-	$content['buy_message_1'] = __("If you're not delighted with Snapshot Premium, I'll give you a full refund", 'snapshot');
-	$content['buy_message_2'] = __("Remember, if you're not satisfied, you get your money back", 'snapshot');
+	$content['buy_url'] = 'http://siteorigin.fetchapp.com/sell/okegupah';
+	$content['buy_price'] = 10;
+	$content['variable_pricing'] = array(
+		array(5, __("If you're creating your site on a budget", 'snapshot')),
+		array(10, __("The standard amount", 'snapshot')),
+		array(20, __("We'll love and support you forever", 'snapshot')),
+	);
+	$content['buy_message_1'] = __("You choose how much you pay for Snapshot Premium", 'snapshot');
 
 	$content['features'] = array(
 		array(

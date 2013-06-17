@@ -72,3 +72,7 @@ Added updater for latest version of Page Builder
 
 **1.2.5**
 Activating Page Builder no longer causes error.
+
+**1.2.6**
+Changed purchase information.
+Fixed translation.
