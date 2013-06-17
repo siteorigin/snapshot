@@ -10,7 +10,7 @@
  */
 function snapshot_prebuilt_page_layouts($layouts){
 	$layouts['home-page'] = array (
-		'name' => __('Home Page', 'siteorigin'),
+		'name' => __('Home Page', 'snapshot'),
 		'widgets' =>
 		array (
 			0 =>
@@ -32,8 +32,8 @@ function snapshot_prebuilt_page_layouts($layouts){
 			),
 			1 =>
 			array (
-				'headline' => 'Your Call To Action Text',
-				'text' => 'Ask your visitor to do something',
+				'headline' => __('Your Call To Action Text', 'snapshot'),
+				'text' => __('Ask your visitor to do something','snapshot'),
 				'button' => 'Action Text',
 				'url' => '#',
 				'info' =>
@@ -46,7 +46,7 @@ function snapshot_prebuilt_page_layouts($layouts){
 			),
 			2 =>
 			array (
-				'headline' => 'A Wonderful Title',
+				'headline' => __('A Wonderful Title', 'snapshot'),
 				'text' => 'Nam consectetur tellus sed lorem sagittis feugiat ut quis odio. Nulla porttitor sagittis massa, posuere posuere justo fringilla vel. Duis elit velit, venenatis a rutrum interdum, hendrerit at arcu. Maecenas luctus, libero porttitor rutrum elementum, lectus nunc tristique lacus, id vestibulum enim erat a tortor. Proin imperdiet erat venenatis justo molestie pretium. Aliquam ut justo felis. In a risus felis, non dapibus erat. Nulla quis sodales felis. Praesent pellentesque lectus adipiscing sem volutpat suscipit. Quisque lobortis sapien id erat posuere pulvinar. Vestibulum turpis magna, cursus quis bibendum ut, ullamcorper ut felis.',
 				'url' => '',
 				'icon' => '0',
@@ -74,7 +74,7 @@ function snapshot_prebuilt_page_layouts($layouts){
 			),
 			4 =>
 			array (
-				'headline' => 'Final Headline',
+				'headline' => __('Final Headline','snapshot'),
 				'text' => 'Cras et turpis erat, ac suscipit mi. Sed aliquet bibendum nulla eget malesuada. Donec tincidunt tempus mattis. Proin non urna at ligula venenatis elementum eget ac nisi. Phasellus vehicula malesuada arcu ut accumsan. Sed euismod, erat in cursus viverra, lectus ipsum laoreet orci, eget vulputate est dolor vel ante.',
 				'url' => '',
 				'icon' => '0',
