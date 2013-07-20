@@ -39,7 +39,7 @@ function snapshot_premium_upgrade_content($content){
 		),
 		array(
 			'heading' => __('Continued Updates', 'snapshot'),
-			'content' => __("You'll help support the continued development of Origami - ensuring it works with future versions of WordPress for years to come.", 'origami'),
+			'content' => __("You'll help support the continued development of Snapshot - ensuring it works with future versions of WordPress for years to come.", 'snapshot'),
 		),
 	);
 
@@ -47,7 +47,7 @@ function snapshot_premium_upgrade_content($content){
 		array(
 			'gravatar' => '8d520667fcdf094093565fc6c7b63ba0',
 			'name' => 'Iisakki',
-			'content' => __("Beautiful and works well!", 'origami'),
+			'content' => __("Beautiful and works well!", 'snapshot'),
 		),
 	);
 
