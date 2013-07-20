@@ -10,6 +10,10 @@ function snapshot_premium_upgrade_content($content){
 
 	$content['features'] = array(
 		array(
+			'heading' => __('Email Support', 'snapshot'),
+			'content' => __("New to WordPress? Need to chat to someone? The SiteOrigin support team and I are waiting to answer your questions.", 'snapshot'),
+		),
+		array(
 			'heading' => __('Sprite Maps', 'snapshot'),
 			'content' => __("If you're targeting a perfect Google PageSpeed score and all the SEO benefits it brings, then sprite maps are essential. They'll make your site load faster and put less load on your servers - saving you cash.", 'snapshot'),
 		),
@@ -35,19 +39,18 @@ function snapshot_premium_upgrade_content($content){
 		),
 		array(
 			'heading' => __('Continued Updates', 'snapshot'),
-			'content' => __("We'll keep Snapshot Premium up to date with new features and performance enhancements.", 'snapshot'),
-		),
-		array(
-			'heading' => __('Premium Support', 'snapshot'),
-			'content' => __("New to WordPress? Need to chat to someone? There is a WordPress guru, waiting to answer your questions. Your posts receive higher priority on our support forums.", 'snapshot'),
+			'content' => __("You'll help support the continued development of Origami - ensuring it works with future versions of WordPress for years to come.", 'origami'),
 		),
 	);
 
-	$content['featured'] = array(
-		get_template_directory_uri().'/upgrade/images/premium.jpg',
-		1110, 1398
+	$content['testimonials'] = array(
+		array(
+			'gravatar' => '8d520667fcdf094093565fc6c7b63ba0',
+			'name' => 'Iisakki',
+			'content' => __("Beautiful and works well!", 'origami'),
+		),
 	);
-	
+
 	return $content;
 }
 add_filter('siteorigin_premium_content', 'snapshot_premium_upgrade_content');
