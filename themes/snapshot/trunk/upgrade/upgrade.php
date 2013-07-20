@@ -5,13 +5,8 @@ function snapshot_premium_upgrade_content($content){
 	$content['premium_summary'] = __("If you've enjoyed using Snapshot, you'll going to love Snapshot Premium. It's a robust upgrade to Snapshot that gives you loads of cool features and email support. You choose how much you want to pay for the upgrade, so it's a cost effective way to give your site a professional edge.", 'snapshot');
 	
 	$content['buy_url'] = 'http://siteorigin.fetchapp.com/sell/okegupah';
-	$content['buy_price'] = 10;
-	$content['variable_pricing'] = array(
-		array(5, __("If you're creating your site on a budget", 'snapshot')),
-		array(10, __("The standard amount", 'snapshot')),
-		array(20, __("We'll love and support you forever", 'snapshot')),
-	);
-	$content['buy_message_1'] = __("You choose how much you pay for Snapshot Premium", 'snapshot');
+	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';
+	$content['premium_video_id'] = '60073475';
 
 	$content['features'] = array(
 		array(

@@ -9,11 +9,10 @@ include get_template_directory().'/functions/admin.php';
 include get_template_directory().'/functions/gallery.php';
 include get_template_directory().'/functions/panels.php';
 
-if(file_exists(get_template_directory().'/premium/functions.php')){
+if( file_exists(get_template_directory().'/premium/functions.php') ){
 	include get_template_directory().'/premium/functions.php';
 }
-
-if(!defined('SITEORIGIN_IS_PREMIUM')) {
+else {
 	include get_template_directory().'/upgrade/upgrade.php';
 }
 
