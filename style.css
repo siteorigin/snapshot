@@ -893,6 +893,14 @@ a{
 	top: .5ex;
 }
 
+.entry-content strong, .entry-content b {
+    font-weight: bold;
+}
+
+.entry-content em {
+    font-style: italic;
+}
+
 
 /* @group Gallery */
 
