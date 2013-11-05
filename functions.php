@@ -1,8 +1,7 @@
 <?php
 
 define('SITEORIGIN_THEME_VERSION', 'trunk');
-define('SITEORIGIN_THEME_UPDATE_ID', 315);
-define('SITEORIGIN_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
+define('SITEORIGIN_THEME_ENDPOINT', 'http://siteorigin.localhost');
 
 include get_template_directory().'/functions/settings.php';
 include get_template_directory().'/functions/admin.php';
@@ -19,7 +18,6 @@ else {
 include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/extras/premium/premium.php';
 include get_template_directory().'/extras/update/update.php';
-include get_template_directory().'/extras/updater/updater.php';
 include get_template_directory().'/extras/adminbar/adminbar.php';
 include get_template_directory().'/extras/widgets/widgets.php';
 include get_template_directory().'/extras/plugin-activation/plugin-activation.php';
@@ -346,11 +344,11 @@ class Snapshot_Walker_Page extends Walker_Page{
 		$output .= "$indent</div></ul>\n";
 	}
 
-	function start_el( &$output, $page, $depth, $args, $current_page = 0 ) {
+	function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
 		if ( $depth ) $indent = str_repeat("\t", $depth);
 		else $indent = '';
 
-		$output .= $indent . '<li class="menu-item"><a href="' . get_permalink($page->ID) . '">' . apply_filters( 'the_title', $page->post_title, $page->ID ) . '</a>';
+		$output .= $indent . '<li class="menu-item"><a href="' . get_permalink($object->ID) . '">' . apply_filters( 'the_title', $object->post_title, $object->ID ) . '</a>';
 	}
 }
 endif;

@@ -97,7 +97,7 @@ function snapshot_premium_video_change_autoplay_callback($matches){
 		$url = add_query_arg('rel', 0, $url);
 	}
 	if(siteorigin_setting('posts_video_default_hd')){
-		$url = add_query_arg('hd', 1, $url);
+		$url = add_query_arg('vq', 'hd1080', $url);
 	}
 
 	return 'src="' .$url. '"';
