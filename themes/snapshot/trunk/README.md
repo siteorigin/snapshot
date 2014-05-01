@@ -84,3 +84,6 @@ Change Log
 * Updated to latest version of SiteOrigin framework.
 * Added bold and italic content styling.
 * Premium: Fixed video quality args.
+
+#### 1.2.9
+* Updated to latest version of SiteOrigin framework.
