@@ -52,7 +52,7 @@ function snapshot_settings_admin_init(){
 	));
 
 	siteorigin_settings_add_teaser('posts', 'video_default_hd', __('Video: Default to HD', 'snapshot'), array(
-		'description' => __('Defaults YouTube and Vimeo videos to HD. Can be overwritten by user/video settings.', 'snapshot'),
+		'description' => __('YouTube has depreciated forced HD embeds. Vimeo HD can be set within Vimeo itself..', 'snapshot'),
 	));
 
 	// The slider section
