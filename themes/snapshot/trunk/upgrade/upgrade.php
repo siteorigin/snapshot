@@ -31,7 +31,7 @@ function snapshot_premium_upgrade_content($content){
 		),
 		array(
 			'heading' => __('Remove Attribution Links', 'snapshot'),
-			'content' => __('Want to look professional? Snapshot Premium gives you the option to remove the "Theme by SiteOrigin" text from your footer in the options panel.', 'snapshot'),
+			'content' => __('Want to look more professional? Snapshot Premium gives you the option to remove the "Theme by SiteOrigin" text from your footer in the options panel.', 'snapshot'),
 		),
 		array(
 			'heading' => __('Slick Search', 'snapshot'),
