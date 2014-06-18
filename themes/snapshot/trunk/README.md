@@ -88,3 +88,6 @@ Change Log
 #### 1.2.9
 * Updated to latest version of SiteOrigin framework.
 * Improved bundled translation files.
+
+#### 1.2.10
+* Updated to latest version of SiteOrigin framework.
