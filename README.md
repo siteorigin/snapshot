@@ -4,6 +4,8 @@ License
 Snapshot WordPress Theme, Copyright 2011 SiteOrigin
 Snapshot is distributed under the terms of the GNU GPL v2.0. See license.txt
 
+Theme screenshot includes images sourced from http://publicdomainarchive.com/ - released as public domain images.
+
 This theme includes the following external libraries and resources
 * HTML5 Shiv MIT/GPL2 Licensed 
 * jQuery Image Preload Dimas Begunoff licensed under MIT
@@ -92,3 +94,4 @@ Change Log
 #### 1.2.10
 * Updated to latest version of SiteOrigin framework.
 * Removed unused PHP file.
+* Updated screenshots.
