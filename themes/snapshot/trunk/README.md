@@ -91,3 +91,4 @@ Change Log
 
 #### 1.2.10
 * Updated to latest version of SiteOrigin framework.
+* Removed unused PHP file.
