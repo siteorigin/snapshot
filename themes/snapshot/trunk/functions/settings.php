@@ -19,6 +19,9 @@ function snapshot_settings_admin_init(){
 	siteorigin_settings_add_teaser('general', 'search', __('Search in Menu', 'snapshot'), array(
 		'description' => __('Display a search link in your menu that slides out a big beautiful search bar.', 'snapshot')
 	));
+	siteorigin_settings_add_teaser('general', 'search_menu_text', __('Search Menu Text', 'snapshot'), array(
+		'description' => __('The text that is displayed in the menu bar for the search.', 'snapshot')
+	));
 	siteorigin_settings_add_field('general', 'latest_posts', 'text', __('Latest Posts Title', 'snapshot'));
 	siteorigin_settings_add_field('general', 'copyright', 'text', __('Copyright Message', 'snapshot'));
 	siteorigin_settings_add_teaser('general', 'attribution', __('Attribution Link', 'snapshot'), array(
@@ -112,6 +115,7 @@ add_action('admin_init', 'snapshot_settings_admin_init');
  */
 function snapshot_settings_default($defaults){
 	$defaults['general_search'] = true;
+	$defaults['general_search_menu_text'] = __('Search', 'snapshot');
 	$defaults['general_latest_posts'] = __('Latest Posts', 'snapshot');
 	$defaults['general_copyright'] = __('Copyright &copy; {sitename} {year}', 'snapshot');
 	$defaults['general_attribution'] = true;

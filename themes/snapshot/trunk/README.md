@@ -95,3 +95,10 @@ Change Log
 * Updated to latest version of SiteOrigin framework.
 * Removed unused PHP file.
 * Updated screenshots.
+
+#### 1.2.11
+* Improved compatibility with latest version of Page Builder.
+
+#### 1.3
+* Removed references to Snapshot Premium, changed to Snapshot Plus plugin instead.
+* Added transition code for removing blog page template.

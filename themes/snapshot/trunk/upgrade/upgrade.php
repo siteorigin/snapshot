@@ -1,16 +1,17 @@
 <?php
 
 function snapshot_premium_upgrade_content($content){
-	$content['premium_title'] = __('Upgrade To Snapshot Premium', 'snapshot');
+	$content['premium_title'] = __('Upgrade To Snapshot Plus', 'snapshot');
 	$content['premium_summary'] = __("If you've enjoyed using Snapshot, you'll going to love Snapshot Premium. It's a robust upgrade to Snapshot that gives you loads of cool features and email support. You choose how much you want to pay for the upgrade, so it's a cost effective way to give your site a professional edge.", 'snapshot');
 	
-	$content['buy_url'] = 'http://siteorigin.fetchapp.com/sell/okegupah';
+	$content['free_download'] = true;
+	$content['buy_url'] = 'http://siteorigin.com/theme/snapshot/?action=plus';
 	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';
 	$content['premium_video_id'] = '60073475';
 
 	$content['features'] = array(
 		array(
-			'heading' => __('Email Support', 'snapshot'),
+			'heading' => __('Free Forum Support', 'snapshot'),
 			'content' => __("New to WordPress? Need to chat to someone? The SiteOrigin support team and I are waiting to answer your questions.", 'snapshot'),
 		),
 		array(

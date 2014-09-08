@@ -40,4 +40,4 @@
 	</div>
 </div>
 
-<?php if(siteorigin_setting('general_search')) get_template_part('premium/searchbar'); ?>
+<?php if( siteorigin_setting('general_search') && function_exists( 'snapshot_plus_search_bar' ) ) snapshot_plus_search_bar(); ?>
