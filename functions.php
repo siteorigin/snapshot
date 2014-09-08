@@ -8,10 +8,7 @@ include get_template_directory().'/functions/admin.php';
 include get_template_directory().'/functions/gallery.php';
 include get_template_directory().'/functions/panels.php';
 
-if( file_exists(get_template_directory().'/premium/functions.php') ){
-	include get_template_directory().'/premium/functions.php';
-}
-else {
+if( !defined('SITEORIGIN_IS_PREMIUM') ){
 	include get_template_directory().'/upgrade/upgrade.php';
 }
 
@@ -168,10 +165,6 @@ if(!function_exists('snapshot_enqueue_scripts')) :
 function snapshot_enqueue_scripts(){
 	wp_enqueue_style('snapshot', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION);
 	
-	if(siteorigin_setting('appearance_style') != 'light'){
-		wp_enqueue_style('snapshot-style', get_template_directory_uri().'/premium/style-'.siteorigin_setting('appearance_style').'.css', array(), SITEORIGIN_THEME_VERSION);
-	}
-
 	wp_enqueue_script('imgpreload', get_template_directory_uri().'/js/jquery.imgpreload.js', array('jquery'), '1.4');
 	wp_enqueue_script('fitvids', get_template_directory_uri().'/js/jquery.fitvids.js', array('jquery'), '1.0');
 	
@@ -435,3 +428,13 @@ function snapshot_siteorigin_panels_data($data){
 	return $data;
 }
 add_filter('siteorigin_panels_data', 'snapshot_siteorigin_panels_data');
+
+/**
+ * Change the name of Influence Premium.
+ *
+ * @return string
+ */
+function snapshot_premium_version_name() {
+	return __('Snapshot Plus', 'influence');
+}
+add_filter( 'siteorigin_premium_theme_name', 'snapshot_premium_version_name' );

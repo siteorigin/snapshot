@@ -1,7 +1,7 @@
-<?php if(get_post_meta(get_the_ID(), 'snapshot_post_video', true) && function_exists('snapshot_premium_video_viewer')) : ?>
+<?php if( get_post_meta(get_the_ID(), 'snapshot_post_video', true) && function_exists('snapshot_plus_video_viewer') ) : ?>
 	<div id="post-single-viewer">
 		<div class="container">
-			<?php snapshot_premium_video_viewer(get_the_ID()); ?>
+			<?php snapshot_plus_video_viewer(get_the_ID()); ?>
 		</div>
 	</div>
 <?php elseif(has_post_thumbnail()) : ?>
