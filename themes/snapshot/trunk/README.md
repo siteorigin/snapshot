@@ -2,15 +2,34 @@ License
 -----------------------------------------------
 
 Snapshot WordPress Theme, Copyright 2011 SiteOrigin
-Snapshot is distributed under the terms of the GNU GPL v2.0. See license.txt
+Snapshot is distributed under the terms of the GNU GPL. See license.txt
 
-Theme screenshot includes images sourced from http://publicdomainarchive.com/ - released as public domain images.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see http://www.gnu.org/copyleft/gpl.html.
 
 This theme includes the following external libraries and resources
-* HTML5 Shiv MIT/GPL2 Licensed 
-* jQuery Image Preload Dimas Begunoff licensed under MIT
-* Fitvids Released under the WTFPL license
-* Demo images under public domain from Pixabay
+
+HTML5 Shiv, Copyright 2011 Alexander Farkas
+Released under a dual MIT/GPL2 License
+Source: https://code.google.com/p/html5shiv/
+
+FitVids, Copyright 2013 Chris Coyier
+Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+
+jQuery Image Preload
+Copyright Dimas Begunoff licensed under MIT
+
+Theme screenshot includes images sourced from http://publicdomainarchive.com/ - released as public domain images.
 
 Change Log
 -----------------------------------------------
@@ -102,3 +121,4 @@ Change Log
 #### 1.3
 * Removed references to Snapshot Premium, changed to Snapshot Plus plugin instead.
 * Added transition code for removing blog page template.
+* Updated license information. License updated to GPL 3.0.

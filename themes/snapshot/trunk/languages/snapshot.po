@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Snapshot\n"
-"POT-Creation-Date: 2014-05-01 15:46+0200\n"
-"PO-Revision-Date: 2014-05-01 15:46+0200\n"
+"POT-Creation-Date: 2014-09-08 21:54+0200\n"
+"PO-Revision-Date: 2014-09-08 21:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -32,8 +32,7 @@ msgstr ""
 msgid "Comments Are Closed"
 msgstr ""
 
-#: comments.php:29 extras/panels-lite/inc/widgets.php:197
-#: extras/panels-lite/inc/widgets.php:198
+#: comments.php:29
 msgid "Name"
 msgstr ""
 
@@ -108,9 +107,9 @@ msgstr ""
 msgid "Prebuilt Layouts"
 msgstr ""
 
-#: extras/metaslider/metaslider.php:69 extras/panels-lite/inc/widgets.php:194
-#: extras/settings/settings.php:396 extras/slider/slider.php:271
-#: extras/slider/tpl/admin-builder.php:29 extras/widgets/widgets.php:338
+#: extras/metaslider/metaslider.php:69 extras/settings/settings.php:367
+#: extras/slider/slider.php:271 extras/slider/tpl/admin-builder.php:29
+#: extras/widgets/widgets.php:338
 msgid "None"
 msgstr ""
 
@@ -130,137 +129,8 @@ msgstr ""
 msgid "Displays a post loop."
 msgstr ""
 
-#: extras/panels-lite/inc/widgets.php:148
-msgid "Unfortunately your theme doesn't have any post loops."
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:159
-#: premium/extras/widgets/widgets.php:265
-msgid "Title"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:163
-msgid "Template"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:178
-msgid "Post Type"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:187
-msgid "Posts Per Page"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:192
-msgid "Order By"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:195
-msgid "Post ID"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:196
-msgid "Author"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:199
-msgid "Date"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:200
-msgid "Modified"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:201
-msgid "Parent"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:202 premium/settings.php:29
-msgid "Random"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:203
-msgid "Comment Count"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:204
-#: extras/panels-lite/inc/widgets.php:205
-msgid "Menu Order"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:210
-msgid "Order"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:212
-msgid "Descending"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:213
-msgid "Ascending"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:218
-msgid "Sticky Posts"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:220
-#: premium/extras/widgets/widgets.php:185
-msgid "Default"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:221
-msgid "Ignore Sticky"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:222
-msgid "Exclude Sticky"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:223
-msgid "Only Sticky"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:228
-msgid "Additional "
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:230
-#, php-format
-msgid ""
-"Additional query arguments. See <a href=\"%s\" target=\"_blank"
-"\">query_posts</a>."
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:240
-msgid "Image (PB)"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:242
-msgid "Displays a simple image."
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:275
-msgid "Image URL"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:279 premium/extras/slider/slider.php:9
-#: tpl/metabox-video.php:16
-msgid "Destination URL"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:293
-msgid "Embedded Video (PB)"
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:295
-#: premium/extras/widgets/widgets.php:96
-msgid "Embeds a video."
-msgstr ""
-
-#: extras/panels-lite/inc/widgets.php:324
-#: premium/extras/widgets/widgets.php:122
-msgid "Video"
+#: extras/panels-lite/inc/widgets.php:94
+msgid "Please install Page Builder to use this widget."
 msgstr ""
 
 #: extras/panels-lite/panels-lite.php:12
@@ -272,7 +142,7 @@ msgstr ""
 msgid "Home Page"
 msgstr ""
 
-#: extras/panels-lite/panels-lite.php:25 extras/panels-lite/panels-lite.php:49
+#: extras/panels-lite/panels-lite.php:25 extras/panels-lite/panels-lite.php:48
 #: extras/panels-lite/panels-lite.php:54
 #: extras/panels-lite/tpl/admin-home-page.php:4 extras/panels/panels.php:31
 #: extras/panels/panels.php:41 extras/panels/panels.php:262
@@ -289,7 +159,7 @@ msgid ""
 "Your theme has Page Builder support. Would you like to install it? It's free."
 msgstr ""
 
-#: extras/panels-lite/panels-lite.php:81 extras/panels/panels.php:562
+#: extras/panels-lite/panels-lite.php:74 extras/panels/panels.php:562
 msgid "Edit Home Page"
 msgstr ""
 
@@ -432,7 +302,7 @@ msgid "Add Widget"
 msgstr ""
 
 #: extras/panels/tpl/metabox-panels.php:56
-#: extras/panels/tpl/metabox-panels.php:102
+#: extras/panels/tpl/metabox-panels.php:95
 msgid "Add Columns"
 msgstr ""
 
@@ -440,27 +310,23 @@ msgstr ""
 msgid "Add New Widget"
 msgstr ""
 
-#: extras/panels/tpl/metabox-panels.php:95
-msgid "Find More Page Builder Widgets"
-msgstr ""
-
-#: extras/panels/tpl/metabox-panels.php:103
+#: extras/panels/tpl/metabox-panels.php:96
 msgid "Columns"
 msgstr ""
 
-#: extras/panels/tpl/metabox-panels.php:108
+#: extras/panels/tpl/metabox-panels.php:101
 msgid "Insert Prebuilt Page Layout"
 msgstr ""
 
-#: extras/panels/tpl/metabox-panels.php:109
+#: extras/panels/tpl/metabox-panels.php:102
 msgid "Page Layout"
 msgstr ""
 
-#: extras/panels/tpl/metabox-panels.php:111
+#: extras/panels/tpl/metabox-panels.php:104
 msgid "Select Layout"
 msgstr ""
 
-#: extras/panels/tpl/metabox-panels.php:115
+#: extras/panels/tpl/metabox-panels.php:108
 msgid "Untitled Layout"
 msgstr ""
 
@@ -476,7 +342,7 @@ msgstr ""
 
 #: extras/premium/premium.php:12 extras/premium/premium.php:173
 #: extras/premium/premium.php:273 extras/premium/tpl/upgrade-page.php:16
-#: extras/premium/tpl/upgrade-page.php:123 extras/settings/settings.php:367
+#: extras/premium/tpl/upgrade-page.php:123 extras/settings/settings.php:338
 msgid "Premium"
 msgstr ""
 
@@ -535,7 +401,7 @@ msgstr ""
 msgid "%s Premium includes additional templates"
 msgstr ""
 
-#: extras/premium/premium.php:173 extras/settings/settings.php:367
+#: extras/premium/premium.php:173 extras/settings/settings.php:338
 #, php-format
 msgid ""
 "Only available in <strong>%s</strong> - <strong class=\"upgrade\">Upgrade "
@@ -558,7 +424,7 @@ msgid ""
 "includes the same basic support we offer users of our free themes."
 msgstr ""
 
-#: extras/premium/premium.php:283 upgrade.php:11
+#: extras/premium/premium.php:283
 msgid "Premium Support"
 msgstr ""
 
@@ -629,7 +495,7 @@ msgstr ""
 #: extras/premium/tpl/upgrade-page.php:41
 msgid ""
 "The premium version of this theme is no longer available. If you need any "
-"help, please contact <a href='http://siteorigin.com//thread/'>SiteOrigin "
+"help, please contact <a href='http://siteorigin.com/thread/'>SiteOrigin "
 "support</a>."
 msgstr ""
 
@@ -639,9 +505,8 @@ msgstr ""
 
 #: extras/premium/tpl/upgrade-page.php:87
 msgid ""
-"Although we appreciate and support all our users, our support staff "
-"prioritize orders of <strong>$15</strong> or more. Support on this order "
-"will take longer."
+"Although we appreciate and support all our users, we only offer prioritized "
+"support for orders of <strong>$15</strong> or more."
 msgstr ""
 
 #: extras/premium/tpl/upgrade-page.php:91
@@ -733,7 +598,7 @@ msgid ""
 "themes and goodies."
 msgstr ""
 
-#: extras/settings/page.php:4 extras/settings/settings.php:67
+#: extras/settings/page.php:4 extras/settings/settings.php:66
 #, php-format
 msgid "%s Theme Settings"
 msgstr ""
@@ -742,73 +607,77 @@ msgstr ""
 msgid "Save Settings"
 msgstr ""
 
-#: extras/settings/settings.php:68
+#: extras/settings/page.php:14
+msgid "Theme Support Forum"
+msgstr ""
+
+#: extras/settings/settings.php:67
 msgid "Theme Settings"
 msgstr ""
 
-#: extras/settings/settings.php:82
+#: extras/settings/settings.php:81
 msgid "Please update to the latest version of WordPress to use theme settings."
 msgstr ""
 
-#: extras/settings/settings.php:266
+#: extras/settings/settings.php:237
 msgid "Enabled"
 msgstr ""
 
-#: extras/settings/settings.php:321
+#: extras/settings/settings.php:292
 #, php-format
 msgid ""
 "You need to <a href=\"%s\">upgrade</a> to WordPress 3.5 to use media fields"
 msgstr ""
 
-#: extras/settings/settings.php:339
+#: extras/settings/settings.php:310
 msgid "Choose Media"
 msgstr ""
 
-#: extras/settings/settings.php:340
+#: extras/settings/settings.php:311
 msgid "Set Media"
 msgstr ""
 
-#: extras/settings/settings.php:354
+#: extras/settings/settings.php:325
 msgid "Remove"
 msgstr ""
 
-#: extras/settings/settings.php:384
+#: extras/settings/settings.php:355
 msgid "Select Images"
 msgstr ""
 
-#: extras/settings/settings.php:409
+#: extras/settings/settings.php:385
 #, php-format
 msgid "This field requires the %s plugin. "
 msgstr ""
 
-#: extras/settings/settings.php:412
+#: extras/settings/settings.php:388
 #, php-format
 msgid "<a href=\"%s\" target=\"_blank\">Install %s</a> now. "
 msgstr ""
 
-#: extras/settings/settings.php:436
+#: extras/settings/settings.php:413
 msgid "Edit"
 msgstr ""
 
-#: extras/settings/settings.php:442
+#: extras/settings/settings.php:419
 msgid "Unknown Field Type"
 msgstr ""
 
-#: extras/settings/settings.php:529
+#: extras/settings/settings.php:508
 msgid "Settings saved."
 msgstr ""
 
-#: extras/settings/settings.php:546
+#: extras/settings/settings.php:527
 #, php-format
 msgid ""
 "Read %s's <a href='%s'>theme documentation</a> for help with these settings."
 msgstr ""
 
-#: extras/settings/settings.php:553
+#: extras/settings/settings.php:534
 msgid "Settings Help"
 msgstr ""
 
-#: extras/settings/settings.php:603
+#: extras/settings/settings.php:584
 msgid "Set Media File"
 msgstr ""
 
@@ -932,18 +801,6 @@ msgstr ""
 msgid "Upload Media"
 msgstr ""
 
-#: extras/theme-widgets/theme-widgets.php:7
-msgid "Theme Widgets"
-msgstr ""
-
-#: extras/theme-widgets/tpl/admin.php:3
-msgid "Widgets"
-msgstr ""
-
-#: extras/theme-widgets/tpl/admin.php:6
-msgid "You can enable/disable any widgets you need."
-msgstr ""
-
 #: extras/update/update.php:59
 #, php-format
 msgid "%s Order Code"
@@ -966,7 +823,6 @@ msgid "A call to action block, generally for your home page."
 msgstr ""
 
 #: extras/widgets/widgets.php:108 extras/widgets/widgets.php:321
-#: premium/extras/widgets/widgets.php:189
 msgid "Headline"
 msgstr ""
 
@@ -1067,12 +923,16 @@ msgstr ""
 msgid "Theme By <a href=\"%s\">SiteOrigin</a>"
 msgstr ""
 
-#: functions.php:82
+#: functions.php:79
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:148
+#: functions.php:145
 msgid "Site Footer"
+msgstr ""
+
+#: functions.php:438
+msgid "Snapshot Plus"
 msgstr ""
 
 #: functions/admin.php:18
@@ -1091,7 +951,7 @@ msgstr ""
 msgid "Post Image"
 msgstr ""
 
-#: functions/admin.php:78
+#: functions/admin.php:82
 msgid ""
 "Embed a video instead of the image gallery. Any oEmbed compatible site like "
 "YouTube or Vimeo."
@@ -1140,176 +1000,188 @@ msgid ""
 msgstr ""
 
 #: functions/settings.php:22
-msgid "Latest Posts Title"
+msgid "Search Menu Text"
 msgstr ""
 
 #: functions/settings.php:23
-msgid "Copyright Message"
-msgstr ""
-
-#: functions/settings.php:24
-msgid "Attribution Link"
+msgid "The text that is displayed in the menu bar for the search."
 msgstr ""
 
 #: functions/settings.php:25
+msgid "Latest Posts Title"
+msgstr ""
+
+#: functions/settings.php:26
+msgid "Copyright Message"
+msgstr ""
+
+#: functions/settings.php:27
+msgid "Attribution Link"
+msgstr ""
+
+#: functions/settings.php:28
 msgid "Hide or display \"Theme By SiteOrigin\" link from your footer."
 msgstr ""
 
-#: functions/settings.php:30
+#: functions/settings.php:33
 msgid "Link Color"
 msgstr ""
 
-#: functions/settings.php:32
+#: functions/settings.php:35
 msgid "Style"
 msgstr ""
 
-#: functions/settings.php:33
+#: functions/settings.php:36
 msgid "Choose the style of your site."
 msgstr ""
 
-#: functions/settings.php:38
+#: functions/settings.php:41
 msgid "Clickable Thumbnails"
 msgstr ""
 
-#: functions/settings.php:39
+#: functions/settings.php:42
 msgid ""
 "Make the entire post thumbnail clickable on the home page and post archive "
 "pages."
 msgstr ""
 
-#: functions/settings.php:42
+#: functions/settings.php:45
 msgid "Sidebar Images"
 msgstr ""
 
-#: functions/settings.php:43
+#: functions/settings.php:46
 msgid "Show or hide the post thumbnails down the right sidebar."
 msgstr ""
 
-#: functions/settings.php:46
+#: functions/settings.php:49
 msgid "Video: Autoplay"
 msgstr ""
 
-#: functions/settings.php:47
+#: functions/settings.php:50
 msgid "Automatically start playing post videos"
 msgstr ""
 
-#: functions/settings.php:50
+#: functions/settings.php:53
 msgid "Video: Hide Related"
 msgstr ""
 
-#: functions/settings.php:51
+#: functions/settings.php:54
 msgid "Hides related videos after YouTube videos stop playing."
 msgstr ""
 
-#: functions/settings.php:54
+#: functions/settings.php:57
 msgid "Video: Default to HD"
 msgstr ""
 
-#: functions/settings.php:55
+#: functions/settings.php:58
 msgid ""
 "YouTube has depreciated forced HD embeds. Vimeo HD can be set within Vimeo "
 "itself.."
 msgstr ""
 
-#: functions/settings.php:60
+#: functions/settings.php:63
 msgid "Home Page Slider"
 msgstr ""
 
-#: functions/settings.php:61
+#: functions/settings.php:64
 msgid "Transition Delay"
 msgstr ""
 
-#: functions/settings.php:62
+#: functions/settings.php:65
 msgid "Number of milliseconds a photo is displayed for."
 msgstr ""
 
-#: functions/settings.php:64
+#: functions/settings.php:67
 msgid "Transition Speed"
 msgstr ""
 
-#: functions/settings.php:65
+#: functions/settings.php:68
 msgid "How many milliseconds the transition takes."
 msgstr ""
 
-#: functions/settings.php:67
+#: functions/settings.php:70
 msgid "Post Count"
 msgstr ""
 
-#: functions/settings.php:68
+#: functions/settings.php:71
 msgid "The number of posts displayed on your home page slider."
 msgstr ""
 
-#: functions/settings.php:71
+#: functions/settings.php:74
 msgid "Scale Home Page Slider Height"
 msgstr ""
 
-#: functions/settings.php:72
+#: functions/settings.php:75
 msgid "Automatically scale the height of the home slider to match each image."
 msgstr ""
 
-#: functions/settings.php:75
+#: functions/settings.php:78
 msgid "Posts Order"
 msgstr ""
 
-#: functions/settings.php:76
+#: functions/settings.php:79
 msgid "How Snapshot chooses your home page slides."
 msgstr ""
 
-#: functions/settings.php:78
+#: functions/settings.php:81
 msgid "Posts Category"
 msgstr ""
 
-#: functions/settings.php:79
+#: functions/settings.php:82
 msgid "Choose which posts are displayed on your home page slider."
 msgstr ""
 
-#: functions/settings.php:84
+#: functions/settings.php:87
 msgid "Share Buttons"
 msgstr ""
 
-#: functions/settings.php:85
+#: functions/settings.php:88
 msgid "Show share buttons next to posts"
 msgstr ""
 
-#: functions/settings.php:87
+#: functions/settings.php:90
 msgid "Twitter Username"
 msgstr ""
 
-#: functions/settings.php:88
+#: functions/settings.php:91
 msgid "Recommend SiteOrigin"
 msgstr ""
 
-#: functions/settings.php:89
+#: functions/settings.php:92
 msgid "Yes"
 msgstr ""
 
-#: functions/settings.php:90
+#: functions/settings.php:93
 msgid ""
 "Recommends your's and SiteOrigin's Twitter accounts after someone tweets "
 "your post."
 msgstr ""
 
-#: functions/settings.php:95 upgrade.php:23 upgrade/upgrade.php:25
+#: functions/settings.php:98 upgrade/upgrade.php:26
 msgid "Ajax Comments"
 msgstr ""
 
-#: functions/settings.php:96
+#: functions/settings.php:99
 msgid "Let your visitors post comments without leaving the page."
 msgstr ""
 
-#: functions/settings.php:101
+#: functions/settings.php:104
 msgid "Error 404 Message"
 msgstr ""
 
-#: functions/settings.php:102
+#: functions/settings.php:105
 msgid "No Search Results"
 msgstr ""
 
-#: functions/settings.php:115
+#: functions/settings.php:118
+msgid "Search"
+msgstr ""
+
+#: functions/settings.php:119
 msgid "Latest Posts"
 msgstr ""
 
-#: functions/settings.php:116
+#: functions/settings.php:120
 msgid "Copyright &copy; {sitename} {year}"
 msgstr ""
 
@@ -1342,153 +1214,8 @@ msgstr ""
 msgid "No results."
 msgstr ""
 
-#: premium/extras/css/css.php:7 premium/extras/css/css.php:25
-#: premium/extras/css/css.php:65
-msgid "Custom CSS"
-msgstr ""
-
-#: premium/extras/css/css.php:27
-#, php-format
-msgid "%s adds any custom CSS you enter here into your site's header. "
-msgstr ""
-
-#: premium/extras/css/css.php:28
-msgid ""
-"These changes will persist across updates so it's best to make all your "
-"changes here. "
-msgstr ""
-
-#: premium/extras/css/css.php:29
-#, php-format
-msgid ""
-"Contact <a href='%s' target='_blank'>SiteOrigin Support</a> for help with "
-"making edits. "
-msgstr ""
-
-#: premium/extras/css/css.php:76
-#, php-format
-msgid "Changes apply to %s and its child themes"
-msgstr ""
-
-#: premium/extras/css/css.php:81
-msgid "Save CSS"
-msgstr ""
-
-#: premium/extras/mobilenav/mobilenav.php:13 premium/settings.php:59
-msgid "Search"
-msgstr ""
-
-#: premium/extras/mobilenav/mobilenav.php:15
-msgid "Navigate"
-msgstr ""
-
-#: premium/extras/mobilenav/mobilenav.php:16
-msgid "Back"
-msgstr ""
-
-#: premium/extras/mobilenav/mobilenav.php:17
-msgid "Close"
-msgstr ""
-
-#: premium/extras/share/share.php:27 share.php:11
+#: share.php:11
 msgid "like"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:13
-msgid "Google Map"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:15
-msgid "Displays a very simple Google map"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:57
-msgid "Map Location"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:59
-msgid "The Map address"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:63
-msgid "Height"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:65
-msgid "Map pixel, the width is decided by the size of its panel."
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:69
-msgid "Zoom"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:71
-msgid "The zoom of the map."
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:94
-msgid "Embedded Video"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:141
-msgid "Bullet List"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:143
-msgid "A simple bullet list."
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:194
-#: premium/extras/widgets/widgets.php:199
-msgid "List Text"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:196
-msgid "Use a * at the beginning of each list entry line."
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:221
-msgid "Contact Form 7"
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:223
-msgid "Displays a contact form."
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:249
-msgid "This widget requires the Contact Form 7 plugin."
-msgstr ""
-
-#: premium/extras/widgets/widgets.php:269
-msgid "Contact Form"
-msgstr ""
-
-#: premium/functions.php:43
-msgid "Enter the full url of a oEmbed video (YouTube, Vimeo, etc)."
-msgstr ""
-
-#: premium/settings.php:16
-msgid "Light"
-msgstr ""
-
-#: premium/settings.php:17
-msgid "Dark"
-msgstr ""
-
-#: premium/settings.php:27
-msgid "Post Date"
-msgstr ""
-
-#: premium/settings.php:28
-msgid "Modified Date"
-msgstr ""
-
-#: premium/settings.php:30
-msgid "By Comment Count"
-msgstr ""
-
-#: premium/settings.php:35
-msgid "All"
 msgstr ""
 
 #: slider-home.php:16
@@ -1505,50 +1232,55 @@ msgstr ""
 msgid "Landscape"
 msgstr ""
 
-#: upgrade.php:5
-msgid ""
-"If you've enjoyed using Snapshot, you're going to love Snapshot Premium. "
-"It's a robust upgrade to Snapshot that gives you loads of cool features and "
-"premium support. At just $7.50, it's a cost effective way to give your site "
-"a professional edge."
+#: tpl/metabox-video.php:16
+msgid "Destination URL"
 msgstr ""
 
-#: upgrade.php:7
-msgid ""
-"If you're not delighted with Snapshot Premium, I'll give you a full refund"
+#: upgrade/upgrade.php:4
+msgid "Upgrade To Snapshot Plus"
 msgstr ""
 
-#: upgrade.php:12
+#: upgrade/upgrade.php:5
 msgid ""
-"New to WordPress? Need to chat to someone? There is a WordPress guru, "
-"waiting to answer your questions. You'll be familiar with our theme in no "
-"time."
+"If you've enjoyed using Snapshot, you'll going to love Snapshot Plus. It's a "
+"robust upgrade to Snapshot that gives you loads of cool features and email "
+"support. Best of all, it's free! All you need to do is sign up to our "
+"newsletter. It's a great way to give your site a professional edge."
 msgstr ""
 
-#: upgrade.php:15 upgrade/upgrade.php:17
+#: upgrade/upgrade.php:14
+msgid "Free Forum Support"
+msgstr ""
+
+#: upgrade/upgrade.php:15
+msgid ""
+"New to WordPress? Need to chat to someone? The SiteOrigin support team and I "
+"are waiting to answer your questions."
+msgstr ""
+
+#: upgrade/upgrade.php:18
 msgid "Sprite Maps"
 msgstr ""
 
-#: upgrade.php:16 upgrade/upgrade.php:18
+#: upgrade/upgrade.php:19
 msgid ""
 "If you're targeting a perfect Google PageSpeed score and all the SEO "
 "benefits it brings, then sprite maps are essential. They'll make your site "
 "load faster and put less load on your servers - saving you cash."
 msgstr ""
 
-#: upgrade.php:19 upgrade/upgrade.php:21
+#: upgrade/upgrade.php:22
 msgid "Video Posts"
 msgstr ""
 
-#: upgrade.php:20 upgrade/upgrade.php:22
+#: upgrade/upgrade.php:23
 msgid ""
-"Are you more of a video guy/gal? Snapshot Premium makes adding videos, from "
-"any popular video sharing site, easy. Your video goes front and center - "
-"where the featured photo usually goes. Perfect for your video blog or web "
-"series."
+"Are you more of a video creator? Snapshot Plus makes adding videos, from any "
+"popular video sharing site, easy. Your video goes front and center - where "
+"the featured photo usually goes. Perfect for your video blog or web series."
 msgstr ""
 
-#: upgrade.php:24 upgrade/upgrade.php:26
+#: upgrade/upgrade.php:27
 msgid ""
 "Keep the conversation flowing with ajax comments. Your visitors will be able "
 "to post comments without leaving the page or interrupting your videos. Ajax "
@@ -1556,79 +1288,53 @@ msgid ""
 "probably get more comments and more visitors."
 msgstr ""
 
-#: upgrade.php:27 upgrade/upgrade.php:29
+#: upgrade/upgrade.php:30
 msgid "A Dashing Dark Style"
 msgstr ""
 
-#: upgrade.php:28 upgrade/upgrade.php:30
+#: upgrade/upgrade.php:31
 msgid ""
-"Prefer to keep the lights out? Snapshot Premium ships with both dark and "
-"light styles. So you can set the mood you really want."
+"Prefer to keep the lights out? Snapshot Plus ships with both dark and light "
+"styles. So you can set the mood you really want."
 msgstr ""
 
-#: upgrade.php:31 upgrade/upgrade.php:33
+#: upgrade/upgrade.php:34
 msgid "Remove Attribution Links"
 msgstr ""
 
-#: upgrade.php:32 upgrade/upgrade.php:34
+#: upgrade/upgrade.php:35
 msgid ""
-"Want to look professional? Snapshot Premium gives you the option to remove "
+"Want to look more professional? Snapshot Plus gives you the option to remove "
 "the \"Theme by SiteOrigin\" text from your footer in the options panel."
 msgstr ""
 
-#: upgrade.php:35 upgrade/upgrade.php:37
+#: upgrade/upgrade.php:38
 msgid "Slick Search"
 msgstr ""
 
-#: upgrade.php:36 upgrade/upgrade.php:38
+#: upgrade/upgrade.php:39
 msgid ""
-"Snapshot Premium has an option to add a non-obtrusive search button to your "
+"Snapshot Plus has an option to add a non-obtrusive search button to your "
 "main menu. Clicking it slides out a big, beautiful search bar so your "
 "visitors can explore your content."
 msgstr ""
 
-#: upgrade.php:39 upgrade/upgrade.php:41
+#: upgrade/upgrade.php:42
 msgid "Continued Updates"
 msgstr ""
 
-#: upgrade.php:40
-msgid ""
-"We'll keep Snapshot Premium up to date with new features and performance "
-"enhancements."
-msgstr ""
-
-#: upgrade.php:44
-msgid "Risk Free Money Back Guarantee"
-msgstr ""
-
-#: upgrade/upgrade.php:4
-msgid "Upgrade To Snapshot Premium"
-msgstr ""
-
-#: upgrade/upgrade.php:5
-msgid ""
-"If you've enjoyed using Snapshot, you'll going to love Snapshot Premium. "
-"It's a robust upgrade to Snapshot that gives you loads of cool features and "
-"email support. You choose how much you want to pay for the upgrade, so it's "
-"a cost effective way to give your site a professional edge."
-msgstr ""
-
-#: upgrade/upgrade.php:13
-msgid "Email Support"
-msgstr ""
-
-#: upgrade/upgrade.php:14
-msgid ""
-"New to WordPress? Need to chat to someone? The SiteOrigin support team and I "
-"are waiting to answer your questions."
-msgstr ""
-
-#: upgrade/upgrade.php:42
+#: upgrade/upgrade.php:43
 msgid ""
 "You'll help support the continued development of Snapshot - ensuring it "
 "works with future versions of WordPress for years to come."
 msgstr ""
 
-#: upgrade/upgrade.php:50
+#: upgrade/upgrade.php:51
 msgid "Beautiful and works well!"
+msgstr ""
+
+#: upgrade/upgrade.php:56
+msgid ""
+"This theme incorporates the best of the themes I've seen. Thank you for your "
+"effort. It has made my job much easier."
 msgstr ""

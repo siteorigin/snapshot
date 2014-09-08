@@ -2,7 +2,7 @@
 
 function snapshot_premium_upgrade_content($content){
 	$content['premium_title'] = __('Upgrade To Snapshot Plus', 'snapshot');
-	$content['premium_summary'] = __("If you've enjoyed using Snapshot, you'll going to love Snapshot Premium. It's a robust upgrade to Snapshot that gives you loads of cool features and email support. You choose how much you want to pay for the upgrade, so it's a cost effective way to give your site a professional edge.", 'snapshot');
+	$content['premium_summary'] = __("If you've enjoyed using Snapshot, you'll going to love Snapshot Plus. It's a robust upgrade to Snapshot that gives you loads of cool features and email support. Best of all, it's free! All you need to do is sign up to our newsletter. It's a great way to give your site a professional edge.", 'snapshot');
 	
 	$content['free_download'] = true;
 	$content['buy_url'] = 'http://siteorigin.com/theme/snapshot/?action=plus';
@@ -20,7 +20,7 @@ function snapshot_premium_upgrade_content($content){
 		),
 		array(
 			'heading' => __('Video Posts', 'snapshot'),
-			'content' => __('Are you more of a video guy/gal? Snapshot Premium makes adding videos, from any popular video sharing site, easy. Your video goes front and center - where the featured photo usually goes. Perfect for your video blog or web series.', 'snapshot'),
+			'content' => __('Are you more of a video creator? Snapshot Plus makes adding videos, from any popular video sharing site, easy. Your video goes front and center - where the featured photo usually goes. Perfect for your video blog or web series.', 'snapshot'),
 		),
 		array(
 			'heading' => __('Ajax Comments', 'snapshot'),
@@ -28,15 +28,15 @@ function snapshot_premium_upgrade_content($content){
 		),
 		array(
 			'heading' => __('A Dashing Dark Style', 'snapshot'),
-			'content' => __('Prefer to keep the lights out? Snapshot Premium ships with both dark and light styles. So you can set the mood you really want.', 'snapshot'),
+			'content' => __('Prefer to keep the lights out? Snapshot Plus ships with both dark and light styles. So you can set the mood you really want.', 'snapshot'),
 		),
 		array(
 			'heading' => __('Remove Attribution Links', 'snapshot'),
-			'content' => __('Want to look more professional? Snapshot Premium gives you the option to remove the "Theme by SiteOrigin" text from your footer in the options panel.', 'snapshot'),
+			'content' => __('Want to look more professional? Snapshot Plus gives you the option to remove the "Theme by SiteOrigin" text from your footer in the options panel.', 'snapshot'),
 		),
 		array(
 			'heading' => __('Slick Search', 'snapshot'),
-			'content' => __('Snapshot Premium has an option to add a non-obtrusive search button to your main menu. Clicking it slides out a big, beautiful search bar so your visitors can explore your content.', 'snapshot'),
+			'content' => __('Snapshot Plus has an option to add a non-obtrusive search button to your main menu. Clicking it slides out a big, beautiful search bar so your visitors can explore your content.', 'snapshot'),
 		),
 		array(
 			'heading' => __('Continued Updates', 'snapshot'),
@@ -49,6 +49,11 @@ function snapshot_premium_upgrade_content($content){
 			'gravatar' => '8d520667fcdf094093565fc6c7b63ba0',
 			'name' => 'Iisakki',
 			'content' => __("Beautiful and works well!", 'snapshot'),
+		),
+		array(
+			'gravatar' => 'c26b8fd861d4093acf1c6c61c0a84f3b',
+			'name' => 'DFWmax',
+			'content' => __("This theme incorporates the best of the themes I've seen. Thank you for your effort. It has made my job much easier.", 'snapshot'),
 		),
 	);
 
