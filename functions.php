@@ -439,13 +439,3 @@ function snapshot_siteorigin_panels_data($data){
 	return $data;
 }
 add_filter('siteorigin_panels_data', 'snapshot_siteorigin_panels_data');
-
-/**
- * Change the name of Influence Premium.
- *
- * @return string
- */
-function snapshot_premium_version_name() {
-	return __('Snapshot Plus', 'influence');
-}
-add_filter( 'siteorigin_premium_theme_name', 'snapshot_premium_version_name' );
