@@ -13,7 +13,7 @@ function snapshot_recommended_plugins(){
 	);
 
 	$config = array(
-		'id'           => 'tgmpa-origami',         // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'tgmpa-snapshot',         // Unique ID for hashing notices for multiple instances of TGMPA.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'parent_slug'  => 'themes.php',            // Parent menu slug.
 		'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
