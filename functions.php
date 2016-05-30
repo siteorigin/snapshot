@@ -77,7 +77,7 @@ function snapshot_setup_theme(){
 
 	add_editor_style();
 
-	add_theme_support( "title-tag" )
+	add_theme_support( "title-tag" );
 
 	if( !function_exists( 'snapshot_plus_init' ) ) {
 		include get_template_directory() . '/inc/plus.php';
