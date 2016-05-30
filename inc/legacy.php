@@ -22,3 +22,15 @@ function snapshot_legacy_settings_page(){
 	</div>
 	<?php
 }
+
+if( !function_exists( 'siteorigin_settings_add_field' ) ) {
+	function siteorigin_settings_add_field( $section, $id, $type, $label = null, $args = array(), $after = false ){
+		SiteOrigin_Settings::single()->add_field( $section, $id, $type, $label, $args, $after);
+	}
+}
+
+if( !function_exists( 'siteorigin_settings_add_section' ) ) {
+	function siteorigin_settings_add_section( $id, $title, $after = false ){
+		SiteOrigin_Settings::single()->add_section( $id, $title, $after );
+	}
+}

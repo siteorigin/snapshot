@@ -122,3 +122,8 @@ Change Log
 * Removed references to Snapshot Premium, changed to Snapshot Plus plugin instead.
 * Added transition code for removing blog page template.
 * Updated license information. License updated to GPL 3.0.
+
+#### 1.4 - 30 May 2016
+* Removed references to Snapshot premium. All settings now included in theme.
+* Migrated to new settings framework.
+* Added about page.
