@@ -57,7 +57,9 @@ if(!function_exists('snapshot_add_meta_boxes')):
  * @action add_meta_boxes
  */
 function snapshot_add_meta_boxes(){
-	add_meta_box('snapshot-post-video', __('Post Video', 'snapshot'), 'snapshot_meta_box_render', 'post', 'side', 'default', 'video');
+	if( function_exists('snapshot_plus_meta_box_video_render') ) {
+		add_meta_box( 'snapshot-post-video', __( 'Post Video', 'snapshot' ), 'snapshot_meta_box_render', 'post', 'side', 'default', 'video' );
+	}
 	add_meta_box('snapshot-post-image', __('Post Image', 'snapshot'), 'snapshot_meta_box_render', 'post', 'side', 'default', 'image');
 }
 endif;
@@ -73,15 +75,6 @@ function snapshot_meta_box_render($post, $metabox){
 		case 'video' :
 			if( function_exists('snapshot_plus_meta_box_video_render') ) {
 				snapshot_plus_meta_box_video_render();
-			}
-			else {
-				siteorigin_premium_call_function(
-					'snapshot_premium_meta_box_video_render',
-					array(),
-					array(
-						'description' => __('Embed a video instead of the image gallery. Any oEmbed compatible site like YouTube or Vimeo.', 'snapshot')
-					)
-				);
 			}
 			break;
 		case 'image' :

@@ -4,7 +4,6 @@ define('SITEORIGIN_THEME_VERSION', 'dev');
 define('SITEORIGIN_THEME_JS_PREFIX', '');
 
 include get_template_directory() . '/inc/settings/settings.php';
-include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 
 include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/admin.php';
@@ -81,6 +80,10 @@ function snapshot_setup_theme(){
 
 	if( !function_exists( 'snapshot_plus_init' ) ) {
 		include get_template_directory() . '/inc/plus.php';
+	}
+
+	if( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
+		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
 }
 endif;
