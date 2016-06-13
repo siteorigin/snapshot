@@ -127,3 +127,8 @@ Change Log
 * Removed references to Snapshot premium. All settings now included in theme.
 * Migrated to new settings framework.
 * Added about page.
+
+#### 1.4.1 - 13 June 2016
+* Fixed error on post edit page.
+* Fixed duplicate Page Builder tab.
+* Updated settings framework.
