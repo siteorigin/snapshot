@@ -77,7 +77,7 @@ function snapshot_settings_admin_init(){
 		'description' => __('Automatically scale the height of the home slider to match each image.', 'snapshot'),
 	));
 	
-	$settings->add_teaser('slider', 'posts', 'select', __('Posts Order', 'snapshot'), array(
+	$settings->add_field('slider', 'posts', 'select', __('Posts Order', 'snapshot'), array(
 		'options' => array(
 			'date' => __('Post Date', 'snapshot'),
 			'modified' => __('Modified Date', 'snapshot'),
@@ -86,7 +86,9 @@ function snapshot_settings_admin_init(){
 		),
 		'description' => __('How Snapshot chooses your home page slides.', 'snapshot'),
 	));
-	$settings->add_teaser('slider', 'category', __('Posts Category', 'snapshot'), array(
+
+	$settings->add_field('slider', 'category', __('Posts Category', 'snapshot'), array(
+		'options' => snapshot_settings_get_category_options(),
 		'description' => __('Choose which posts are displayed on your home page slider.', 'snapshot')
 	));
 
@@ -107,6 +109,20 @@ function snapshot_settings_admin_init(){
 	$settings->add_field('messages', 'no_results', 'textarea', __('No Search Results', 'snapshot'));
 }
 add_action('siteorigin_settings_init', 'snapshot_settings_admin_init');
+
+function snapshot_settings_get_category_options(){
+	$category_options = array(
+		0 => __('All', 'snapshot'),
+	);
+	$cats = get_categories();
+	if(!empty($cats)){
+		foreach(get_categories() as $cat){
+			$category_options[$cat->term_id] = $cat->name;
+		}
+	}
+
+	return $category_options;
+}
 
 /**
  * Set up the default settings
