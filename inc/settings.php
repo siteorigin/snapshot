@@ -169,8 +169,7 @@ function snapshot_settings_default($defaults){
 add_filter('siteorigin_settings_defaults', 'snapshot_settings_default');
 
 function snapshot_about_page_setup( $about ){
-	$about['description'] = __( 'Snapshot is a beautiful theme for showing off your photography.', 'snapshot' );
-	$about['premium_url'] = false;
+	$about[ 'description' ] = __( 'Snapshot is a beautiful theme for showing off your photography.', 'snapshot' );
 
 	$about[ 'sections' ] = array(
 		'free',
