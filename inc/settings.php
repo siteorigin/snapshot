@@ -8,12 +8,12 @@
 function snapshot_settings_admin_init(){
 	$settings = SiteOrigin_Settings::single();
 
-	$settings->add_section('general', __('General', 'snapshot'));
-	$settings->add_section('appearance', __('Appearance', 'snapshot'));
-	$settings->add_section('posts', __('Posts', 'snapshot'));
-	$settings->add_section('slider', __('Slider', 'snapshot'));
-	$settings->add_section('social', __('Social', 'snapshot'));
-	$settings->add_section('messages', __('Text', 'snapshot'));
+	$settings->add_section( 'general', __('General', 'snapshot') );
+	$settings->add_section( 'appearance', __('Appearance', 'snapshot') );
+	$settings->add_section( 'posts', __('Posts', 'snapshot') );
+	$settings->add_section( 'slider', __('Slider', 'snapshot') );
+	$settings->add_section( 'social', __('Social', 'snapshot') );
+	$settings->add_section( 'messages', __('Text', 'snapshot') );
 
 	// General Stuff
 	
@@ -25,6 +25,10 @@ function snapshot_settings_admin_init(){
 	));
 	$settings->add_field('general', 'latest_posts', 'text', __('Latest Posts Title', 'snapshot'));
 	$settings->add_field('general', 'copyright', 'text', __('Copyright Message', 'snapshot'));
+
+	$settings->add_teaser( 'general', 'attribution', 'checkbox', __( 'SiteOrigin Attribution', 'snapshot' ), array(
+		'description' => __( "Hide SiteOrigin attribution in your footer.", 'snapshot' )
+	) );
 
 	// Appearance Stuff
 
@@ -93,7 +97,11 @@ function snapshot_settings_admin_init(){
 	));
 
 	// Social and sharing
-	
+
+	$settings->add_teaser( 'social', 'ajax', 'checkbox', __( 'Ajax Comments', 'snapshot' ), array(
+		'description' => __( "Keep the conversation flowing with Ajax comments.", 'snapshot' )
+	) );
+
 	$settings->add_field('social', 'display_share', 'checkbox', __('Share Buttons', 'snapshot'), array(
 		'label' => __('Show share buttons next to posts', 'snapshot')
 	));
@@ -136,7 +144,7 @@ function snapshot_settings_default($defaults){
 	$defaults['general_search_menu_text'] = __('Search', 'snapshot');
 	$defaults['general_latest_posts'] = __('Latest Posts', 'snapshot');
 	$defaults['general_copyright'] = __('Copyright &copy; {sitename} {year}', 'snapshot');
-	$defaults['general_attribution'] = true;
+	$defaults['general_attribution'] = false;
 
 	$defaults['appearance_style'] = 'light';
 	$defaults['appearance_link'] = '#dc5c3b';
@@ -155,11 +163,10 @@ function snapshot_settings_default($defaults){
 	$defaults['slider_posts'] = 'date';
 	$defaults['slider_category'] = 'date';
 
+	$defaults['social_ajax'] = true;
 	$defaults['social_display_share'] = true;
 	$defaults['social_recommend'] = false;
 	$defaults['social_twitter'] = '';
-
-	$defaults['comments_ajax'] = true;
 
 	$defaults['messages_404'] = '';
 	$defaults['messages_no_results'] = '';
@@ -169,8 +176,7 @@ function snapshot_settings_default($defaults){
 add_filter('siteorigin_settings_defaults', 'snapshot_settings_default');
 
 function snapshot_about_page_setup( $about ){
-	$about['description'] = __( 'Snapshot is a beautiful theme for showing off your photography.', 'snapshot' );
-	$about['premium_url'] = false;
+	$about[ 'description' ] = __( 'Snapshot is a beautiful theme for showing off your photography.', 'snapshot' );
 
 	$about[ 'sections' ] = array(
 		'free',
