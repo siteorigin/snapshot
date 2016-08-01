@@ -132,3 +132,8 @@ Change Log
 * Fixed error on post edit page.
 * Fixed duplicate Page Builder tab.
 * Updated settings framework.
+
+#### 1.4.2 - 1 August 2016
+* Updated about page.
+* Fixed theme settings.
+* Integration with SiteOrigin Premium.
