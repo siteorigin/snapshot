@@ -95,7 +95,7 @@ add_action('after_setup_theme', 'snapshot_setup_theme');
 function snapshot_theme_premium_setup(){
 	// This theme supports the no attribution addon
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
-		'filter'  => 'vantage_footer_attribution',
+		'filter'  => 'snapshot_footer_attribution',
 		'enabled' => siteorigin_setting( 'general_attribution' ),
 		'siteorigin_setting' => 'general_attribution'
 	) );

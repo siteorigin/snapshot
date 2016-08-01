@@ -6,12 +6,8 @@
 		<div class="clear"></div>
 		
 		<div id="footer-copyright">
-			<?php if(siteorigin_setting('general_attribution')) : ?>
-				<div class="designer">
-					<?php printf(__('Theme By <a href="%s">SiteOrigin</a>', 'snapshot'), 'http://siteorigin.com') ?>
-				</div>
-			<?php endif; ?>
-				
+			<?php echo apply_filters( 'snapshot_footer_attribution', '<div class="designer">' . sprintf( __('Theme by <a href="%s">SiteOrigin</a>', 'snapshot'), 'https://siteorigin.com') . '</div>' ) ?>
+
 			<div class="owner">
 				<?php
 					print str_replace(
